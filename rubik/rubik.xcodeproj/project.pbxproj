@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		638248A22A1D9E19006058B8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638248A12A1D9E19006058B8 /* CameraView.swift */; };
+		6383B57E2A2ADB5C004E64DE /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B57D2A2ADB5B004E64DE /* Cube.swift */; };
 		63FE27152A1B21FE00FD0242 /* rubikApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE27142A1B21FE00FD0242 /* rubikApp.swift */; };
 		63FE27172A1B21FE00FD0242 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE27162A1B21FE00FD0242 /* RootView.swift */; };
 		63FE27192A1B220100FD0242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FE27182A1B220100FD0242 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		638248A12A1D9E19006058B8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		6383B57D2A2ADB5B004E64DE /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		63FE27112A1B21FE00FD0242 /* rubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FE27142A1B21FE00FD0242 /* rubikApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikApp.swift; sourceTree = "<group>"; };
 		63FE27162A1B21FE00FD0242 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -43,9 +45,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6383B57C2A2ADB5B004E64DE /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				6383B57D2A2ADB5B004E64DE /* Cube.swift */,
+			);
+			name = Logic;
+			path = rubik/Logic;
+			sourceTree = "<group>";
+		};
 		63FE27082A1B21FE00FD0242 = {
 			isa = PBXGroup;
 			children = (
+				6383B57C2A2ADB5B004E64DE /* Logic */,
 				63FE27132A1B21FE00FD0242 /* rubik */,
 				63FE27122A1B21FE00FD0242 /* Products */,
 			);
@@ -148,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6383B57E2A2ADB5C004E64DE /* Cube.swift in Sources */,
 				638248A22A1D9E19006058B8 /* CameraView.swift in Sources */,
 				63FE27172A1B21FE00FD0242 /* RootView.swift in Sources */,
 				63FE27152A1B21FE00FD0242 /* rubikApp.swift in Sources */,
