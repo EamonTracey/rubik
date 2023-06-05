@@ -3,87 +3,61 @@ struct Cube {
      * The state of a cube is defined by the orientation and permutation of
      * its 12 edges and the orientation and permutation of its 8 corners.
      *
-     * In each array below, the index of the array corresponds to a fixed
-     * position on the cube. The correspondence is defined below.
-     *
-     * Edges:
-     *   - 0:  UR (up right)
-     *   - 1:  UL (up left)
-     *   - 2:  UF (up front)
-     *   - 3:  UB (up back)
-     *   - 4:  DR (down right)
-     *   - 5:  DL (down left)
-     *   - 6:  DF (down front)
-     *   - 7:  DB (down back)
-     *   - 8:  RF (right front)
-     *   - 9:  RB (right back)
-     *   - 10: LF (left front)
-     *   - 11: LB (left back)
-     *
-     * Corners:
-     *   - 0: URF (up right front)
-     *   - 1: URB (up right back)
-     *   - 2: ULF (up left front)
-     *   - 3: ULB (up left back)
-     *   - 4: DRF (down right front)
-     *   - 5: DRB (down right back)
-     *   - 6: DLF (down left front)
-     *   - 7: DLB (down left back)
-     *
-     * The notation to designate positions has the hierarchy:
-     *   - U > D > R > L > F > B
-     *   - up > down > right > left > front > back
+     * In the arrays below, the index of each cubelet corresponds to its
+     * position in the cube. Therefore, the order of the arrays defines
+     * the cube's permutation. A cube with the correct permutation
+     * will have the edges and corners arrays sorted by each cubelet's
+     * solved position (the indices match the solved positions).
      */
     
-    /*
-     * Edge orientation is relative. Two people, using different frames of
-     * reference, may disagree whether the same edge is oriented. The definition
-     * of edge orientation is as follows: an edge position is oriented if and
-     * only if the cubelet in that position can be turned into its solved state
-     * using only U, D, R, and L turns. This means that F and B toggle the orientation
-     * of the edges on the respective layer (note that F2 and B2 preserve edge
-     * orientation).
-     */
-    var edgeOrientation: [UInt8]
-    
-    /*
-     * Edge permutation refers to edge cubelets' positions on the cube.
-     */
-    var edgePermutation: [UInt8]
-    
-    /*
-     * Similar to edge orientation, corner orientation is relative. The definition
-     * of corner orientation is as follows: a corner position is oriented if and only
-     * if the cubelet in that position can be turned into its solved state using only
-     * U, D, R2, and L2 moves. This means that R, L, F, and B change the orientation
-     * of the corners on the respective layer (Note that R2, L2, F2, and B2 preserve
-     * corner orientation).
-     */
-    var cornerOrientation: [UInt8]
-    
-    /*
-     * Corner permutation refers to corner cubelets' positions on the cube.
-     */
-    var cornerPermutation: [UInt8]
+    var edges: [Edge]
+    var corners: [Corner]
 }
 
 extension Cube {
-    // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    static let solvedEdgeOrientation = Array(repeating: 0, count: 12) as [UInt8]
+    // [(0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0), (8, 0), (9, 0), (10, 0), (11 0)]
+    static let solvedEdges = EdgePosition.allCases.map { Edge(solvedPosition: $0, orientation: .correct) }
     
-    // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-    static let solvedEdgePermutation = Array(0...11) as [UInt8]
-    
-    // [0, 0, 0, 0, 0, 0, 0, 0]
-    static let solvedCornerOrientation = Array(repeating: 0, count: 8) as [UInt8]
-    
-    // [0, 1, 2, 3, 4, 5, 6, 7]
-    static let solvedCornerPermutation = Array(0...7) as [UInt8]
+    // [(0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (7, 0)]
+    static let solvedCorners = CornerPosition.allCases.map { Corner(solvedPosition: $0, orientation: .correct) }
 
     static let solvedCube = Cube(
-        edgeOrientation: solvedEdgeOrientation,
-        edgePermutation: solvedEdgePermutation,
-        cornerOrientation: solvedCornerOrientation,
-        cornerPermutation: solvedCornerPermutation
+        edges: solvedEdges,
+        corners: solvedCorners
     )
+}
+
+
+extension Cube {
+    var areEdgesOrientable: Bool {
+        /*
+         * Edge orientation changes by 4 edges at a time. A quarter turn of the F or B
+         * layer toggles the orientation of the 4 edges on the F or B layer, respectively.
+         * Note that it is possible for exactly 2 edges to be flipped (consider flipping
+         * 4 edges and then flipping 3 of the same 4 edges plus an unflipped edge). Therefore,
+         * in order for edges to be orientable, there must be an even number of flipped edges.
+         */
+        
+        return self.edges.map { $0.orientation.rawValue }.reduce(0, ^) == 0
+    }
+    
+    var areCornersOrientable: Bool {
+        /*
+         * Corner orientation changes by 4 corners at a time. A quarter turn of the
+         * R, L, F, or B layer twists 2 corners clockwise and 2 corners counterclockwise
+         * on the R, L, F, or B layer, respectively. Note that it is possible for exactly
+         * 2 corners to be flipped with the sum of their orientations equaling 3 (consider
+         * twisting 2 corners clockwise and 2 corners counterclockwise and then twist the
+         * first 2 corners counterclockwise, 1 of the other corners clockwise, and an
+         * untwisted corner clockwise). Therefore, in order for corners to be orientable,
+         * the sum of the orientations of corners must be divisible by 3.
+         */
+        
+        return self.corners.map { $0.orientation.rawValue }.reduce(0, +) % 3 == 0
+    }
+    
+    // TODO: Implement
+    var isPermutable: Bool {
+        return true
+    }
 }

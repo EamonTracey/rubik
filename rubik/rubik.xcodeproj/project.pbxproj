@@ -9,15 +9,34 @@
 /* Begin PBXBuildFile section */
 		638248A22A1D9E19006058B8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638248A12A1D9E19006058B8 /* CameraView.swift */; };
 		6383B57E2A2ADB5C004E64DE /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B57D2A2ADB5B004E64DE /* Cube.swift */; };
+		6383B5892A2AEDB4004E64DE /* rubikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B5882A2AEDB4004E64DE /* rubikTests.swift */; };
+		6383B5902A2D39D8004E64DE /* Cubelet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B58F2A2D39D8004E64DE /* Cubelet.swift */; };
+		6383B5922A2D3AB2004E64DE /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B5912A2D3AB2004E64DE /* Orientation.swift */; };
+		6390D4BC2A2E8CF30074EEBD /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6390D4BB2A2E8CF30074EEBD /* Position.swift */; };
 		63FE27152A1B21FE00FD0242 /* rubikApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE27142A1B21FE00FD0242 /* rubikApp.swift */; };
 		63FE27172A1B21FE00FD0242 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE27162A1B21FE00FD0242 /* RootView.swift */; };
 		63FE27192A1B220100FD0242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FE27182A1B220100FD0242 /* Assets.xcassets */; };
 		63FE271C2A1B220100FD0242 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FE271B2A1B220100FD0242 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6383B58A2A2AEDB4004E64DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63FE27092A1B21FE00FD0242 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63FE27102A1B21FE00FD0242;
+			remoteInfo = rubik;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		638248A12A1D9E19006058B8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		6383B57D2A2ADB5B004E64DE /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		6383B5862A2AEDB4004E64DE /* rubikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rubikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6383B5882A2AEDB4004E64DE /* rubikTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikTests.swift; sourceTree = "<group>"; };
+		6383B58F2A2D39D8004E64DE /* Cubelet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cubelet.swift; sourceTree = "<group>"; };
+		6383B5912A2D3AB2004E64DE /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		6390D4BB2A2E8CF30074EEBD /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		63FE27112A1B21FE00FD0242 /* rubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FE27142A1B21FE00FD0242 /* rubikApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikApp.swift; sourceTree = "<group>"; };
 		63FE27162A1B21FE00FD0242 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -26,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6383B5832A2AEDB4004E64DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63FE270E2A1B21FE00FD0242 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,9 +75,20 @@
 			isa = PBXGroup;
 			children = (
 				6383B57D2A2ADB5B004E64DE /* Cube.swift */,
+				6383B58F2A2D39D8004E64DE /* Cubelet.swift */,
+				6390D4BB2A2E8CF30074EEBD /* Position.swift */,
+				6383B5912A2D3AB2004E64DE /* Orientation.swift */,
 			);
 			name = Logic;
 			path = rubik/Logic;
+			sourceTree = "<group>";
+		};
+		6383B5872A2AEDB4004E64DE /* rubikTests */ = {
+			isa = PBXGroup;
+			children = (
+				6383B5882A2AEDB4004E64DE /* rubikTests.swift */,
+			);
+			path = rubikTests;
 			sourceTree = "<group>";
 		};
 		63FE27082A1B21FE00FD0242 = {
@@ -59,6 +96,7 @@
 			children = (
 				6383B57C2A2ADB5B004E64DE /* Logic */,
 				63FE27132A1B21FE00FD0242 /* rubik */,
+				6383B5872A2AEDB4004E64DE /* rubikTests */,
 				63FE27122A1B21FE00FD0242 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				63FE27112A1B21FE00FD0242 /* rubik.app */,
+				6383B5862A2AEDB4004E64DE /* rubikTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +132,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6383B5852A2AEDB4004E64DE /* rubikTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6383B58C2A2AEDB4004E64DE /* Build configuration list for PBXNativeTarget "rubikTests" */;
+			buildPhases = (
+				6383B5822A2AEDB4004E64DE /* Sources */,
+				6383B5832A2AEDB4004E64DE /* Frameworks */,
+				6383B5842A2AEDB4004E64DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6383B58B2A2AEDB4004E64DE /* PBXTargetDependency */,
+			);
+			name = rubikTests;
+			productName = rubikTests;
+			productReference = 6383B5862A2AEDB4004E64DE /* rubikTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		63FE27102A1B21FE00FD0242 /* rubik */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63FE271F2A1B220100FD0242 /* Build configuration list for PBXNativeTarget "rubik" */;
@@ -120,6 +177,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					6383B5852A2AEDB4004E64DE = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 63FE27102A1B21FE00FD0242;
+					};
 					63FE27102A1B21FE00FD0242 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -139,11 +200,19 @@
 			projectRoot = "";
 			targets = (
 				63FE27102A1B21FE00FD0242 /* rubik */,
+				6383B5852A2AEDB4004E64DE /* rubikTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6383B5842A2AEDB4004E64DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63FE270F2A1B21FE00FD0242 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,20 +225,75 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6383B5822A2AEDB4004E64DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6383B5892A2AEDB4004E64DE /* rubikTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63FE270D2A1B21FE00FD0242 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6390D4BC2A2E8CF30074EEBD /* Position.swift in Sources */,
 				6383B57E2A2ADB5C004E64DE /* Cube.swift in Sources */,
 				638248A22A1D9E19006058B8 /* CameraView.swift in Sources */,
+				6383B5902A2D39D8004E64DE /* Cubelet.swift in Sources */,
 				63FE27172A1B21FE00FD0242 /* RootView.swift in Sources */,
+				6383B5922A2D3AB2004E64DE /* Orientation.swift in Sources */,
 				63FE27152A1B21FE00FD0242 /* rubikApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6383B58B2A2AEDB4004E64DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63FE27102A1B21FE00FD0242 /* rubik */;
+			targetProxy = 6383B58A2A2AEDB4004E64DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		6383B58D2A2AEDB4004E64DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UY72C74W7W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.bagley.tracey.rubikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rubik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/rubik";
+			};
+			name = Debug;
+		};
+		6383B58E2A2AEDB4004E64DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UY72C74W7W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.bagley.tracey.rubikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rubik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/rubik";
+			};
+			name = Release;
+		};
 		63FE271D2A1B220100FD0242 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -345,6 +469,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6383B58C2A2AEDB4004E64DE /* Build configuration list for PBXNativeTarget "rubikTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6383B58D2A2AEDB4004E64DE /* Debug */,
+				6383B58E2A2AEDB4004E64DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		63FE270C2A1B21FE00FD0242 /* Build configuration list for PBXProject "rubik" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
