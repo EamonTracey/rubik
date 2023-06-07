@@ -8,17 +8,15 @@ extension Cube {
         case .up(let degree):
             self.turnUp(degree)
         case .down(let degree):
-            fallthrough
+            self.turnDown(degree)
         case .right(let degree):
-            fallthrough
+            self.turnRight(degree)
         case .left(let degree):
-            fallthrough
+            self.turnLeft(degree)
         case .front(let degree):
-            fallthrough
+            self.turnFront(degree)
         case .back(let degree):
-            fallthrough
-        default:
-            break
+            self.turnBack(degree)
         }
     }
 
@@ -41,6 +39,88 @@ extension Cube {
             self.corners[.upRightBack] = self.corners[.upLeftBack]
             self.corners[.upLeftBack] = self.corners[.upLeftFront]
             self.corners[.upLeftFront] = storedUpRightFront
+        }
+    }
+    
+    mutating func turnDown(_ degree: TurnDegree) {
+        /*
+         * Turn the down layer.
+         */
+        
+        for _ in 0..<degree.rawValue {
+            // Edge permutation.
+            let storedDownRight = self.edges[.downRight]
+            self.edges[.downRight] = self.edges[.downFront]
+            self.edges[.downFront] = self.edges[.downLeft]
+            self.edges[.downLeft] = self.edges[.downBack]
+            self.edges[.downBack] = storedDownRight
+            
+            // Corner permutation.
+            let storedDownRightFront = self.corners[.downRightFront]
+            self.corners[.downRightFront] = self.corners[.downLeftFront]
+            self.corners[.downLeftFront] = self.corners[.downLeftBack]
+            self.corners[.downLeftBack] = self.corners[.downRightBack]
+            self.corners[.downRightBack] = storedDownRightFront
+        }
+    }
+    
+    mutating func turnRight(_ degree: TurnDegree) {
+        /*
+         * Turn the right layer.
+         */
+        
+        for _ in 0..<degree.rawValue {
+            // Edge permutation.
+            
+            // Corner permutation.
+            
+            // Corner orientation.
+        }
+    }
+    
+    mutating func turnLeft(_ degree: TurnDegree) {
+        /*
+         * Turn the left layer.
+         */
+        
+        for _ in 0..<degree.rawValue {
+            // Edge permutation.
+            
+            // Corner permutation.
+            
+            // Corner orientation.
+        }
+    }
+    
+    mutating func turnFront(_ degree: TurnDegree) {
+        /*
+         * Turn the front layer.
+         */
+        
+        for _ in 0..<degree.rawValue {
+            // Edge permutation.
+            
+            // Corner permutation.
+            
+            // Edge orientation.
+            
+            // Corner orientation.
+        }
+    }
+    
+    mutating func turnBack(_ degree: TurnDegree) {
+        /*
+         * Turn the back layer.
+         */
+        
+        for _ in 0..<degree.rawValue {
+            // Edge permutation.
+            
+            // Corner permutation.
+            
+            // Edge orientation.
+            
+            // Corner orientation.
         }
     }
 }
