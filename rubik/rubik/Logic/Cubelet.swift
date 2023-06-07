@@ -5,13 +5,6 @@ protocol Cubelet {
      */
     
     /*
-     * Each cubelet has an orientation. The type of orientation is different
-     * between differing cubelets, though it always requires a defined frame
-     * of reference.
-     */
-    associatedtype Orientation
-    
-    /*
      * Each cubelet has a position. The type of position is different between
      * differing cubelets (an edge cubelet cannot be in a corner position). Note
      * that "position" refers to a fixed part of the cube and is not synonymous
@@ -23,6 +16,13 @@ protocol Cubelet {
      *   - up > down > right > left > front > back
      */
     associatedtype Position
+    
+    /*
+     * Each cubelet has an orientation. The type of orientation is different
+     * between differing cubelets, though it always requires a defined frame
+     * of reference.
+     */
+    associatedtype Orientation
     
     /*
      * The solved position is a constant that designates a specific piece.
