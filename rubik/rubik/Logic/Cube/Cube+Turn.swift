@@ -18,6 +18,8 @@ extension Cube {
         case .back(let degree):
             self.turnBack(degree)
         }
+        
+        self.turnUp(.counterclockwise)
     }
 
     mutating func turnUp(_ degree: TurnDegree) {
@@ -71,11 +73,11 @@ extension Cube {
         
         for _ in 0..<degree.rawValue {
             // Edge permutation.
-            let storedRightFront = self.edges[.rightFront]
+            let storedUpRight = self.edges[.upRight]
+            self.edges[.upRight] = self.edges[.rightFront]
             self.edges[.rightFront] = self.edges[.downRight]
             self.edges[.downRight] = self.edges[.rightBack]
-            self.edges[.rightBack] = self.edges[.upRight]
-            self.edges[.upRight] = storedRightFront
+            self.edges[.rightBack] = storedUpRight
             
             // Corner permutation.
             let storedUpRightFront = self.corners[.upRightFront]
@@ -85,10 +87,10 @@ extension Cube {
             self.corners[.upRightBack] = storedUpRightFront
             
             // Corner orientation.
-            self.corners[.upRightFront].orientation = (self.corners[.upRightFront].orientation + 1) % 3
-            self.corners[.downRightFront].orientation = (self.corners[.downRightFront].orientation + 1) % 3
-            self.corners[.downRightBack].orientation = (self.corners[.downRightBack].orientation + 1) % 3
-            self.corners[.upRightBack].orientation = (self.corners[.upRightBack].orientation + 1) % 3
+            self.corners[.upRightFront].twist(.counterClockwise)
+            self.corners[.upRightBack].twist(.clockwise)
+            self.corners[.downRightFront].twist(.clockwise)
+            self.corners[.downRightBack].twist(.counterClockwise)
         }
     }
     
@@ -99,24 +101,24 @@ extension Cube {
         
         for _ in 0..<degree.rawValue {
             // Edge permutation.
-            let storedLeftFront = self.edges[.leftFront]
-            self.edges[.leftFront] = self.edges[.downLeft]
-            self.edges[.downLeft] = self.edges[.leftBack]
-            self.edges[.leftBack] = self.edges[.upLeft]
-            self.edges[.upLeft] = storedLeftFront
+            let storedUpLeft = self.edges[.upLeft]
+            self.edges[.upLeft] = self.edges[.leftBack]
+            self.edges[.leftBack] = self.edges[.downLeft]
+            self.edges[.downLeft] = self.edges[.leftFront]
+            self.edges[.leftFront] = storedUpLeft
             
             // Corner permutation.
             let storedUpLeftFront = self.corners[.upLeftFront]
-            self.corners[.upLeftFront] = self.corners[.downLeftFront]
-            self.corners[.downLeftFront] = self.corners[.downLeftBack]
-            self.corners[.downLeftBack] = self.corners[.upLeftBack]
-            self.corners[.upLeftBack] = storedUpLeftFront
+            self.corners[.upLeftFront] = self.corners[.upLeftBack]
+            self.corners[.upLeftBack] = self.corners[.downLeftBack]
+            self.corners[.downLeftBack] = self.corners[.downLeftFront]
+            self.corners[.downLeftFront] = storedUpLeftFront
             
             // Corner orientation.
-            self.corners[.upLeftFront].orientation = (self.corners[.upLeftFront].orientation + 1) % 3
-            self.corners[.downLeftFront].orientation = (self.corners[.downLeftFront].orientation + 1) % 3
-            self.corners[.downLeftBack].orientation = (self.corners[.downLeftBack].orientation + 1) % 3
-            self.corners[.upLeftBack].orientation = (self.corners[.upLeftBack].orientation + 1) % 3
+            self.corners[.upLeftFront].twist(.clockwise)
+            self.corners[.upLeftBack].twist(.counterClockwise)
+            self.corners[.downLeftFront].twist(.counterClockwise)
+            self.corners[.downLeftBack].twist(.clockwise)
         }
     }
     
@@ -127,30 +129,30 @@ extension Cube {
         
         for _ in 0..<degree.rawValue {
             // Edge permutation.
-            let storedLeftFront = self.edges[.leftFront]
+            let storedUpFront = self.edges[.upFront]
+            self.edges[.upFront] = self.edges[.leftFront]
             self.edges[.leftFront] = self.edges[.downFront]
             self.edges[.downFront] = self.edges[.rightFront]
-            self.edges[.rightFront] = self.edges[.upFront]
-            self.edges[.upFront] = storedLeftFront
+            self.edges[.rightFront] = storedUpFront
             
             // Corner permutation.
-            let storedUpLeftFront = self.corners[.upLeftFront]
+            let storedUpRightFront = self.corners[.upRightFront]
+            self.corners[.upRightFront] = self.corners[.upLeftFront]
             self.corners[.upLeftFront] = self.corners[.downLeftFront]
-            self.corners[.downLeftFront] = self.corners[.downRightBack]
-            self.corners[.downRightBack] = self.corners[.upRightFront]
-            self.corners[.upRightFront] = storedUpLeftFront
+            self.corners[.downLeftFront] = self.corners[.downRightFront]
+            self.corners[.downRightFront] = storedUpRightFront
             
             // Edge orientation.
-            self.corners[.upFront].orientation = 1 - self.corners[.upFront].orientation
-            self.corners[.leftFront].orientation = 1 - self.corners[.leftFront].orientation
-            self.corners[.rightFront].orientation = 1 - self.corners[.rightFront].orientation
-            self.corners[.downFront].orientation = 1 - self.corners[.downFront].orientation
+            self.edges[.upFront].flip()
+            self.edges[.downFront].flip()
+            self.edges[.rightFront].flip()
+            self.edges[.leftFront].flip()
             
             // Corner orientation.
-            self.corners[.upLeftFront].orientation = (self.corners[.upLeftFront].orientation + 1) % 3
-            self.corners[.downLeftFront].orientation = (self.corners[.downLeftFront].orientation + 1) % 3
-            self.corners[.downRightFront].orientation = (self.corners[.downRightFront].orientation + 1) % 3
-            self.corners[.upRightFront].orientation = (self.corners[.upRightFront].orientation + 1) % 3
+            self.corners[.upRightFront].twist(.clockwise)
+            self.corners[.upLeftFront].twist(.counterClockwise)
+            self.corners[.downRightFront].twist(.counterClockwise)
+            self.corners[.downLeftFront].twist(.clockwise)
         }
     }
     
@@ -161,30 +163,26 @@ extension Cube {
         
         for _ in 0..<degree.rawValue {
             // Edge permutation.
-            let storedLeftBack = self.edges[.leftBack]
-            self.edges[.leftBack] = self.edges[.upBack]
-            self.edges[.upBack] = self.edges[.rightBack]
-            self.edges[.rightBack] = self.edges[.downBack]
-            self.edges[.downBack] = storedLeftBack
+            let storedUpBack = self.edges[.upBack]
             
             // Corner permutation.
-            let storedUpLeftBack = self.corners[.upLeftBack]
-            self.corners[.upLeftBack] = self.corners[.upRightBack]
+            let storedUpRightBack = self.corners[.upRightBack]
             self.corners[.upRightBack] = self.corners[.downRightBack]
             self.corners[.downRightBack] = self.corners[.downLeftBack]
-            self.corners[.downLeftBack] = storedUpLeftBack
+            self.corners[.downLeftBack] = self.corners[.upLeftBack]
+            self.corners[.upLeftBack] = storedUpRightBack
             
             // Edge orientation.
-            self.corners[.upBack].orientation = 1 - self.corners[.upBack].orientation
-            self.corners[.leftBack].orientation = 1 - self.corners[.leftBack].orientation
-            self.corners[.rightBack].orientation = 1 - self.corners[.rightBack].orientation
-            self.corners[.downBack].orientation = 1 - self.corners[.downBack].orientation
+            self.edges[.upBack].flip()
+            self.edges[.downBack].flip()
+            self.edges[.rightBack].flip()
+            self.edges[.leftBack].flip()
             
             // Corner orientation.
-            self.corners[.upLeftBack].orientation = (self.corners[.upLeftBack].orientation + 1) % 3
-            self.corners[.upRightBack].orientation = (self.corners[.upRightBack].orientation + 1) % 3
-            self.corners[.downRightBack].orientation = (self.corners[.downRightBack].orientation + 1) % 3
-            self.corners[.downLeftBack].orientation = (self.corners[.downLeftBack].orientation + 1) % 3
+            self.corners[.upRightBack].twist(.counterClockwise)
+            self.corners[.upLeftBack].twist(.clockwise)
+            self.corners[.downRightBack].twist(.clockwise)
+            self.corners[.downLeftBack].twist(.counterClockwise)
         }
     }
 }

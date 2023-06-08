@@ -36,25 +36,3 @@ protocol Cubelet {
      */
     var orientation: Orientation { get set }
 }
-
-struct Edge: Cubelet, Equatable {
-    /*
-     * On a Rubik's cube, there are 12 edge cubelets: white-red, white-orange,
-     * white-green, white-blue, yellow-red, yellow-orange, yellow-green, yellow-blue,
-     * red-green, orange-green, red-blue, and orange-blue.
-     */
-    
-    let solvedPosition: EdgePosition
-    var orientation: EdgeOrientation
-}
-
-struct Corner: Cubelet, Equatable {
-    /*
-     * On a Rubik's cube, there are 8 corner cubelets: white-red-green, white-red-blue,
-     * white-orange-green, white-orange-blue, yellow-red-green, yellow-red-blue,
-     * yellow-orange-green, and yellow-orange-blue.
-     */
-    
-    let solvedPosition: CornerPosition
-    var orientation: CornerOrientation
-}

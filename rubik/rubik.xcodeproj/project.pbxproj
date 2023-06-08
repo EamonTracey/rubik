@@ -10,12 +10,21 @@
 		6371D3142A3022BC00DBABFC /* Cube+Solved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3132A3022BC00DBABFC /* Cube+Solved.swift */; };
 		6371D3162A3022DC00DBABFC /* Cube+Solvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3152A3022DC00DBABFC /* Cube+Solvable.swift */; };
 		6371D3182A30231200DBABFC /* Cube+Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3172A30231200DBABFC /* Cube+Turn.swift */; };
+		6371D31D2A31457200DBABFC /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D31C2A31457200DBABFC /* Edge.swift */; };
+		6371D31F2A31459000DBABFC /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D31E2A31459000DBABFC /* Corner.swift */; };
+		6371D3212A3145A800DBABFC /* Edge+Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3202A3145A800DBABFC /* Edge+Flip.swift */; };
+		6371D3232A3145B400DBABFC /* Corner+Twist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3222A3145B400DBABFC /* Corner+Twist.swift */; };
+		6371D3272A314D3600DBABFC /* EdgePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3262A314D3600DBABFC /* EdgePosition.swift */; };
+		6371D3292A314D4700DBABFC /* CornerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3282A314D4700DBABFC /* CornerPosition.swift */; };
+		6371D32B2A314D7B00DBABFC /* EdgeOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D32A2A314D7B00DBABFC /* EdgeOrientation.swift */; };
+		6371D32D2A314D8B00DBABFC /* CornerOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D32C2A314D8B00DBABFC /* CornerOrientation.swift */; };
+		6371D32F2A3168B300DBABFC /* rubikSolvedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D32E2A3168B300DBABFC /* rubikSolvedTests.swift */; };
+		6371D3312A3168F200DBABFC /* rubikSolvableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3302A3168F200DBABFC /* rubikSolvableTests.swift */; };
+		6371D3332A31692A00DBABFC /* rubikTurnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3322A31692A00DBABFC /* rubikTurnTests.swift */; };
 		638248A22A1D9E19006058B8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638248A12A1D9E19006058B8 /* CameraView.swift */; };
 		6383B57E2A2ADB5C004E64DE /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B57D2A2ADB5B004E64DE /* Cube.swift */; };
 		6383B5892A2AEDB4004E64DE /* rubikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B5882A2AEDB4004E64DE /* rubikTests.swift */; };
 		6383B5902A2D39D8004E64DE /* Cubelet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B58F2A2D39D8004E64DE /* Cubelet.swift */; };
-		6383B5922A2D3AB2004E64DE /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B5912A2D3AB2004E64DE /* Orientation.swift */; };
-		6390D4BC2A2E8CF30074EEBD /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6390D4BB2A2E8CF30074EEBD /* Position.swift */; };
 		6390D4BE2A2EC15B0074EEBD /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6390D4BD2A2EC15B0074EEBD /* Turn.swift */; };
 		6390D4C02A2ED6910074EEBD /* Array+PositionSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6390D4BF2A2ED6910074EEBD /* Array+PositionSubscript.swift */; };
 		63FE27152A1B21FE00FD0242 /* rubikApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE27142A1B21FE00FD0242 /* rubikApp.swift */; };
@@ -38,13 +47,22 @@
 		6371D3132A3022BC00DBABFC /* Cube+Solved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cube+Solved.swift"; sourceTree = "<group>"; };
 		6371D3152A3022DC00DBABFC /* Cube+Solvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cube+Solvable.swift"; sourceTree = "<group>"; };
 		6371D3172A30231200DBABFC /* Cube+Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cube+Turn.swift"; sourceTree = "<group>"; };
+		6371D31C2A31457200DBABFC /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		6371D31E2A31459000DBABFC /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
+		6371D3202A3145A800DBABFC /* Edge+Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Edge+Flip.swift"; sourceTree = "<group>"; };
+		6371D3222A3145B400DBABFC /* Corner+Twist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Corner+Twist.swift"; sourceTree = "<group>"; };
+		6371D3262A314D3600DBABFC /* EdgePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgePosition.swift; sourceTree = "<group>"; };
+		6371D3282A314D4700DBABFC /* CornerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerPosition.swift; sourceTree = "<group>"; };
+		6371D32A2A314D7B00DBABFC /* EdgeOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeOrientation.swift; sourceTree = "<group>"; };
+		6371D32C2A314D8B00DBABFC /* CornerOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerOrientation.swift; sourceTree = "<group>"; };
+		6371D32E2A3168B300DBABFC /* rubikSolvedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikSolvedTests.swift; sourceTree = "<group>"; };
+		6371D3302A3168F200DBABFC /* rubikSolvableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikSolvableTests.swift; sourceTree = "<group>"; };
+		6371D3322A31692A00DBABFC /* rubikTurnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikTurnTests.swift; sourceTree = "<group>"; };
 		638248A12A1D9E19006058B8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		6383B57D2A2ADB5B004E64DE /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		6383B5862A2AEDB4004E64DE /* rubikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rubikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6383B5882A2AEDB4004E64DE /* rubikTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikTests.swift; sourceTree = "<group>"; };
 		6383B58F2A2D39D8004E64DE /* Cubelet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cubelet.swift; sourceTree = "<group>"; };
-		6383B5912A2D3AB2004E64DE /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
-		6390D4BB2A2E8CF30074EEBD /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		6390D4BD2A2EC15B0074EEBD /* Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		6390D4BF2A2ED6910074EEBD /* Array+PositionSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+PositionSubscript.swift"; sourceTree = "<group>"; };
 		63FE27112A1B21FE00FD0242 /* rubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +109,38 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		6371D31B2A31456100DBABFC /* Cubelet */ = {
+			isa = PBXGroup;
+			children = (
+				6371D3252A3145C400DBABFC /* Corner */,
+				6371D3242A3145BA00DBABFC /* Edge */,
+				6383B58F2A2D39D8004E64DE /* Cubelet.swift */,
+			);
+			path = Cubelet;
+			sourceTree = "<group>";
+		};
+		6371D3242A3145BA00DBABFC /* Edge */ = {
+			isa = PBXGroup;
+			children = (
+				6371D3202A3145A800DBABFC /* Edge+Flip.swift */,
+				6371D31C2A31457200DBABFC /* Edge.swift */,
+				6371D3262A314D3600DBABFC /* EdgePosition.swift */,
+				6371D32A2A314D7B00DBABFC /* EdgeOrientation.swift */,
+			);
+			path = Edge;
+			sourceTree = "<group>";
+		};
+		6371D3252A3145C400DBABFC /* Corner */ = {
+			isa = PBXGroup;
+			children = (
+				6371D3222A3145B400DBABFC /* Corner+Twist.swift */,
+				6371D31E2A31459000DBABFC /* Corner.swift */,
+				6371D3282A314D4700DBABFC /* CornerPosition.swift */,
+				6371D32C2A314D8B00DBABFC /* CornerOrientation.swift */,
+			);
+			path = Corner;
+			sourceTree = "<group>";
+		};
 		638248A02A1D9CCC006058B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,11 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				6371D3192A30249800DBABFC /* Extensions */,
+				6371D31B2A31456100DBABFC /* Cubelet */,
 				6371D3122A30227B00DBABFC /* Cube */,
 				6390D4BD2A2EC15B0074EEBD /* Turn.swift */,
-				6383B58F2A2D39D8004E64DE /* Cubelet.swift */,
-				6390D4BB2A2E8CF30074EEBD /* Position.swift */,
-				6383B5912A2D3AB2004E64DE /* Orientation.swift */,
 			);
 			name = Logic;
 			path = rubik/Logic;
@@ -118,6 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				6383B5882A2AEDB4004E64DE /* rubikTests.swift */,
+				6371D32E2A3168B300DBABFC /* rubikSolvedTests.swift */,
+				6371D3302A3168F200DBABFC /* rubikSolvableTests.swift */,
+				6371D3322A31692A00DBABFC /* rubikTurnTests.swift */,
 			);
 			path = rubikTests;
 			sourceTree = "<group>";
@@ -260,7 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6371D3332A31692A00DBABFC /* rubikTurnTests.swift in Sources */,
+				6371D32F2A3168B300DBABFC /* rubikSolvedTests.swift in Sources */,
 				6383B5892A2AEDB4004E64DE /* rubikTests.swift in Sources */,
+				6371D3312A3168F200DBABFC /* rubikSolvableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,18 +322,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6371D3212A3145A800DBABFC /* Edge+Flip.swift in Sources */,
 				6390D4C02A2ED6910074EEBD /* Array+PositionSubscript.swift in Sources */,
-				6390D4BC2A2E8CF30074EEBD /* Position.swift in Sources */,
+				6371D3232A3145B400DBABFC /* Corner+Twist.swift in Sources */,
+				6371D32D2A314D8B00DBABFC /* CornerOrientation.swift in Sources */,
 				6371D3162A3022DC00DBABFC /* Cube+Solvable.swift in Sources */,
+				6371D3292A314D4700DBABFC /* CornerPosition.swift in Sources */,
 				6383B57E2A2ADB5C004E64DE /* Cube.swift in Sources */,
+				6371D31F2A31459000DBABFC /* Corner.swift in Sources */,
+				6371D32B2A314D7B00DBABFC /* EdgeOrientation.swift in Sources */,
 				638248A22A1D9E19006058B8 /* CameraView.swift in Sources */,
+				6371D31D2A31457200DBABFC /* Edge.swift in Sources */,
 				6383B5902A2D39D8004E64DE /* Cubelet.swift in Sources */,
 				63FE27172A1B21FE00FD0242 /* RootView.swift in Sources */,
-				6383B5922A2D3AB2004E64DE /* Orientation.swift in Sources */,
 				6390D4BE2A2EC15B0074EEBD /* Turn.swift in Sources */,
 				6371D3182A30231200DBABFC /* Cube+Turn.swift in Sources */,
 				63FE27152A1B21FE00FD0242 /* rubikApp.swift in Sources */,
 				6371D3142A3022BC00DBABFC /* Cube+Solved.swift in Sources */,
+				6371D3272A314D3600DBABFC /* EdgePosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
