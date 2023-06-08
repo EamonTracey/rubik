@@ -164,6 +164,10 @@ extension Cube {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpBack = self.edges[.upBack]
+            self.edges[.upBack] = self.edges[.rightBack]
+            self.edges[.rightBack] = self.edges[.downBack]
+            self.edges[.downBack] = self.edges[.leftBack]
+            self.edges[.leftBack] = storedUpBack
             
             // Corner permutation.
             let storedUpRightBack = self.corners[.upRightBack]
