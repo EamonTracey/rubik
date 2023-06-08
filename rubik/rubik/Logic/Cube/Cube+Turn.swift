@@ -87,10 +87,10 @@ extension Cube {
             self.corners[.upRightBack] = storedUpRightFront
             
             // Corner orientation.
-            self.corners[.upRightFront].twist(.counterClockwise)
+            self.corners[.upRightFront].twist(.counterclockwise)
             self.corners[.upRightBack].twist(.clockwise)
             self.corners[.downRightFront].twist(.clockwise)
-            self.corners[.downRightBack].twist(.counterClockwise)
+            self.corners[.downRightBack].twist(.counterclockwise)
         }
     }
     
@@ -116,8 +116,8 @@ extension Cube {
             
             // Corner orientation.
             self.corners[.upLeftFront].twist(.clockwise)
-            self.corners[.upLeftBack].twist(.counterClockwise)
-            self.corners[.downLeftFront].twist(.counterClockwise)
+            self.corners[.upLeftBack].twist(.counterclockwise)
+            self.corners[.downLeftFront].twist(.counterclockwise)
             self.corners[.downLeftBack].twist(.clockwise)
         }
     }
@@ -150,8 +150,8 @@ extension Cube {
             
             // Corner orientation.
             self.corners[.upRightFront].twist(.clockwise)
-            self.corners[.upLeftFront].twist(.counterClockwise)
-            self.corners[.downRightFront].twist(.counterClockwise)
+            self.corners[.upLeftFront].twist(.counterclockwise)
+            self.corners[.downRightFront].twist(.counterclockwise)
             self.corners[.downLeftFront].twist(.clockwise)
         }
     }
@@ -183,10 +183,10 @@ extension Cube {
             self.edges[.leftBack].flip()
             
             // Corner orientation.
-            self.corners[.upRightBack].twist(.counterClockwise)
+            self.corners[.upRightBack].twist(.counterclockwise)
             self.corners[.upLeftBack].twist(.clockwise)
             self.corners[.downRightBack].twist(.clockwise)
-            self.corners[.downLeftBack].twist(.counterClockwise)
+            self.corners[.downLeftBack].twist(.counterclockwise)
         }
     }
 }

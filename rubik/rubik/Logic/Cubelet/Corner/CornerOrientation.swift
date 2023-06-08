@@ -14,5 +14,5 @@ enum CornerOrientation: UInt8 {
      */
     case correct = 0
     case clockwise = 1
-    case counterClockwise = 2
+    case counterclockwise = 2
 }
