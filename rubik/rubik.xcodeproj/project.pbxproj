@@ -21,6 +21,7 @@
 		6371D32F2A3168B300DBABFC /* rubikSolvedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D32E2A3168B300DBABFC /* rubikSolvedTests.swift */; };
 		6371D3312A3168F200DBABFC /* rubikSolvableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3302A3168F200DBABFC /* rubikSolvableTests.swift */; };
 		6371D3332A31692A00DBABFC /* rubikTurnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3322A31692A00DBABFC /* rubikTurnTests.swift */; };
+		6371D3362A32D48500DBABFC /* TurnDegree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6371D3352A32D48500DBABFC /* TurnDegree.swift */; };
 		638248A22A1D9E19006058B8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638248A12A1D9E19006058B8 /* CameraView.swift */; };
 		6383B57E2A2ADB5C004E64DE /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B57D2A2ADB5B004E64DE /* Cube.swift */; };
 		6383B5892A2AEDB4004E64DE /* rubikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383B5882A2AEDB4004E64DE /* rubikTests.swift */; };
@@ -58,6 +59,7 @@
 		6371D32E2A3168B300DBABFC /* rubikSolvedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikSolvedTests.swift; sourceTree = "<group>"; };
 		6371D3302A3168F200DBABFC /* rubikSolvableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikSolvableTests.swift; sourceTree = "<group>"; };
 		6371D3322A31692A00DBABFC /* rubikTurnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikTurnTests.swift; sourceTree = "<group>"; };
+		6371D3352A32D48500DBABFC /* TurnDegree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnDegree.swift; sourceTree = "<group>"; };
 		638248A12A1D9E19006058B8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		6383B57D2A2ADB5B004E64DE /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		6383B5862A2AEDB4004E64DE /* rubikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rubikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,15 @@
 			path = Corner;
 			sourceTree = "<group>";
 		};
+		6371D3342A32D47400DBABFC /* Turn */ = {
+			isa = PBXGroup;
+			children = (
+				6390D4BD2A2EC15B0074EEBD /* Turn.swift */,
+				6371D3352A32D48500DBABFC /* TurnDegree.swift */,
+			);
+			path = Turn;
+			sourceTree = "<group>";
+		};
 		638248A02A1D9CCC006058B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,10 +164,10 @@
 		6383B57C2A2ADB5B004E64DE /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				6371D3342A32D47400DBABFC /* Turn */,
 				6371D3192A30249800DBABFC /* Extensions */,
 				6371D31B2A31456100DBABFC /* Cubelet */,
 				6371D3122A30227B00DBABFC /* Cube */,
-				6390D4BD2A2EC15B0074EEBD /* Turn.swift */,
 			);
 			name = Logic;
 			path = rubik/Logic;
@@ -313,6 +324,7 @@
 			files = (
 				6371D3332A31692A00DBABFC /* rubikTurnTests.swift in Sources */,
 				6371D32F2A3168B300DBABFC /* rubikSolvedTests.swift in Sources */,
+				6371D3362A32D48500DBABFC /* TurnDegree.swift in Sources */,
 				6383B5892A2AEDB4004E64DE /* rubikTests.swift in Sources */,
 				6371D3312A3168F200DBABFC /* rubikSolvableTests.swift in Sources */,
 			);
