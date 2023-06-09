@@ -2,7 +2,7 @@ import XCTest
 
 @testable import rubik
 
-class rubikAlgorithmTests: XCTestCase {
+final class rubikAlgorithmTests: XCTestCase {
     var algorithm: Algorithm!
     
     func testValidStringInitialization() {
