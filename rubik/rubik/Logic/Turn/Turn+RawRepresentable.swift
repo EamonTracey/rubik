@@ -1,5 +1,5 @@
 extension Turn: RawRepresentable {
-    init?(rawValue: String) {
+    init?(rawValue: some StringProtocol) {
         switch rawValue {
         case "U":
             self = .up(.clockwise)
