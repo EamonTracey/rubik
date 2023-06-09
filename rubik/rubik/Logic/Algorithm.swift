@@ -23,4 +23,8 @@ extension Algorithm {
         
         self.turns = turns
     }
+    
+    var length: Int {
+        return self.turns.count
+    }
 }
