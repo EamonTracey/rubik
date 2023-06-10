@@ -18,8 +18,6 @@ extension Cube {
         case .back(let degree):
             self.turnBack(degree)
         }
-        
-        self.turnUp(.counterclockwise)
     }
 
     mutating func turnUp(_ degree: TurnDegree) {

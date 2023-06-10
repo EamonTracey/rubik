@@ -1,4 +1,4 @@
-enum Turn {
+enum Turn: Equatable {
     /*
      * The cube has 6 outer layers which can be turned.
      */
