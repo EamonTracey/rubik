@@ -1,4 +1,4 @@
-struct Algorithm {
+struct Algorithm: Equatable {
     /*
      * An algorithm is a sequence of turns.
      */
