@@ -36,6 +36,7 @@
 		63B15F4F2A343C2400A06967 /* Turn+Reversed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F4D2A343C0000A06967 /* Turn+Reversed.swift */; };
 		63B15F522A34CE3D00A06967 /* Algorithm+Reversed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F512A34CE3D00A06967 /* Algorithm+Reversed.swift */; };
 		63B15F542A34CEFC00A06967 /* rubikReverseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F532A34CEFC00A06967 /* rubikReverseTests.swift */; };
+		63B15F562A34D9B100A06967 /* Algorithm+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F552A34D9B100A06967 /* Algorithm+RawRepresentable.swift */; };
 		63FE27152A1B21FE00FD0242 /* rubikApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE27142A1B21FE00FD0242 /* rubikApp.swift */; };
 		63FE27172A1B21FE00FD0242 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE27162A1B21FE00FD0242 /* RootView.swift */; };
 		63FE27192A1B220100FD0242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FE27182A1B220100FD0242 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		63B15F4D2A343C0000A06967 /* Turn+Reversed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Turn+Reversed.swift"; sourceTree = "<group>"; };
 		63B15F512A34CE3D00A06967 /* Algorithm+Reversed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Algorithm+Reversed.swift"; sourceTree = "<group>"; };
 		63B15F532A34CEFC00A06967 /* rubikReverseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikReverseTests.swift; sourceTree = "<group>"; };
+		63B15F552A34D9B100A06967 /* Algorithm+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Algorithm+RawRepresentable.swift"; sourceTree = "<group>"; };
 		63FE27112A1B21FE00FD0242 /* rubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FE27142A1B21FE00FD0242 /* rubikApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikApp.swift; sourceTree = "<group>"; };
 		63FE27162A1B21FE00FD0242 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				6371D33E2A32DC8600DBABFC /* Algorithm.swift */,
 				63B15F512A34CE3D00A06967 /* Algorithm+Reversed.swift */,
+				63B15F552A34D9B100A06967 /* Algorithm+RawRepresentable.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				6371D31F2A31459000DBABFC /* Corner.swift in Sources */,
 				6371D32B2A314D7B00DBABFC /* EdgeOrientation.swift in Sources */,
 				638248A22A1D9E19006058B8 /* CameraView.swift in Sources */,
+				63B15F562A34D9B100A06967 /* Algorithm+RawRepresentable.swift in Sources */,
 				63B15F4F2A343C2400A06967 /* Turn+Reversed.swift in Sources */,
 				6371D31D2A31457200DBABFC /* Edge.swift in Sources */,
 				6383B5902A2D39D8004E64DE /* Cubelet.swift in Sources */,
