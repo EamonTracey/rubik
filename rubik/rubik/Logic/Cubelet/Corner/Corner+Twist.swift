@@ -2,7 +2,7 @@ extension Corner {
     mutating func twist(_ degree: CornerOrientation) {
         /*
          * Twist the corner by the specified degree.
-         * Note that is degree = clockwise, this does not set the orientation
+         * Note that if degree = clockwise, this does not set the orientation
          * to clockwise, rather it twists the corner clockwise from its previous
          * state.
          */

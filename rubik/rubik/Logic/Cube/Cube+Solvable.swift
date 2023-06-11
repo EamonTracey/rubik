@@ -50,7 +50,6 @@ extension Cube {
         var edgeInversions = 0
         var cornerInversions = 0
         
-        
         // Compute edge permutation inversions.
         for a in self.edges.indices {
             for b in self.edges.indices {
