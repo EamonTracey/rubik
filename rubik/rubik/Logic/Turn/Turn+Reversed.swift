@@ -1,26 +1,24 @@
 extension Turn {
-    fileprivate static let reverseMap: [Turn:Turn] = [
-        .up(.clockwise): .up(.counterclockwise),
-        .up(.half): .up(.half),
-        .up(.counterclockwise): .up(.clockwise),
-        .down(.clockwise): .down(.counterclockwise),
-        .down(.half): .down(.half),
-        .down(.counterclockwise): .down(.clockwise),
-        .right(.clockwise): .right(.counterclockwise),
-        .right(.half): .right(.half),
-        .right(.counterclockwise): .right(.clockwise),
-        .left(.clockwise): .left(.counterclockwise),
-        .left(.half): .left(.half),
-        .left(.counterclockwise): .left(.clockwise),
-        .front(.clockwise): .front(.counterclockwise),
-        .front(.half): .front(.half),
-        .front(.counterclockwise): .front(.clockwise),
-        .back(.clockwise): .back(.counterclockwise),
-        .back(.half): .back(.half),
-        .back(.counterclockwise): .back(.clockwise),
+    fileprivate static let reverseMap: [TurnDegree:TurnDegree] = [
+        .clockwise: .counterclockwise,
+        .half: .half,
+        .counterclockwise: .clockwise
     ]
     
     var reversed: Turn {
-        return Turn.reverseMap[self]!
+        switch self {
+        case .up(let degree):
+            return .up(Turn.reverseMap[degree]!)
+        case .down(let degree):
+            return .down(Turn.reverseMap[degree]!)
+        case .right(let degree):
+            return .right(Turn.reverseMap[degree]!)
+        case .left(let degree):
+            return .left(Turn.reverseMap[degree]!)
+        case .front(let degree):
+            return .front(Turn.reverseMap[degree]!)
+        case .back(let degree):
+            return .back(Turn.reverseMap[degree]!)
+        }
     }
 }
