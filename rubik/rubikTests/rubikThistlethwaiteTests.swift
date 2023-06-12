@@ -6,7 +6,7 @@ import XCTest
 final class rubikThistlethwaiteTests: XCTestCase {
     func testStepOne() {
         var cube = Cube.solvedCube
-        let scramble = Algorithm("F' D' U' R2 L' U2 R L F R' U2 L' U2 F2 B R2 F2 B' L2 R2 B2 U' R D' R2")!
+        let scramble = Algorithm("R2 U' B' L2 R2 U' L B2 L' B2 D' F2 L B2 F' U2 R' B' F' U' F2 L' U D R")!
         cube.execute(scramble)
         
         let stepOneAlgorithm = Thistlethwaite.StepOne.table[cube.edgeOrientation]

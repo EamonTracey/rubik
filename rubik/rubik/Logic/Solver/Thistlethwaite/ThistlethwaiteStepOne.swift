@@ -3,12 +3,13 @@ import Collections
 extension Thistlethwaite {
     enum StepOne {
         /*
-         * Step one orients the 12 edges of the cube, implying a factor of 2^11 = 2048.
+         * Step one orients the 12 edges, implying a factor of:
+         *   - 2^11 = 2048.
          */
         static let factor = 2048
         
         /*
-         * All turns are used in step one.
+         * Step one allows all turns.
          */
         static let allowedTurns: [Turn] = [
             .up(.clockwise), .up(.half), .up(.counterclockwise),
