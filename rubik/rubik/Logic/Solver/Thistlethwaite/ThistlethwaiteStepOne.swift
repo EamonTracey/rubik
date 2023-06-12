@@ -28,7 +28,7 @@ extension Thistlethwaite.StepOne {
      * step requires at most 7 turns.
      *
      * The set of turns used in step one is all 18. Remember that quarter turns of the F
-     * and B layers cause edges to flip orientations.
+     * and B layers cause edges to flip orientation.
      */
     
     static var table: [[EdgeOrientation]: Algorithm] {
