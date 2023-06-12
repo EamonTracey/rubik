@@ -5,25 +5,18 @@ import XCTest
 
 final class rubikThistlethwaiteTests: XCTestCase {
     func testStepOne() {
+        var algorithmOne: Algorithm! = nil
+        var algorithmTwo: Algorithm! = nil
+        
         var cube = Cube.solvedCube
-        let scramble = Algorithm("R' D' R B' D2 R L' F B2 R2 B' F2 L U R' B L' F R D' R' F L' F2 L")!
+        let scramble = Algorithm("F U L R U' R2 D U' L D2 F' B D2 B' L D' B L2 D B L' R2 U2 L' B'")!
         cube.execute(scramble)
         
-        let stepOneAlgorithm = Thistlethwaite.StepOne.table[cube.edgeOrientation]!.reversed
-        cube.execute(stepOneAlgorithm)
+        algorithmOne = Thistlethwaite.StepOne.table[Thistlethwaite.StepOne.encodedState(of: cube)]!.reversed
+        cube.execute(algorithmOne)
+        algorithmTwo = Thistlethwaite.StepTwo.table[Thistlethwaite.StepTwo.encodedState(of: cube)]!.reversed
+        cube.execute(algorithmTwo)
         
-        XCTAssertEqual(Thistlethwaite.StepTwo.table.count, 1082565)
-        
-        let stepTwoAlgorithm = Thistlethwaite.StepTwo.table[
-            cube.cornerOrientation.map { $0.rawValue } + [
-                UInt8(cube.edgePermutation.firstIndex(of: .rightFront)!),
-                UInt8(cube.edgePermutation.firstIndex(of: .leftFront)!),
-                UInt8(cube.edgePermutation.firstIndex(of: .rightBack)!),
-                UInt8(cube.edgePermutation.firstIndex(of: .leftBack)!),
-            ].sorted()
-        ]!.reversed
-        
-        let finalAlgorithm = stepOneAlgorithm.appending(contentsOf: stepTwoAlgorithm)
-        print(finalAlgorithm.rawValue)
+        print(algorithmOne.appending(contentsOf: algorithmTwo).rawValue)
     }
 }
