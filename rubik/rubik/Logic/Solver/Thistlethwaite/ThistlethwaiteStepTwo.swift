@@ -26,16 +26,27 @@ extension Thistlethwaite {
 }
 
 extension Thistlethwaite.StepTwo {
-    static var table: [[CornerOrientation]: Algorithm] {
-        var stateTable: [[CornerOrientation]: Algorithm] = [:]
+    static var table: [[UInt8]: Algorithm] {
+        var stateTable: [[UInt8]: Algorithm] = [:]
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
         
-        while let state = frontier.popFirst() {
-            if state.algorithm.length > 10 { continue }
+        while stateTable.count < Thistlethwaite.StepTwo.factor, let state = frontier.popFirst() {
+            print(stateTable.count)
             
-            if stateTable.keys.contains(state.cube.cornerOrientation) { continue }
+            let thing = state.cube.cornerOrientation.map { $0.rawValue } + [
+                UInt8(state.cube.edgePermutation.firstIndex(of: .rightFront)!),
+                UInt8(state.cube.edgePermutation.firstIndex(of: .leftFront)!),
+                UInt8(state.cube.edgePermutation.firstIndex(of: .rightBack)!),
+                UInt8(state.cube.edgePermutation.firstIndex(of: .leftBack)!),
+            ].sorted()
             
-            stateTable[state.cube.cornerOrientation] = state.algorithm
+            if stateTable.keys.contains(
+                thing
+            ) { continue }
+            
+            stateTable[
+                thing
+            ] = state.algorithm
             
             for turn in Thistlethwaite.StepTwo.allowedTurns {
                 var adjacentState = state

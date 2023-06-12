@@ -11,7 +11,17 @@ final class rubikThistlethwaiteTests: XCTestCase {
         
         let stepOneAlgorithm = Thistlethwaite.StepOne.table[cube.edgeOrientation]!.reversed
         cube.execute(stepOneAlgorithm)
-        let stepTwoAlgorithm = Thistlethwaite.StepTwo.table[cube.cornerOrientation]!.reversed
+        
+        XCTAssertEqual(Thistlethwaite.StepTwo.table.count, 1082565)
+        
+        let stepTwoAlgorithm = Thistlethwaite.StepTwo.table[
+            cube.cornerOrientation.map { $0.rawValue } + [
+                UInt8(cube.edgePermutation.firstIndex(of: .rightFront)!),
+                UInt8(cube.edgePermutation.firstIndex(of: .leftFront)!),
+                UInt8(cube.edgePermutation.firstIndex(of: .rightBack)!),
+                UInt8(cube.edgePermutation.firstIndex(of: .leftBack)!),
+            ].sorted()
+        ]!.reversed
         
         let finalAlgorithm = stepOneAlgorithm.appending(contentsOf: stepTwoAlgorithm)
         print(finalAlgorithm.rawValue)
