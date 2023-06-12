@@ -1,3 +1,5 @@
+import Collections
+
 extension Thistlethwaite {
     enum StepTwo {
         /*
@@ -20,5 +22,29 @@ extension Thistlethwaite {
             .front(.half),
             .back(.half)
         ]
+    }
+}
+
+extension Thistlethwaite.StepTwo {
+    static var table: [[CornerOrientation]: Algorithm] {
+        var stateTable: [[CornerOrientation]: Algorithm] = [:]
+        var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
+        
+        while let state = frontier.popFirst() {
+            if state.algorithm.length > 10 { continue }
+            
+            if stateTable.keys.contains(state.cube.cornerOrientation) { continue }
+            
+            stateTable[state.cube.cornerOrientation] = state.algorithm
+            
+            for turn in Thistlethwaite.StepTwo.allowedTurns {
+                var adjacentState = state
+                adjacentState.cube.turn(turn)
+                adjacentState.algorithm = adjacentState.algorithm.appending(turn)
+                frontier.append(adjacentState)
+            }
+        }
+        
+        return stateTable
     }
 }

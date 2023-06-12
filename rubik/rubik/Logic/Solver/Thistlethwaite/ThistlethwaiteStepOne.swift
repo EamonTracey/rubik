@@ -34,22 +34,22 @@ extension Thistlethwaite.StepOne {
     
     static var table: [[EdgeOrientation]: Algorithm] {
         var stateTable: [[EdgeOrientation]: Algorithm] = [:]
-        var frontier: Deque<(Cube, Algorithm)> = [(.solvedCube, .nothing)]
+        var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
         
         while stateTable.count < Thistlethwaite.StepOne.factor, let state = frontier.popFirst() {
             // If we have already visited this state, skip it.
-            if stateTable.keys.contains(state.0.edgeOrientation) {
+            if stateTable.keys.contains(state.cube.edgeOrientation) {
                 continue
             }
             
             // Add the state and its corresponding algorithm to the table.
-            stateTable[state.0.edgeOrientation] = state.1
+            stateTable[state.cube.edgeOrientation] = state.algorithm
             
             // Add all adjacent states to the queue to be visited.
             for turn in Thistlethwaite.StepOne.allowedTurns {
                 var adjacentState = state
-                adjacentState.0.turn(turn)
-                adjacentState.1 = adjacentState.1.appending(turn)
+                adjacentState.cube.turn(turn)
+                adjacentState.algorithm = adjacentState.algorithm.appending(turn)
                 frontier.append(adjacentState)
             }
         }
