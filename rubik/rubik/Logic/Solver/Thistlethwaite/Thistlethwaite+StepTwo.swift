@@ -23,10 +23,11 @@ extension Thistlethwaite {
             .back(.half)
         ]
         
-        /*
-         * TODO: Document
-         */
         static func encodedState(of cube: Cube) -> [UInt8] {
+            /*
+             * TODO: Document
+             */
+            
             let state: [UInt8] = cube.cornerOrientation.map { $0.rawValue }
             var middleLayerEdgePositions: [UInt8] = Array(repeating: 0, count: 4)
             

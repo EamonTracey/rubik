@@ -20,10 +20,11 @@ extension Thistlethwaite {
             .back(.clockwise), .back(.half), .back(.counterclockwise)
         ]
         
-        /*
-         * TODO: Document
-         */
         static func encodedState(of cube: Cube) -> [UInt8] {
+            /*
+             * TODO: Document
+             */
+            
             return cube.edgeOrientation.map { $0.rawValue }
         }
     }
