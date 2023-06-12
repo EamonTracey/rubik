@@ -5,6 +5,8 @@ struct Algorithm: Equatable {
     
     let turns: [Turn]
     
+    static var nothing = Algorithm(turns: [])
+    
     var length: Int {
         return self.turns.count
     }

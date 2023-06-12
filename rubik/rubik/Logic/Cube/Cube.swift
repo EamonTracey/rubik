@@ -12,4 +12,20 @@ struct Cube: Equatable {
     
     var edges: [Edge]
     var corners: [Corner]
+    
+    var edgeOrientation: [EdgeOrientation] {
+        return self.edges.map { $0.orientation }
+    }
+    
+    var cornerOrientation: [CornerOrientation] {
+        return self.corners.map { $0.orientation }
+    }
+    
+    var edgePermutation: [EdgePosition] {
+        return self.edges.map { $0.solvedPosition }
+    }
+    
+    var cornerPermutation: [CornerPosition] {
+        return self.corners.map { $0.solvedPosition }
+    }
 }

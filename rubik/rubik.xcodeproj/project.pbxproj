@@ -40,6 +40,12 @@
 		63B15F582A35250C00A06967 /* EdgePosition+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F572A35250C00A06967 /* EdgePosition+Comparable.swift */; };
 		63B15F5A2A35256500A06967 /* CornerPosition+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F592A35256500A06967 /* CornerPosition+Comparable.swift */; };
 		63B15F5E2A3620C000A06967 /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F5D2A3620C000A06967 /* Solver.swift */; };
+		63B15F602A36350D00A06967 /* Solver+Thistlethwaite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F5F2A36350C00A06967 /* Solver+Thistlethwaite.swift */; };
+		63B15F622A363CAB00A06967 /* rubikThistlethwaiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F612A363CAB00A06967 /* rubikThistlethwaiteTests.swift */; };
+		63B15F6A2A369EA100A06967 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 63B15F692A369EA100A06967 /* Collections */; };
+		63B15F6D2A36C2F700A06967 /* ThistlethwaiteStepOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F6C2A36C2F700A06967 /* ThistlethwaiteStepOne.swift */; };
+		63B15F6F2A36C30D00A06967 /* Thistlethwaite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F6E2A36C30D00A06967 /* Thistlethwaite.swift */; };
+		63B15F712A36C7E300A06967 /* Algorithm+Appending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B15F702A36C7E300A06967 /* Algorithm+Appending.swift */; };
 		63FE27152A1B21FE00FD0242 /* rubikApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE27142A1B21FE00FD0242 /* rubikApp.swift */; };
 		63FE27172A1B21FE00FD0242 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FE27162A1B21FE00FD0242 /* RootView.swift */; };
 		63FE27192A1B220100FD0242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63FE27182A1B220100FD0242 /* Assets.xcassets */; };
@@ -91,6 +97,11 @@
 		63B15F572A35250C00A06967 /* EdgePosition+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgePosition+Comparable.swift"; sourceTree = "<group>"; };
 		63B15F592A35256500A06967 /* CornerPosition+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerPosition+Comparable.swift"; sourceTree = "<group>"; };
 		63B15F5D2A3620C000A06967 /* Solver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver.swift; sourceTree = "<group>"; };
+		63B15F5F2A36350C00A06967 /* Solver+Thistlethwaite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Solver+Thistlethwaite.swift"; sourceTree = "<group>"; };
+		63B15F612A363CAB00A06967 /* rubikThistlethwaiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikThistlethwaiteTests.swift; sourceTree = "<group>"; };
+		63B15F6C2A36C2F700A06967 /* ThistlethwaiteStepOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThistlethwaiteStepOne.swift; sourceTree = "<group>"; };
+		63B15F6E2A36C30D00A06967 /* Thistlethwaite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thistlethwaite.swift; sourceTree = "<group>"; };
+		63B15F702A36C7E300A06967 /* Algorithm+Appending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Algorithm+Appending.swift"; sourceTree = "<group>"; };
 		63FE27112A1B21FE00FD0242 /* rubik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FE27142A1B21FE00FD0242 /* rubikApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubikApp.swift; sourceTree = "<group>"; };
 		63FE27162A1B21FE00FD0242 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -110,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B15F6A2A369EA100A06967 /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +226,7 @@
 				63B15F452A33E03700A06967 /* rubikAlgorithmTests.swift */,
 				63B15F4B2A33E76A00A06967 /* rubikExecuteTests.swift */,
 				63B15F532A34CEFC00A06967 /* rubikReverseTests.swift */,
+				63B15F612A363CAB00A06967 /* rubikThistlethwaiteTests.swift */,
 			);
 			path = rubikTests;
 			sourceTree = "<group>";
@@ -222,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				6371D33E2A32DC8600DBABFC /* Algorithm.swift */,
+				63B15F702A36C7E300A06967 /* Algorithm+Appending.swift */,
 				63B15F512A34CE3D00A06967 /* Algorithm+Reversed.swift */,
 				63B15F552A34D9B100A06967 /* Algorithm+RawRepresentable.swift */,
 			);
@@ -232,8 +246,19 @@
 			isa = PBXGroup;
 			children = (
 				63B15F5D2A3620C000A06967 /* Solver.swift */,
+				63B15F5F2A36350C00A06967 /* Solver+Thistlethwaite.swift */,
+				63B15F6B2A36C2B400A06967 /* Thistlethwaite */,
 			);
 			path = Solver;
+			sourceTree = "<group>";
+		};
+		63B15F6B2A36C2B400A06967 /* Thistlethwaite */ = {
+			isa = PBXGroup;
+			children = (
+				63B15F6E2A36C30D00A06967 /* Thistlethwaite.swift */,
+				63B15F6C2A36C2F700A06967 /* ThistlethwaiteStepOne.swift */,
+			);
+			path = Thistlethwaite;
 			sourceTree = "<group>";
 		};
 		63FE27082A1B21FE00FD0242 = {
@@ -308,6 +333,9 @@
 			dependencies = (
 			);
 			name = rubik;
+			packageProductDependencies = (
+				63B15F692A369EA100A06967 /* Collections */,
+			);
 			productName = rubik;
 			productReference = 63FE27112A1B21FE00FD0242 /* rubik.app */;
 			productType = "com.apple.product-type.application";
@@ -340,6 +368,9 @@
 				Base,
 			);
 			mainGroup = 63FE27082A1B21FE00FD0242;
+			packageReferences = (
+				63B15F682A369EA100A06967 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 63FE27122A1B21FE00FD0242 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -378,6 +409,7 @@
 				6371D32F2A3168B300DBABFC /* rubikSolvedTests.swift in Sources */,
 				6383B5892A2AEDB4004E64DE /* rubikTests.swift in Sources */,
 				63B15F462A33E03700A06967 /* rubikAlgorithmTests.swift in Sources */,
+				63B15F622A363CAB00A06967 /* rubikThistlethwaiteTests.swift in Sources */,
 				6371D3312A3168F200DBABFC /* rubikSolvableTests.swift in Sources */,
 				63B15F542A34CEFC00A06967 /* rubikReverseTests.swift in Sources */,
 				63B15F4C2A33E76A00A06967 /* rubikExecuteTests.swift in Sources */,
@@ -390,9 +422,11 @@
 			files = (
 				63B15F5A2A35256500A06967 /* CornerPosition+Comparable.swift in Sources */,
 				6371D3212A3145A800DBABFC /* Edge+Flip.swift in Sources */,
+				63B15F6F2A36C30D00A06967 /* Thistlethwaite.swift in Sources */,
 				6390D4C02A2ED6910074EEBD /* Array+PositionSubscript.swift in Sources */,
 				6371D3232A3145B400DBABFC /* Corner+Twist.swift in Sources */,
 				6371D32D2A314D8B00DBABFC /* CornerOrientation.swift in Sources */,
+				63B15F6D2A36C2F700A06967 /* ThistlethwaiteStepOne.swift in Sources */,
 				6371D3162A3022DC00DBABFC /* Cube+Solvable.swift in Sources */,
 				63B15F522A34CE3D00A06967 /* Algorithm+Reversed.swift in Sources */,
 				6371D3292A314D4700DBABFC /* CornerPosition.swift in Sources */,
@@ -414,7 +448,9 @@
 				6371D3412A32E4C300DBABFC /* Cube+Algorithm.swift in Sources */,
 				63FE27152A1B21FE00FD0242 /* rubikApp.swift in Sources */,
 				6371D3142A3022BC00DBABFC /* Cube+Solved.swift in Sources */,
+				63B15F712A36C7E300A06967 /* Algorithm+Appending.swift in Sources */,
 				63B15F5E2A3620C000A06967 /* Solver.swift in Sources */,
+				63B15F602A36350D00A06967 /* Solver+Thistlethwaite.swift in Sources */,
 				6371D3272A314D3600DBABFC /* EdgePosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,6 +705,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63B15F682A369EA100A06967 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63B15F692A369EA100A06967 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63B15F682A369EA100A06967 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63FE27092A1B21FE00FD0242 /* Project object */;
 }
