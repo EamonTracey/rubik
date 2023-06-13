@@ -9,7 +9,7 @@ extension Thistlethwaite {
         /*
          * TODO: Document
          */
-        static let factor = 29400 + 1000000000
+        static let factor = 352800
         
         /*
          * TODO: Document
