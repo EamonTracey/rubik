@@ -27,6 +27,7 @@ final class rubikThistlethwaiteTests: XCTestCase {
         let scramble = Algorithm("U F2 D' B2 R2 L2 F2 U' D2 R2 D U L2 D2 F2 R2 U' L2 D2 U")!
         cube.execute(scramble)
         
+        print(Thistlethwaite.StepThree.table.count)
         algorithm = Thistlethwaite.StepThree.table[Thistlethwaite.StepThree.encodedState(of: cube)]!.reversed
         
         print(algorithm.rawValue)

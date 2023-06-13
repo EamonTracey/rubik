@@ -9,7 +9,7 @@ extension Thistlethwaite {
         /*
          * TODO: Document
          */
-        static let factor = 4900
+        static let factor = 29400 + 1000000000
         
         /*
          * TODO: Document
@@ -27,11 +27,13 @@ extension Thistlethwaite {
             /*
              * TODO: Document
              */
-                        
+            
             var m: [UInt8] = Array(repeating: 0, count: 4)
             var s: [UInt8] = Array(repeating: 0, count: 4)
-            var u: [UInt8] = Array(repeating: 0, count: 4)
-            var d: [UInt8] = Array(repeating: 0, count: 4)
+            var t1: [UInt8] = []
+            var t2: [UInt8] = []
+            var t3: [UInt8] = []
+            var t4: [UInt8] = []
             
             let edgePermutation = cube.edgePermutation
             for index in edgePermutation.indices {
@@ -47,17 +49,37 @@ extension Thistlethwaite {
             
             let cornerPermutation = cube.cornerPermutation
             for index in cornerPermutation.indices {
-                if cornerPermutation[index] == .upRightFront { u[0] = UInt8(index) }
-                else if cornerPermutation[index] == .upRightBack { u[1] = UInt8(index) }
-                else if cornerPermutation[index] == .upLeftFront { u[2] = UInt8(index) }
-                else if cornerPermutation[index] == .upLeftBack { u[3] = UInt8(index) }
-                else if cornerPermutation[index] == .downRightFront { d[0] = UInt8(index) }
-                else if cornerPermutation[index] == .downRightBack { d[1] = UInt8(index) }
-                else if cornerPermutation[index] == .downLeftFront { d[2] = UInt8(index) }
-                else if cornerPermutation[index] == .downLeftBack { d[3] = UInt8(index) }
+                if cornerPermutation[index] == .upRightFront { t1.append(UInt8(index)) }
+                else if cornerPermutation[index] == .upLeftBack { t1.append(UInt8(index)) }
+                else if cornerPermutation[index] == .downLeftFront { t2.append(UInt8(index)) }
+                else if cornerPermutation[index] == .downRightBack { t2.append(UInt8(index)) }
+                else if cornerPermutation[index] == .upRightBack { t3.append(UInt8(index)) }
+                else if cornerPermutation[index] == .upLeftFront { t3.append(UInt8(index)) }
+                else if cornerPermutation[index] == .downRightFront { t4.append(UInt8(index)) }
+                else if cornerPermutation[index] == .downLeftBack { t4.append(UInt8(index)) }
             }
             
-            return m.sorted() + s.sorted() + u.sorted() + d.sorted()
+//            t[Int(CornerPosition.upRightFront.rawValue)] = t1[0]
+//            t[Int(CornerPosition.upLeftBack.rawValue)] = t1[1]
+//            t[Int(CornerPosition.downLeftFront.rawValue)] = t1[2]
+//            t[Int(CornerPosition.downRightBack.rawValue)] = t1[3]
+//
+//            t[Int(CornerPosition.upRightBack.rawValue)] = t2[0]
+//            t[Int(CornerPosition.upLeftFront.rawValue)] = t2[1]
+//            t[Int(CornerPosition.downRightFront.rawValue)] = t2[2]
+//            t[Int(CornerPosition.downLeftBack.rawValue)] = t2[3]
+            
+            var cornerInversions: UInt8 = 0
+            for a in cube.corners.indices {
+                for b in cube.corners.indices {
+                    if a < b && cube.corners[a].solvedPosition > cube.corners[b].solvedPosition {
+                        cornerInversions += 1
+                    }
+                }
+            }
+            cornerInversions %= 2
+            
+            return m.sorted() + s.sorted() + t1.sorted() + t2.sorted() + t3.sorted() + t4.sorted() + [cornerInversions]
         }
     }
 }
