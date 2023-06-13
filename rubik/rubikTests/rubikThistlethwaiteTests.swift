@@ -36,4 +36,35 @@ final class rubikThistlethwaiteTests: XCTestCase {
         algorithm = Thistlethwaite.StepFour.table[Thistlethwaite.StepFour.encodedState(of: cube)]!.reversed
         print(algorithm.rawValue)
     }
+    
+    func testFullSolve() {
+        let algorithm1: Algorithm
+        let algorithm2: Algorithm
+        let algorithm3: Algorithm
+        let algorithm4: Algorithm
+        
+        var cube = Cube.solvedCube
+        cube.execute(Algorithm("L2 R2 U' B2 D R' B' R' U B' F' L2 R2 B2 D' F R' D2 U2 B L2 R2 F2 R U'")!)
+        print("Scrambled")
+        
+        algorithm1 = Thistlethwaite.StepOne.table[Thistlethwaite.StepOne.encodedState(of: cube)]!.reversed
+        cube.execute(algorithm1)
+        print("Step 1 completed")
+        
+        algorithm2 = Thistlethwaite.StepTwo.table[Thistlethwaite.StepTwo.encodedState(of: cube)]!.reversed
+        cube.execute(algorithm2)
+        print("Step 2 completed")
+        
+        algorithm3 = Thistlethwaite.StepThree.table[Thistlethwaite.StepThree.encodedState(of: cube)]!.reversed
+        cube.execute(algorithm3)
+        print("Step 3 completed")
+        
+        algorithm4 = Thistlethwaite.StepFour.table[Thistlethwaite.StepFour.encodedState(of: cube)]!.reversed
+        cube.execute(algorithm4)
+        print("Step 4 completed")
+        
+        print(cube)
+        print(algorithm1.appending(contentsOf: algorithm2).appending(contentsOf: algorithm3).appending(contentsOf: algorithm4).rawValue)
+        // R2 U' F' R U2 L2 F2 U' L' F2 R2 D' L2 U B2 U R2 R2 D2 L2 B2 U2 B2 D2 R2 F2 R2 F2 U2
+    }
 }
