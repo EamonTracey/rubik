@@ -21,7 +21,7 @@ final class rubikThistlethwaiteTests: XCTestCase {
     }
     
     func testStepThree() {
-        let algorithm: Algorithm
+        var algorithm: Algorithm
         
         var cube = Cube.solvedCube
         let scramble = Algorithm("U F2 D' B2 R2 L2 F2 U' D2 R2 D U L2 D2 F2 R2 U' L2 D2 U")!
@@ -29,7 +29,11 @@ final class rubikThistlethwaiteTests: XCTestCase {
         
         print(Thistlethwaite.StepThree.table.count)
         algorithm = Thistlethwaite.StepThree.table[Thistlethwaite.StepThree.encodedState(of: cube)]!.reversed
+        print(algorithm.rawValue)
+        cube.execute(algorithm)
         
+        print(Thistlethwaite.StepFour.table.count)
+        algorithm = Thistlethwaite.StepFour.table[Thistlethwaite.StepFour.encodedState(of: cube)]!.reversed
         print(algorithm.rawValue)
     }
 }
