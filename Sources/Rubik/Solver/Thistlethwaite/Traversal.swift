@@ -20,7 +20,9 @@ public extension Solver {
             statesTable[state] = node.algorithm
             
             for turn in allowedTurns {
-//                if turn.stringNotation.first == node.algorithm.turns.last?.stringNotation.first { continue }
+                if let lastTurn = node.algorithm.turns.last, turn.sameLayer(as: lastTurn) {
+                    continue
+                }
                 var adjacentNode = node
                 adjacentNode.cube.turn(turn)
                 adjacentNode.algorithm.append(turn)

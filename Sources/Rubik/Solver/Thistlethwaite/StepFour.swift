@@ -1,4 +1,4 @@
-public let thistlethwaiteFourLimit: Int = 1000000000//663552
+public let thistlethwaiteFourLimit: Int = 999999999//663552
 
 public let thistlethwaiteFourAllowedTurns: [Turn] = [
     .up(.half),
@@ -11,28 +11,30 @@ public let thistlethwaiteFourAllowedTurns: [Turn] = [
 
 @inlinable
 public func encodeThistlethwaiteFour(_ cube: Cube) -> Int {
-    var encodedEgePermutation: Int = 0
-    var encodedCornerPermutation: Int = 0
+    var encodedStandingSliceEdgePermutation: Int = 0
+    var encodedMiddleSliceEdgePermutation: Int = 0
+    var encodedEquatorialSliceEdgePermutation: Int = 0
+    var encodedFirstTetradCornerPermutation: Int = 0
+    var encodedSecondTetradCornerPermutation: Int = 0
     
-//    encodedEgePermutation += cube.edges[0].solvedPosition.rawValue * 262144
-    encodedEgePermutation += cube.edges[1].solvedPosition.rawValue * 3145728
-    encodedEgePermutation += cube.edges[2].solvedPosition.rawValue * 37748736
-    encodedEgePermutation += cube.edges[3].solvedPosition.rawValue * 452984832
-//    encodedEgePermutation += cube.edges[4].solvedPosition.rawValue * 5435817984
-    encodedEgePermutation += cube.edges[5].solvedPosition.rawValue * 65229815808
-    encodedEgePermutation += cube.edges[6].solvedPosition.rawValue * 782757789696
-    encodedEgePermutation += cube.edges[7].solvedPosition.rawValue * 9393093476352
-    encodedEgePermutation += cube.edges[8].solvedPosition.rawValue * 112717121716224
-    encodedEgePermutation += cube.edges[9].solvedPosition.rawValue * 1352605460594688
+    encodedStandingSliceEdgePermutation += cube.edges[0].solvedPosition.rawValue * 67108864
+    encodedStandingSliceEdgePermutation += cube.edges[1].solvedPosition.rawValue * 268435456
+    encodedStandingSliceEdgePermutation += cube.edges[2].solvedPosition.rawValue * 1073741824
     
-//    encodedCornerPermutation += cube.corners[0].solvedPosition.rawValue
-    encodedCornerPermutation += cube.corners[1].solvedPosition.rawValue * 8
-    encodedCornerPermutation += cube.corners[2].solvedPosition.rawValue * 64
-    encodedCornerPermutation += cube.corners[3].solvedPosition.rawValue * 512
-    encodedCornerPermutation += cube.corners[4].solvedPosition.rawValue * 4096
-//    encodedCornerPermutation += cube.corners[5].solvedPosition.rawValue * 32768
+    encodedMiddleSliceEdgePermutation += cube.edges[4].solvedPosition.rawValue * 131072
+    encodedMiddleSliceEdgePermutation += cube.edges[5].solvedPosition.rawValue * 1048576
+    encodedMiddleSliceEdgePermutation += cube.edges[6].solvedPosition.rawValue * 8388608
     
-    return encodedEgePermutation + encodedCornerPermutation
+    encodedEquatorialSliceEdgePermutation += cube.edges[8].solvedPosition.rawValue * 512
+    encodedEquatorialSliceEdgePermutation += cube.edges[9].solvedPosition.rawValue * 8192
+    
+    encodedFirstTetradCornerPermutation += cube.corners[0].solvedPosition.rawValue * 8
+    encodedFirstTetradCornerPermutation += cube.corners[1].solvedPosition.rawValue * 32
+    encodedFirstTetradCornerPermutation += cube.corners[2].solvedPosition.rawValue * 128
+    
+    encodedSecondTetradCornerPermutation += cube.corners[4].solvedPosition.rawValue
+    
+    return encodedStandingSliceEdgePermutation + encodedMiddleSliceEdgePermutation + encodedEquatorialSliceEdgePermutation + encodedFirstTetradCornerPermutation + encodedSecondTetradCornerPermutation
 }
 
 public extension Solver {

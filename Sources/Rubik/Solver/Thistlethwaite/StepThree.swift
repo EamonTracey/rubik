@@ -12,7 +12,7 @@ public let thistlethwaiteThreeAllowedTurns: [Turn] = [
 @inlinable
 public func encodeThistlethwaiteThree(_ cube: Cube) -> Int {
     var encodedMiddleSliceEdgeCombination: Int = 0
-    var encodedFirstTetradCombination: Int = 0
+    var encodedFirstTetradCornerCombination: Int = 0
     
     for (index, edge) in cube.edges[0...7].enumerated() {
         if edge.solvedPosition.rawValue - 4 >= 0 {
@@ -22,13 +22,13 @@ public func encodeThistlethwaiteThree(_ cube: Cube) -> Int {
     
     for (index, corner) in cube.corners.enumerated() {
         if corner.solvedPosition.rawValue - 4 >= 0 {
-            encodedFirstTetradCombination |= 1 << index
+            encodedFirstTetradCornerCombination |= 1 << index
         }
     }
     
     var tp = tetradParity(cube)
     
-    return encodedMiddleSliceEdgeCombination + encodedFirstTetradCombination + (tp << 58)
+    return encodedMiddleSliceEdgeCombination + encodedFirstTetradCornerCombination + (tp << 58)
 }
 
 @inlinable

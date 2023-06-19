@@ -12,7 +12,7 @@ public let thistlethwaiteTwoAllowedTurns: [Turn] = [
 @inlinable
 public func encodeThistlethwaiteTwo(_ cube: Cube) -> Int {
     var encodedCornerOrientation: Int = 0
-    var encodedEquatorSliceEdgeCombination: Int = 0
+    var encodedEquatorialSliceEdgeCombination: Int = 0
     
     encodedCornerOrientation += cube.corners[0].orientation.rawValue * 4096
     encodedCornerOrientation += cube.corners[1].orientation.rawValue * 12288
@@ -23,12 +23,12 @@ public func encodeThistlethwaiteTwo(_ cube: Cube) -> Int {
     encodedCornerOrientation += cube.corners[6].orientation.rawValue * 2985984
     
     for (index, edge) in cube.edges.enumerated() {
-        if edge.solvedPosition.rawValue - 8 >= 0 {
-            encodedEquatorSliceEdgeCombination |= 1 << index
+        if edge.solvedPosition.rawValue >= 8 {
+            encodedEquatorialSliceEdgeCombination |= 1 << index
         }
     }
     
-    return encodedCornerOrientation + encodedEquatorSliceEdgeCombination
+    return encodedCornerOrientation + encodedEquatorialSliceEdgeCombination
 }
 
 public extension Solver {
