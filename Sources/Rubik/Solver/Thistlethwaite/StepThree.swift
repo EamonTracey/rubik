@@ -26,14 +26,18 @@ public func encodeThistlethwaiteThree(_ cube: Cube) -> Int {
         }
     }
     
-    var tp = tetradParity(cube)
+    var tp = tetradParity(cube) << 50
+    assert(encodedMiddleSliceEdgeCombination & encodedFirstTetradCornerCombination == 0)
+    assert(tp & (encodedMiddleSliceEdgeCombination + encodedFirstTetradCornerCombination) == 0)
     
-    return encodedMiddleSliceEdgeCombination + encodedFirstTetradCornerCombination + (tp << 58)
+    return encodedMiddleSliceEdgeCombination + encodedFirstTetradCornerCombination + tp
 }
 
 @inlinable
 public func tetradParity(_ cube: Cube) -> Int {
     var cube = cube
+    var one: Int
+    var two: Int
     
     // manually put corners into tetrads
     var goods: [Cube.Corner] = []
@@ -61,47 +65,49 @@ public func tetradParity(_ cube: Cube) -> Int {
     } else if cube.corners[.downLeftFront].solvedPosition == .upRightFront {
         cube.turn(Turn("F2")!)
     }
-    // solve ulb
-    if cube.corners[.downRightBack].solvedPosition == .upLeftBack {
+    // solve dlb
+    if cube.corners[.upRightBack].solvedPosition == .downLeftBack {
         cube.turn(Turn("B2")!)
-    } else if cube.corners[.downLeftFront].solvedPosition == .upLeftBack {
+    } else if cube.corners[.upLeftFront].solvedPosition == .downLeftBack {
         cube.turn(Turn("L2")!)
-    }
-    // solve drb (and thus dlf)
-    if cube.corners[.downLeftFront].solvedPosition == .downRightBack {
+    } else if cube.corners[.downRightFront].solvedPosition == .downLeftBack {
         cube.turn(Turn("D2")!)
     }
-    // solve urb
-    if cube.corners[.upLeftFront].solvedPosition == .upRightBack {
-        cube.execute(Algorithm("F2 L2 F2 U2")!)
-    } else if cube.corners[.downRightFront].solvedPosition == .upRightBack {
-        cube.execute(Algorithm("U2 F2 U2 L2")!)
-    } else if cube.corners[.downLeftBack].solvedPosition == .upRightBack {
-        cube.execute(Algorithm("L2 U2 L2 F2")!)
-    }
-    // sanity check
-    assert(cube.corners[.upRightFront].solvedPosition == .upRightFront)
-    assert(cube.corners[.upLeftBack].solvedPosition == .upLeftBack)
-    assert(cube.corners[.downRightBack].solvedPosition == .downRightBack)
-    assert(cube.corners[.downLeftFront].solvedPosition == .downLeftFront)
-    assert(cube.corners[.upRightBack].solvedPosition == .upRightBack)
     
-    let perm = [ cube.corners[.upLeftFront].solvedPosition, cube.corners[.downRightFront].solvedPosition, cube.corners[.downLeftBack].solvedPosition ]
-    if perm == [ .upLeftFront, .downRightFront, .downLeftBack ] { return 0 }
-    else if perm == [ .upLeftFront, .downLeftBack, .downRightFront ] { return 1 }
-    else if perm == [ .downRightFront, .upLeftFront, .downLeftBack ] { return 2 }
-    else if perm == [ .downRightFront, .downLeftBack, .upLeftFront ] { return 3 }
-    else if perm == [ .downLeftBack, .upLeftFront, .downRightFront ] { return 4 }
-    else if perm == [ .downLeftBack, .downRightFront, .upLeftFront ] { return 5 }
-    else { fatalError("wtf") }
-//    print(cube.corners[.upRightBack].solvedPosition.rawValue, cube.corners[.downRightFront].solvedPosition.rawValue, cube.corners[.downLeftBack].solvedPosition.rawValue)
-    // permutation of ulf, drf, dlb
-    var tp: Int = 0
-    tp += (cube.corners[.upLeftFront].solvedPosition.rawValue - 5)
-    tp += (cube.corners[.downRightFront].solvedPosition.rawValue - 5) * 3
-    tp += (cube.corners[.downLeftBack].solvedPosition.rawValue - 5) * 9
-//    print(tp)
-    return tp
+    assert(cube.corners[.upRightFront].solvedPosition == .upRightFront)
+    assert(cube.corners[.downLeftBack].solvedPosition == .downLeftBack)
+    
+    let (x, y, z) = (cube.corners[.upLeftBack].solvedPosition.rawValue, cube.corners[.downRightBack].solvedPosition.rawValue, cube.corners[.downLeftFront].solvedPosition.rawValue)
+    if x < y && y < z {
+        one = 0
+    } else if x < z && z < y {
+        one = 1
+    } else if y < x && x < z {
+        one = 2
+    } else if y < z && z < x {
+        one = 3
+    } else if z < x && x < y {
+        one = 4
+    } else {
+        one = 5
+    }
+    
+    let (a, b, c) = (cube.corners[.downRightFront].solvedPosition.rawValue, cube.corners[.upLeftFront].solvedPosition.rawValue, cube.corners[.upRightBack].solvedPosition.rawValue)
+    if a < b && b < c {
+        two = 0
+    } else if a < c && c < b {
+        two = 1
+    } else if b < a && a < c {
+        two = 2
+    } else if b < c && c < a {
+        two = 3
+    } else if c < a && a < b {
+        two = 4
+    } else {
+        two = 5
+    }
+    
+    return abs(one - two)
 }
 
 public extension Solver {
