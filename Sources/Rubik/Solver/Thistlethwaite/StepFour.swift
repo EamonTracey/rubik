@@ -1,4 +1,4 @@
-public let thistlethwaiteFourLimit: Int = 999999999//663552
+public let thistlethwaiteFourLimit: Int = 663552
 
 public let thistlethwaiteFourAllowedTurns: [Turn] = [
     .up(.half),
