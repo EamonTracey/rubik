@@ -18,6 +18,7 @@ public extension Solver {
             }
             
             statesTable[state] = node.algorithm
+            print(statesTable.count)
             
             for turn in allowedTurns {
                 if let lastTurn = node.algorithm.turns.last, turn.sameLayer(as: lastTurn) {

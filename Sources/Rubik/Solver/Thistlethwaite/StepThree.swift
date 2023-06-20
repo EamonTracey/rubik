@@ -35,11 +35,8 @@ public func encodeThistlethwaiteThree(_ cube: Cube) -> Int {
 
 @inlinable
 public func tetradParity(_ cube: Cube) -> Int {
-    var cube = cube
-    var one: Int
-    var two: Int
-    
     // manually put corners into tetrads
+    var cube = cube
     var goods: [Cube.Corner] = []
     var bads: [Cube.Corner] = []
     for corner in cube.corners {
@@ -65,49 +62,55 @@ public func tetradParity(_ cube: Cube) -> Int {
     } else if cube.corners[.downLeftFront].solvedPosition == .upRightFront {
         cube.turn(Turn("F2")!)
     }
-    // solve dlb
-    if cube.corners[.upRightBack].solvedPosition == .downLeftBack {
+    // solve ulb
+    if cube.corners[.downRightBack].solvedPosition == .upLeftBack {
         cube.turn(Turn("B2")!)
-    } else if cube.corners[.upLeftFront].solvedPosition == .downLeftBack {
+    } else if cube.corners[.downLeftFront].solvedPosition == .upLeftBack {
         cube.turn(Turn("L2")!)
-    } else if cube.corners[.downRightFront].solvedPosition == .downLeftBack {
+    }
+    // solve drb (and thus dlf)
+    if cube.corners[.downLeftFront].solvedPosition == .downRightBack {
         cube.turn(Turn("D2")!)
     }
-    
+//    // solve urb
+//    if cube.corners[.upLeftFront].solvedPosition == .upRightBack {
+//        cube.execute(Algorithm("F2 L2 F2 U2")!)
+//    } else if cube.corners[.downRightFront].solvedPosition == .upRightBack {
+//        cube.execute(Algorithm("U2 F2 U2 L2")!)
+//    } else if cube.corners[.downLeftBack].solvedPosition == .upRightBack {
+//        cube.execute(Algorithm("L2 U2 L2 F2")!)
+//    }
+    // solve dlb
+    if cube.corners[.upRightBack].solvedPosition == .downLeftBack {
+        cube.execute(Algorithm("L2 U2 L2 F2")!)
+    } else if cube.corners[.upLeftFront].solvedPosition == .downLeftBack {
+        cube.execute(Algorithm("U2 F2 U2 L2")!)
+    } else if cube.corners[.downRightFront].solvedPosition == .downLeftBack {
+        cube.execute(Algorithm("F2 L2 F2 U2")!)
+    }
+    // sanity check
     assert(cube.corners[.upRightFront].solvedPosition == .upRightFront)
+    assert(cube.corners[.upLeftBack].solvedPosition == .upLeftBack)
+    assert(cube.corners[.downRightBack].solvedPosition == .downRightBack)
+    assert(cube.corners[.downLeftFront].solvedPosition == .downLeftFront)
     assert(cube.corners[.downLeftBack].solvedPosition == .downLeftBack)
     
-    let (x, y, z) = (cube.corners[.upLeftBack].solvedPosition.rawValue, cube.corners[.downRightBack].solvedPosition.rawValue, cube.corners[.downLeftFront].solvedPosition.rawValue)
-    if x < y && y < z {
-        one = 0
-    } else if x < z && z < y {
-        one = 1
-    } else if y < x && x < z {
-        one = 2
-    } else if y < z && z < x {
-        one = 3
-    } else if z < x && x < y {
-        one = 4
-    } else {
-        one = 5
-    }
-    
-    let (a, b, c) = (cube.corners[.downRightFront].solvedPosition.rawValue, cube.corners[.upLeftFront].solvedPosition.rawValue, cube.corners[.upRightBack].solvedPosition.rawValue)
-    if a < b && b < c {
-        two = 0
-    } else if a < c && c < b {
-        two = 1
-    } else if b < a && a < c {
-        two = 2
-    } else if b < c && c < a {
-        two = 3
-    } else if c < a && a < b {
-        two = 4
-    } else {
-        two = 5
-    }
-    
-    return abs(one - two)
+//    let perm = [ cube.corners[.upLeftFront].solvedPosition, cube.corners[.downRightFront].solvedPosition, cube.corners[.downLeftBack].solvedPosition ]
+//    if perm == [ .upLeftFront, .downRightFront, .downLeftBack ] { return 0 }
+//    else if perm == [ .upLeftFront, .downLeftBack, .downRightFront ] { return 1 }
+//    else if perm == [ .downRightFront, .upLeftFront, .downLeftBack ] { return 2 }
+//    else if perm == [ .downRightFront, .downLeftBack, .upLeftFront ] { return 3 }
+//    else if perm == [ .downLeftBack, .upLeftFront, .downRightFront ] { return 4 }
+//    else if perm == [ .downLeftBack, .downRightFront, .upLeftFront ] { return 5 }
+//    else { fatalError("wtf") }
+    let perm = [ cube.corners[.upRightBack].solvedPosition, cube.corners[.upLeftFront].solvedPosition, cube.corners[.downRightFront].solvedPosition ]
+    if perm == [ .upRightBack, .upLeftFront, .downRightFront ] { return 0 }
+    else if perm == [ .upRightBack, .downRightFront, .upLeftFront ] { return 1 }
+    else if perm == [ .upLeftFront, .upRightBack, .downRightFront ] { return 2 }
+    else if perm == [ .upLeftFront, .downRightFront, .upRightBack ] { return 3 }
+    else if perm == [ .downRightFront, .upRightBack, .upLeftFront ] { return 4 }
+    else if perm == [ .downRightFront, .upLeftFront, .upRightBack ] { return 5 }
+    else { fatalError("wtf") }
 }
 
 public extension Solver {
