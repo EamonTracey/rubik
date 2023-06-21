@@ -10,31 +10,37 @@
 /// A convenient way to initialize a cube with a specific state is to scramble the ``solvedCube``
 /// with an ``Algorithm``. For example:
 ///
-///     var cube: Cube = .solvedCube
-///     cube.execute(Algorithm("R U R' U' R' F R2 U' R' U' R U R' F'")!)
+/// ```swift
+/// var cube: Cube = .solvedCube
+/// cube.execute(Algorithm("R U R' U' R' F R2 U' R' U' R U R' F'")!)
+/// ```
 ///
-/// - Note: A cube is valid if and only if the ``edges`` and ``corners`` arrays contain 12 and 8
-/// cubelets, respectively, with unique `solvedPosition` values. Otherwise, the cube is invalid, and
-/// operations on the cube are undefined. Observe that a cube can be valid yet unsolvable.
+/// - Important: A cube is valid if and only if the ``edges`` and ``corners`` arrays contain
+/// 12 and 8 cubelets, respectively, with unique `solvedPosition` values. Otherwise, the cube is
+/// invalid, and operations on the cube are undefined. Observe that a cube can be valid yet unsolvable.
 public struct Cube {
     /// The edges of a 3x3 Rubik's cube.
     ///
-    /// - Note: This array must contain 12 instances of ``Edge`` with unique `solvedPosition` values to be valid.
+    /// - Important: The array must contain 12 edges with unique `solvedPosition` values to be valid.
     public var edges: [Edge]
     
     /// The corners of a 3x3 Rubik's cube.
     ///
-    /// - Note: This array must contain 8 instances of ``Corner`` with unique `solvedPosition` values to be valid.
+    /// - Important: The array must contain 8 corners with unique `solvedPosition` values to be valid.
     public var corners: [Corner]
 }
 
 public extension Cube {
-    /// The ``edges`` array that corresponds to a solved cube.
+    /// The array of edges that corresponds to a solved cube.
+    ///
+    /// The array is sorted ascendingly by the `solvedPosition` of each ``Edge``.
     static let solvedEdges: [Edge] = Cube.Edge.Position.allCases.map { position in
         Edge(orientation: .correct, solvedPosition: position)
     }
     
-    /// The ``corners`` array that corresponds to a solved cube.
+    /// The array of corners that corresponds to a solved cube.
+    ///
+    /// The array is sorted ascendingly by the `solvedPosition` of each ``Corner``.
     static let solvedCorners: [Corner] = Cube.Corner.Position.allCases.map { position in
         Corner(orientation: .correct, solvedPosition: position)
     }
@@ -43,9 +49,29 @@ public extension Cube {
     static let solvedCube: Cube = Cube(edges: Cube.solvedEdges, corners: Cube.solvedCorners)
 }
 
-public extension Cube {
+extension Cube {
+    /// Apply a turn to a cube.
+    ///
+    /// For example, perform the sexy move:
+    ///
+    /// ```swift
+    /// var cube: Cube = .solvedCube
+    /// cube.turn(.right(.clockwise))
+    /// cube.turn(.up(.clockwise))
+    /// cube.turn(.right(.counterclockwise))
+    /// cube.turn(.up(.counterclockwise))
+    /// ```
+    ///
+    /// The cube has 6 layers: up (U), down (D), right (R), left (L), front (F), and back (B). Each layer can be turned clockwise,
+    /// counterclockwise, and halfway (in which case the direction is irrelevant).
+    ///
+    /// Each turns changes the permutation of the cube. The edges and corners of the layer are both 4-cycled. Further, depending
+    /// on the turn, the orientation of edges and corners may change. Edge orientation changes by turns of the F and B layers.
+    /// Corner orientation changes by turns of the R, L, F, and B layers.
+    ///
+    /// - Note: More information about how cubelet orientation is defined may be found in the documentation of ``Edge`` and ``Corner``.
     @inlinable
-    mutating func turn(_ turn: Turn) {
+    public mutating func turn(_ turn: Turn) {
         switch turn {
         case .up(let degree):
             self.turnUp(degree)
@@ -63,7 +89,7 @@ public extension Cube {
     }
     
     @inlinable
-    mutating func turnUp(_ degree: Turn.Degree) {
+    internal mutating func turnUp(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpRight = self.edges[.upRight]
@@ -82,7 +108,7 @@ public extension Cube {
     }
     
     @inlinable
-    mutating func turnDown(_ degree: Turn.Degree) {
+    internal mutating func turnDown(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedDownRight = self.edges[.downRight]
@@ -101,7 +127,7 @@ public extension Cube {
     }
     
     @inlinable
-    mutating func turnRight(_ degree: Turn.Degree) {
+    internal mutating func turnRight(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpRight = self.edges[.upRight]
@@ -126,7 +152,7 @@ public extension Cube {
     }
     
     @inlinable
-    mutating func turnLeft(_ degree: Turn.Degree) {
+    internal mutating func turnLeft(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpLeft = self.edges[.upLeft]
@@ -151,7 +177,7 @@ public extension Cube {
     }
     
     @inlinable
-    mutating func turnFront(_ degree: Turn.Degree) {
+    internal mutating func turnFront(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpFront = self.edges[.upFront]
@@ -182,7 +208,7 @@ public extension Cube {
     }
     
     @inlinable
-    mutating func turnBack(_ degree: Turn.Degree) {
+    internal mutating func turnBack(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpBack = self.edges[.upBack]
@@ -213,9 +239,9 @@ public extension Cube {
     }
 }
 
-public extension Cube {
+extension Cube {
     @inlinable
-    mutating func execute(_ algorithm: Algorithm, repeats: Int = 1) {
+    public mutating func execute(_ algorithm: Algorithm, repeats: Int = 1) {
         for _ in 0..<repeats {
             for turn in algorithm.turns {
                 self.turn(turn)
