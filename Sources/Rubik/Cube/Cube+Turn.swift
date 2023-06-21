@@ -1,59 +1,9 @@
-/// A representation of the 3x3 Rubik's cube twisty puzzle.
-///
-/// The state of a cube is defined by the orientation and permutation of its 12 edges
-/// and the orientation and permutation of its 8 corners. In the ``edges`` and ``corners``
-/// arrays, the index of each cubelet corresponds to its position in the cube. Therefore, the order
-/// of the arrays defines the cube's permutation. A cube with the correct permutation will have the
-/// ``edges`` and ``corners`` arrays sorted ascendingly by each cubelet's `solvedPosition`
-/// (each index matches the corresponding `solvedPosition.rawValue`).
-///
-/// A convenient way to initialize a cube with a specific state is to scramble the ``solvedCube``
-/// with an ``Algorithm``. For example:
-///
-/// ```swift
-/// var cube: Cube = .solvedCube
-/// cube.execute(Algorithm("R U R' U' R' F R2 U' R' U' R U R' F'")!)
-/// ```
-///
-/// - Important: A cube is valid if and only if the ``edges`` and ``corners`` arrays contain
-/// 12 and 8 cubelets, respectively, with unique `solvedPosition` values. Otherwise, the cube is
-/// invalid, and operations on the cube are undefined. Observe that a cube can be valid yet unsolvable.
-public struct Cube {
-    /// The edges of a 3x3 Rubik's cube.
-    ///
-    /// - Important: The array must contain 12 edges with unique `solvedPosition` values to be valid.
-    public var edges: [Edge]
-    
-    /// The corners of a 3x3 Rubik's cube.
-    ///
-    /// - Important: The array must contain 8 corners with unique `solvedPosition` values to be valid.
-    public var corners: [Corner]
-}
-
-public extension Cube {
-    /// The array of edges that corresponds to a solved cube.
-    ///
-    /// The array is sorted ascendingly by the `solvedPosition` of each ``Edge``.
-    static let solvedEdges: [Edge] = Cube.Edge.Position.allCases.map { position in
-        Edge(orientation: .correct, solvedPosition: position)
-    }
-    
-    /// The array of corners that corresponds to a solved cube.
-    ///
-    /// The array is sorted ascendingly by the `solvedPosition` of each ``Corner``.
-    static let solvedCorners: [Corner] = Cube.Corner.Position.allCases.map { position in
-        Corner(orientation: .correct, solvedPosition: position)
-    }
-    
-    /// The cube in the solved state.
-    static let solvedCube: Cube = Cube(edges: Cube.solvedEdges, corners: Cube.solvedCorners)
-}
-
 extension Cube {
     /// Apply a turn to a cube.
     ///
-    /// The cube has 6 layers: up (U), down (D), right (R), left (L), front (F), and back (B). Each layer can be turned clockwise,
-    /// counterclockwise, and halfway (in which case the direction is irrelevant). For example, perform the sexy move:
+    /// The cube has 6 layers: up (U), down (D), right (R), left (L), front (F), and back (B). Each layer can be
+    /// turned clockwise, counterclockwise, and halfway (in which case the direction is irrelevant). For
+    /// example, perform the sexy move:
     ///
     /// ```swift
     /// var cube: Cube = .solvedCube
@@ -63,11 +13,13 @@ extension Cube {
     /// cube.turn(.up(.counterclockwise))
     /// ```
     ///
-    /// Each turns changes the permutation of the cube. The edges and corners of the layer are both 4-cycled. Further, depending
-    /// on the turn, the orientation of edges and corners may change. Edge orientation changes by turns of the F and B layers.
-    /// Corner orientation changes by turns of the R, L, F, and B layers.
+    /// Each turns changes the permutation of the cube. The edges and corners of the layer are both
+    /// 4-cycled. Further, depending on the turn, the orientation of edges and corners may change. Edge
+    /// orientation changes by turns of the F and B layers. Corner orientation changes by turns of the R, L,
+    /// F, and B layers.
     ///
-    /// - Note: More information about how cubelet orientation is defined may be found in the documentation of ``Edge`` and ``Corner``.
+    /// - Note: More information about how cubelet orientation is defined may be found in the
+    /// documentation of ``Edge`` and ``Corner``.
     @inlinable
     public mutating func turn(_ turn: Turn) {
         switch turn {
@@ -85,7 +37,9 @@ extension Cube {
             self.turnBack(degree)
         }
     }
-    
+}
+
+extension Cube {
     @inlinable
     internal mutating func turnUp(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
@@ -233,35 +187,6 @@ extension Cube {
             self.corners[.upLeftBack].twist(.clockwise)
             self.corners[.downRightBack].twist(.clockwise)
             self.corners[.downLeftBack].twist(.counterclockwise)
-        }
-    }
-}
-
-extension Cube {
-    /// Apply an algorithm to a cube.
-    ///
-    /// Instead of turning layers of the cube through individuals calls to ``Cube.turn``, use an algorithm. For example, perform the sexy move:
-    ///
-    /// ```swift
-    /// var cube: Cube = .solvedCube
-    /// cube.execute(Algorithm("R U R' U'")!)
-    /// ```
-    ///
-    /// The function also accepts a `repeats` parameter to specify how many times to apply the algorithm. The default value is 1. For example, perform the sexy move 6 times:
-    ///
-    /// ```swift
-    /// var cube: Cube = .solvedCube
-    /// cube.execute(Algorithm("R U R' U'")!, repeats: 6)
-    ///
-    /// // Six repetitions of the sexy move returns the cube to its initial state.
-    /// assert(cube == .solvedCube)
-    /// ```
-    @inlinable
-    public mutating func execute(_ algorithm: Algorithm, repeats: Int = 1) {
-        for _ in 0..<repeats {
-            for turn in algorithm.turns {
-                self.turn(turn)
-            }
         }
     }
 }
