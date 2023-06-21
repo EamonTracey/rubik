@@ -33,4 +33,8 @@ extension Cube {
             corner.solvedPosition.rawValue
         }.reduce(0, +) % 3 == 0
     }
+    
+    public var isSolvable: Bool {
+        return self.isPermutable && self.areEdgesOrientable && self.areCornersOrientable
+    }
 }
