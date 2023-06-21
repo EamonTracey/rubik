@@ -52,7 +52,8 @@ public extension Cube {
 extension Cube {
     /// Apply a turn to a cube.
     ///
-    /// For example, perform the sexy move:
+    /// The cube has 6 layers: up (U), down (D), right (R), left (L), front (F), and back (B). Each layer can be turned clockwise,
+    /// counterclockwise, and halfway (in which case the direction is irrelevant). For example, perform the sexy move:
     ///
     /// ```swift
     /// var cube: Cube = .solvedCube
@@ -61,9 +62,6 @@ extension Cube {
     /// cube.turn(.right(.counterclockwise))
     /// cube.turn(.up(.counterclockwise))
     /// ```
-    ///
-    /// The cube has 6 layers: up (U), down (D), right (R), left (L), front (F), and back (B). Each layer can be turned clockwise,
-    /// counterclockwise, and halfway (in which case the direction is irrelevant).
     ///
     /// Each turns changes the permutation of the cube. The edges and corners of the layer are both 4-cycled. Further, depending
     /// on the turn, the orientation of edges and corners may change. Edge orientation changes by turns of the F and B layers.
@@ -240,6 +238,24 @@ extension Cube {
 }
 
 extension Cube {
+    /// Apply an algorithm to a cube.
+    ///
+    /// Instead of turning layers of the cube through individuals calls to ``Cube.turn``, use an algorithm. For example, perform the sexy move:
+    ///
+    /// ```swift
+    /// var cube: Cube = .solvedCube
+    /// cube.execute(Algorithm("R U R' U'")!)
+    /// ```
+    ///
+    /// The function also accepts a `repeats` parameter to specify how many times to apply the algorithm. The default value is 1. For example, perform the sexy move 6 times:
+    ///
+    /// ```swift
+    /// var cube: Cube = .solvedCube
+    /// cube.execute(Algorithm("R U R' U'")!, repeats: 6)
+    ///
+    /// // Six repetitions of the sexy move returns the cube to its initial state.
+    /// assert(cube == .solvedCube)
+    /// ```
     @inlinable
     public mutating func execute(_ algorithm: Algorithm, repeats: Int = 1) {
         for _ in 0..<repeats {
