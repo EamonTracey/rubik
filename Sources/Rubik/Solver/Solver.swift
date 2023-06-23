@@ -1,6 +1,3 @@
-import Collections
-import Foundation
-
 public class Solver {
     @inlinable
     public func solve(_ cube: Cube, using method: SolveMethod) -> Algorithm {
