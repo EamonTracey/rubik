@@ -1,5 +1,5 @@
 public extension Cube {
-    struct Corner {
+    struct Corner: Equatable {
         public var orientation: Orientation
         public var solvedPosition: Position
     }

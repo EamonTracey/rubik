@@ -1,5 +1,5 @@
 public extension Cube {
-    struct Edge {
+    struct Edge: Equatable {
         public var orientation: Orientation
         public var solvedPosition: Position
     }
