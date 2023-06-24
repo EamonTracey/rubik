@@ -1,4 +1,4 @@
-/// A representation of the 3x3 Rubik's cube twisty puzzle.
+/// The 3x3 Rubik's cube twisty puzzle.
 ///
 /// The state of a cube is defined by the orientation and permutation of its 12 edges and the orientation and
 /// permutation of its 8 corners. In the ``edges`` and ``corners`` arrays, the index of each cubelet
@@ -19,13 +19,13 @@
 /// 8 cubelets, respectively, with unique `solvedPosition` values. Otherwise, the cube is invalid, and
 /// operations on the cube are undefined. Observe that a cube can be valid yet unsolvable.
 public struct Cube {
-    /// The edges of a 3x3 Rubik's cube.
+    /// The edges of a cube.
     ///
     /// - Important: The array must contain 12 edges with unique `solvedPosition` values to be
     /// valid.
     public var edges: [Edge]
     
-    /// The corners of a 3x3 Rubik's cube.
+    /// The corners of a cube.
     ///
     /// - Important: The array must contain 8 corners with unique `solvedPosition` values to be
     /// valid.
