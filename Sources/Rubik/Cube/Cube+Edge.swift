@@ -7,7 +7,7 @@ public extension Cube {
         public var orientation: Orientation
         /// The position that corresponds to an edge cubelet's solved state.
         ///
-        /// On a Rubik's cube, the solved position corresponds to the sticker colors of the edge cubelet.
+        /// The solved position corresponds to the sticker colors of the edge cubelet.
         ///
         /// - Note: Do not confuse this property with the actual position of an edge. Realize, for
         /// example, that the UR edge cubelet can be in the FL position. In the context of a cube, the
@@ -21,10 +21,9 @@ public extension Cube.Edge {
     ///
     /// There are 2 distinct edge orientations.
     ///
-    /// - Note: Edge orientation is relative. Two people, using different frames of reference, may
-    /// disagree whether the same edge is oriented. The definition of edge orientation is as follows: an
-    /// edge cubelet is oriented if and only if it can be turned into its solved state using only U, D, R, and L
-    /// turns. This means that F and B toggle the orientation of the edges on the respective layer.
+    /// - Note: Edge orientation is relative. The definition of edge orientation is as follows: an edge
+    /// cubelet is oriented if and only if it can be turned into its solved state using only U, D, R, and L turns.
+    /// This means that F and B toggle the orientation of the edges on the respective layer.
     enum Orientation: Int {
         /// Correct edge orientation.
         case correct = 0
