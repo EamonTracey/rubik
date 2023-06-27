@@ -7,13 +7,13 @@ public struct Algorithm {
     }
 }
 
-public extension Algorithm {
-    static let nothing = Algorithm(turns: [])
+extension Algorithm {
+    public static let nothing = Algorithm(turns: [])
 }
 
-public extension Algorithm {
+extension Algorithm {
     @inlinable
-    init?(_ stringNotation: some StringProtocol) {
+    public init?(_ stringNotation: some StringProtocol) {
         var turns: [Turn] = []
         for word in stringNotation.split(separator: " ") {
             if let turn = Turn(word) {
@@ -27,9 +27,9 @@ public extension Algorithm {
     }
 }
 
-public extension Algorithm {
+extension Algorithm {
     @inlinable
-    var stringNotation: String {
+    public var stringNotation: String {
         return self.turns.map { turn in
             turn.stringNotation
         }.joined(separator: " ")
@@ -37,16 +37,16 @@ public extension Algorithm {
 }
 
 
-public extension Algorithm {
+extension Algorithm {
     @inlinable
-    mutating func append(_ turn: Turn) {
+    public mutating func append(_ turn: Turn) {
         self.turns.append(turn)
     }
 }
 
-public extension Algorithm {
+extension Algorithm {
     @inlinable
-    var reversed: Algorithm {
+    public var reversed: Algorithm {
         return Algorithm(turns: self.turns.reversed().map({ turn in
             turn.reversed
         }))

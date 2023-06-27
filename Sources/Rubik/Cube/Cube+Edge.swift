@@ -1,8 +1,8 @@
-public extension Cube {
+extension Cube {
     /// An edge cubelet of a cube.
     ///
     /// There are 12 edge cubelets on a cube.
-    struct Edge: Equatable {
+    public struct Edge: Equatable {
         /// The orientation of an edge cubelet.
         public var orientation: Orientation
         /// The position that corresponds to an edge cubelet's solved state.
@@ -16,7 +16,7 @@ public extension Cube {
     }
 }
 
-public extension Cube.Edge {
+extension Cube.Edge {
     /// Represents edge orientation.
     ///
     /// There are 2 distinct edge orientations.
@@ -24,7 +24,7 @@ public extension Cube.Edge {
     /// - Note: Edge orientation is relative. The definition of edge orientation is as follows: an edge
     /// cubelet is oriented if and only if it can be turned into its solved state using only U, D, R, and L turns.
     /// This means that F and B toggle the orientation of the edges on the respective layer.
-    enum Orientation: Int {
+    public enum Orientation: Int {
         /// Correct edge orientation.
         case correct = 0
         /// Flipped edge orientation.
@@ -32,14 +32,14 @@ public extension Cube.Edge {
     }
 }
 
-public extension Cube.Edge {
+extension Cube.Edge {
     /// Represents edge position.
     ///
     /// There are 12 distinct edge positions.
     ///
     /// - Note: Edge "position" is not synonymous with edge "cubelet." Position refers to a fixed part of
     /// the cube while cubelet refers to a specific piece that can move to different positions.
-    enum Position: Int, CaseIterable {
+    public enum Position: Int, CaseIterable {
         /// The UR edge.
         case upRight = 0
         /// The UL edge.
@@ -67,10 +67,10 @@ public extension Cube.Edge {
     }
 }
 
-public extension Cube.Edge {
+extension Cube.Edge {
     /// Flip the orientation of an edge cubelet.
     @inlinable
-    mutating func flip() {
+    public mutating func flip() {
         self.orientation = self.orientation == .correct ? .flipped : .correct
     }
 }

@@ -1,6 +1,6 @@
-public let thistlethwaiteTwoLimit: Int = 1082565
+internal let thistlethwaiteTwoLimit: Int = 1082565
 
-public let thistlethwaiteTwoAllowedTurns: [Turn] = [
+internal let thistlethwaiteTwoAllowedTurns: [Turn] = [
     .up(.clockwise), .up(.half), .up(.counterclockwise),
     .down(.clockwise), .down(.half), .down(.counterclockwise),
     .right(.clockwise), .right(.half), .right(.counterclockwise),
@@ -10,7 +10,7 @@ public let thistlethwaiteTwoAllowedTurns: [Turn] = [
 ]
 
 @inlinable
-public func encodeThistlethwaiteTwo(_ cube: Cube) -> Int {
+internal func encodeThistlethwaiteTwo(_ cube: Cube) -> Int {
     var encodedCornerOrientation: Int = 0
     var encodedEquatorialSliceEdgeCombination: Int = 0
     
@@ -31,9 +31,9 @@ public func encodeThistlethwaiteTwo(_ cube: Cube) -> Int {
     return encodedCornerOrientation + encodedEquatorialSliceEdgeCombination
 }
 
-public extension Solver {
+extension Solver {
     @inlinable
-    func generateThistlethwaiteTwoTable() -> [Int: Algorithm] {
+    internal func generateThistlethwaiteTwoTable() -> [Int: Algorithm] {
         return self.thistlethwaiteTraversal(
             factor: thistlethwaiteTwoLimit,
             allowedTurns: thistlethwaiteTwoAllowedTurns,

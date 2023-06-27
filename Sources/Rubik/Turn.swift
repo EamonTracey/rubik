@@ -7,17 +7,17 @@ public enum Turn: Equatable, Hashable {
     case back(Degree)
 }
 
-public extension Turn {
-    enum Degree: Int {
+extension Turn {
+    public enum Degree: Int {
         case clockwise = 1
         case half = 2
         case counterclockwise = 3
     }
 }
 
-public extension Turn {
+extension Turn {
     @inlinable
-    init?(_ stringNotation: some StringProtocol) {
+    public init?(_ stringNotation: some StringProtocol) {
         switch stringNotation {
         case "U":
             self = .up(.clockwise)
@@ -61,7 +61,7 @@ public extension Turn {
     }
     
     @inlinable
-    var stringNotation: String {
+    public var stringNotation: String {
         switch self {
         case .up(.clockwise):
             return "U"
@@ -103,9 +103,9 @@ public extension Turn {
     }
 }
 
-public extension Turn {
+extension Turn {
     @inlinable
-    var reversed: Turn {
+    public var reversed: Turn {
         switch self {
         case .up(.clockwise):
             return .up(.counterclockwise)
@@ -138,8 +138,8 @@ public extension Turn {
 }
 
 
-public extension Turn {
-    func sameLayer(as turn: Turn) -> Bool {
+extension Turn {
+    internal func sameLayer(as turn: Turn) -> Bool {
         switch (self, turn) {
         case (.up, .up):
             fallthrough

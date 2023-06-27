@@ -1,13 +1,9 @@
 import Collections
 
-public extension Solver {
+extension Solver {
     @inlinable
-    func thistlethwaiteTraversal<State: Hashable>(
-        factor: Int,
-        allowedTurns: [Turn],
-        stateEncoding: (Cube) -> (State)
-    ) -> [State: Algorithm] {
-        var statesTable: [State: Algorithm] = Dictionary(minimumCapacity: factor)
+    internal func thistlethwaiteTraversal(factor: Int, allowedTurns: [Turn], stateEncoding: (Cube) -> (Int)) -> [Int: Algorithm] {
+        var statesTable: [Int: Algorithm] = Dictionary(minimumCapacity: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
         
         while statesTable.count < factor, let node = frontier.popFirst() {

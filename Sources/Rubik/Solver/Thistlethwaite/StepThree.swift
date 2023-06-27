@@ -1,6 +1,6 @@
-public let thistlethwaiteThreeLimit: Int = 1000000000
+internal let thistlethwaiteThreeLimit: Int = 1000000000
 
-public let thistlethwaiteThreeAllowedTurns: [Turn] = [
+internal let thistlethwaiteThreeAllowedTurns: [Turn] = [
     .up(.clockwise), .up(.half), .up(.counterclockwise),
     .down(.clockwise), .down(.half), .down(.counterclockwise),
     .right(.half),
@@ -10,7 +10,7 @@ public let thistlethwaiteThreeAllowedTurns: [Turn] = [
 ]
 
 @inlinable
-public func encodeThistlethwaiteThree(_ cube: Cube) -> Int {
+internal func encodeThistlethwaiteThree(_ cube: Cube) -> Int {
     var encodedMiddleSliceEdgeCombination: Int = 0
     var encodedFirstTetradCornerCombination: Int = 0
     
@@ -33,8 +33,8 @@ public func encodeThistlethwaiteThree(_ cube: Cube) -> Int {
     return encodedMiddleSliceEdgeCombination + encodedFirstTetradCornerCombination + tp
 }
 
-@inlinable
-public func tetradParity(_ cube: Cube) -> Int {
+// TODO: Clean
+private func tetradParity(_ cube: Cube) -> Int {
     // manually put corners into tetrads
     var cube = cube
     var goods: [Cube.Corner] = []
@@ -113,9 +113,9 @@ public func tetradParity(_ cube: Cube) -> Int {
     else { fatalError("wtf") }
 }
 
-public extension Solver {
+extension Solver {
     @inlinable
-    func generateThistlethwaiteThreeTable() -> [Int: Algorithm] {
+    internal func generateThistlethwaiteThreeTable() -> [Int: Algorithm] {
         return self.thistlethwaiteTraversal(
             factor: thistlethwaiteThreeLimit,
             allowedTurns: thistlethwaiteThreeAllowedTurns,

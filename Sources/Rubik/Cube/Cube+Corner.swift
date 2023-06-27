@@ -1,8 +1,8 @@
-public extension Cube {
+extension Cube {
     /// A corner cubelet of a cube.
     ///
     /// There are 8 corner cubelets on a cube.
-    struct Corner: Equatable {
+    public struct Corner: Equatable {
         /// The orientation of a corner cubelet.
         public var orientation: Orientation
         /// The position that corresponds to a corner cubelet's solved state.
@@ -16,7 +16,7 @@ public extension Cube {
     }
 }
 
-public extension Cube.Corner {
+extension Cube.Corner {
     /// Represents corner orientation.
     ///
     /// There are 3 distinct corner orientations.
@@ -24,7 +24,7 @@ public extension Cube.Corner {
     /// - Note: Corner orientation is relative. The definition of corner orientation is as follows: a corner
     /// cubelet is oriented if and only if it can be turned into its solved state using only U, D, R2, and L2
     /// turns. This means that R, L, F, and B change the orientation of the corners on the respective layer.
-    enum Orientation: Int {
+    public enum Orientation: Int {
         /// Correct corner orientation.
         case correct = 0
         /// Clockwise-twisted corner orientation.
@@ -34,14 +34,14 @@ public extension Cube.Corner {
     }
 }
 
-public extension Cube.Corner {
+extension Cube.Corner {
     /// Represents corner position.
     ///
     /// There are 8 distinct corner positions.
     ///
     /// - Note: Corner "position" is not synonymous with corner "cubelet." Position refers to a fixed part
     /// of the cube while cubelet refers to a specific piece that can move to different positions.
-    enum Position: Int, CaseIterable {
+    public enum Position: Int, CaseIterable {
         /// The URF corner.
         case upRightFront = 0
         /// The ULB corner.
@@ -61,18 +61,18 @@ public extension Cube.Corner {
     }
 }
 
-public extension Cube.Corner {
+extension Cube.Corner {
     /// Represents the degree by which a corner twists.
-    enum TwistDegree: Int {
+    public enum TwistDegree: Int {
         case clockwise = 1
         case counterclockwise = 2
     }
 }
 
-public extension Cube.Corner {
+extension Cube.Corner {
     /// Twist a corner to change its orientation.
     @inlinable
-    mutating func twist(_ degree: TwistDegree) {
+    public mutating func twist(_ degree: TwistDegree) {
         self.orientation = Orientation(rawValue: (self.orientation.rawValue + degree.rawValue) % 3)!
     }
 }
