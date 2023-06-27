@@ -12,9 +12,9 @@ public enum SolveMethod {
     case thistlethwaite
 }
 
-public extension Solver {
-    @inlinable
-    func solveThistlethwaite(_ cube: Cube) -> Algorithm {
+extension Solver {
+    @usableFromInline
+    internal func solveThistlethwaite(_ cube: Cube) -> Algorithm {
         var algorithm: Algorithm = .nothing
         
         return algorithm
