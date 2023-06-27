@@ -9,7 +9,7 @@ internal let thistlethwaiteFourAllowedTurns: [Turn] = [
     .back(.half)
 ]
 
-@inlinable
+@usableFromInline
 internal func encodeThistlethwaiteFour(_ cube: Cube) -> Int {
     var encodedStandingSliceEdgePermutation: Int = 0
     var encodedMiddleSliceEdgePermutation: Int = 0
@@ -38,7 +38,7 @@ internal func encodeThistlethwaiteFour(_ cube: Cube) -> Int {
 }
 
 extension Solver {
-    @inlinable
+    @usableFromInline
     internal func generateThistlethwaiteFourTable() -> [Int: Algorithm] {
         return self.thistlethwaiteTraversal(
             factor: thistlethwaiteFourLimit,

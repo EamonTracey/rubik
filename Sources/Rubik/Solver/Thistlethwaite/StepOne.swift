@@ -9,7 +9,7 @@ internal let thistlethwaiteOneAllowedTurns: [Turn] = [
     .back(.clockwise), .back(.half), .back(.counterclockwise),
 ]
 
-@inlinable
+@usableFromInline
 internal func encodeThistlethwaiteOne(_ cube: Cube) -> Int {
     var encodedEdgeOrientation: Int = 0
     
@@ -29,7 +29,7 @@ internal func encodeThistlethwaiteOne(_ cube: Cube) -> Int {
 }
 
 extension Solver {
-    @inlinable
+    @usableFromInline
     internal func generateThistlethwaiteOneTable() -> [Int: Algorithm] {
         return self.thistlethwaiteTraversal(
             factor: thistlethwaiteOneLimit,

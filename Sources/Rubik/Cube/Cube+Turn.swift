@@ -40,7 +40,7 @@ extension Cube {
 }
 
 extension Cube {
-    @inlinable
+    @usableFromInline
     internal mutating func turnUp(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
@@ -59,7 +59,7 @@ extension Cube {
         }
     }
     
-    @inlinable
+    @usableFromInline
     internal mutating func turnDown(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
@@ -78,7 +78,7 @@ extension Cube {
         }
     }
     
-    @inlinable
+    @usableFromInline
     internal mutating func turnRight(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
@@ -103,7 +103,7 @@ extension Cube {
         }
     }
     
-    @inlinable
+    @usableFromInline
     internal mutating func turnLeft(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
@@ -128,7 +128,7 @@ extension Cube {
         }
     }
     
-    @inlinable
+    @usableFromInline
     internal mutating func turnFront(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
@@ -159,7 +159,7 @@ extension Cube {
         }
     }
     
-    @inlinable
+    @usableFromInline
     internal mutating func turnBack(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.

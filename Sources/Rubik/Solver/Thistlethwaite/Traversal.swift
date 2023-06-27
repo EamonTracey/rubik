@@ -1,7 +1,7 @@
 import Collections
 
 extension Solver {
-    @inlinable
+    @usableFromInline
     internal func thistlethwaiteTraversal(factor: Int, allowedTurns: [Turn], stateEncoding: (Cube) -> (Int)) -> [Int: Algorithm] {
         var statesTable: [Int: Algorithm] = Dictionary(minimumCapacity: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]

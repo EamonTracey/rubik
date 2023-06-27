@@ -139,6 +139,7 @@ extension Turn {
 
 
 extension Turn {
+    @usableFromInline
     internal func sameLayer(as turn: Turn) -> Bool {
         switch (self, turn) {
         case (.up, .up):

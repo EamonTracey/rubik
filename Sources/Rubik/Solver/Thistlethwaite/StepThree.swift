@@ -9,7 +9,7 @@ internal let thistlethwaiteThreeAllowedTurns: [Turn] = [
     .back(.half)
 ]
 
-@inlinable
+@usableFromInline
 internal func encodeThistlethwaiteThree(_ cube: Cube) -> Int {
     var encodedMiddleSliceEdgeCombination: Int = 0
     var encodedFirstTetradCornerCombination: Int = 0
@@ -114,7 +114,7 @@ private func tetradParity(_ cube: Cube) -> Int {
 }
 
 extension Solver {
-    @inlinable
+    @usableFromInline
     internal func generateThistlethwaiteThreeTable() -> [Int: Algorithm] {
         return self.thistlethwaiteTraversal(
             factor: thistlethwaiteThreeLimit,
