@@ -4,9 +4,12 @@ extension Cube {
     /// Edge validity implies that the cube has the correct edge cubelets. This means that the ``edges``
     /// array contains exactly 12 cubelets with unique `solvedPosition` values.
     public var areEdgesValid: Bool {
-        return Set(self.edges.map { edge in
+        let twelveEdges = self.edges.count == 12
+        let uniqueCubelets = Set(self.edges.map { edge in
             edge.solvedPosition
         }).count == 12
+        
+        return twelveEdges && uniqueCubelets
     }
     
     /// Determine if a cube's corners are valid.
@@ -14,9 +17,12 @@ extension Cube {
     /// Corner validity implies that the cube has the correct corner cubelets. This means that the
     /// ``corners`` array contains exactly 8 cubelets with unique `solvedPosition` values.
     public var areCornersValid: Bool {
-        return Set(self.corners.map { corner in
+        let eightCorners = self.corners.count == 12
+        let uniqueCubelets = Set(self.corners.map { corner in
             corner.solvedPosition
-        }).count == 8
+        }).count == 12
+        
+        return eightCorners && uniqueCubelets
     }
     
     /// Determine if a cube is valid.
