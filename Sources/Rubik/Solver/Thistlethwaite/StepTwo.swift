@@ -31,13 +31,11 @@ internal func encodeThistlethwaiteTwo(_ cube: Cube) -> Int {
     return encodedCornerOrientation + encodedEquatorialSliceEdgeCombination
 }
 
-extension Solver {
-    @usableFromInline
-    internal func generateThistlethwaiteTwoTable() -> [Int: Algorithm] {
-        return self.thistlethwaiteTraversal(
-            factor: thistlethwaiteTwoLimit,
-            allowedTurns: thistlethwaiteTwoAllowedTurns,
-            stateEncoding: encodeThistlethwaiteTwo
-        )
-    }
+@usableFromInline
+internal func generateThistlethwaiteTwoTable() -> [Int: Algorithm] {
+    return thistlethwaiteTraversal(
+        factor: thistlethwaiteTwoLimit,
+        allowedTurns: thistlethwaiteTwoAllowedTurns,
+        stateEncoding: encodeThistlethwaiteTwo
+    )
 }

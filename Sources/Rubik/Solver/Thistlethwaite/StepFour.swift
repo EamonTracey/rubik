@@ -34,17 +34,16 @@ internal func encodeThistlethwaiteFour(_ cube: Cube) -> Int {
     
     encodedSecondTetradCornerPermutation += cube.corners[4].solvedPosition.rawValue
     
-    return encodedStandingSliceEdgePermutation + encodedMiddleSliceEdgePermutation + encodedEquatorialSliceEdgePermutation + encodedFirstTetradCornerPermutation + encodedSecondTetradCornerPermutation
+    return encodedStandingSliceEdgePermutation + encodedMiddleSliceEdgePermutation +
+      encodedEquatorialSliceEdgePermutation + encodedFirstTetradCornerPermutation +
+      encodedSecondTetradCornerPermutation
 }
 
-extension Solver {
-    @usableFromInline
-    internal func generateThistlethwaiteFourTable() -> [Int: Algorithm] {
-        return self.thistlethwaiteTraversal(
-            factor: thistlethwaiteFourLimit,
-            allowedTurns: thistlethwaiteFourAllowedTurns,
-            stateEncoding: encodeThistlethwaiteFour
-        )
-    }
+@usableFromInline
+internal func generateThistlethwaiteFourTable() -> [Int: Algorithm] {
+    return thistlethwaiteTraversal(
+        factor: thistlethwaiteFourLimit,
+        allowedTurns: thistlethwaiteFourAllowedTurns,
+        stateEncoding: encodeThistlethwaiteFour
+    )
 }
-

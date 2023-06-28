@@ -113,13 +113,11 @@ private func tetradParity(_ cube: Cube) -> Int {
     else { fatalError("wtf") }
 }
 
-extension Solver {
-    @usableFromInline
-    internal func generateThistlethwaiteThreeTable() -> [Int: Algorithm] {
-        return self.thistlethwaiteTraversal(
-            factor: thistlethwaiteThreeLimit,
-            allowedTurns: thistlethwaiteThreeAllowedTurns,
-            stateEncoding: encodeThistlethwaiteThree
-        )
-    }
+@usableFromInline
+internal func generateThistlethwaiteThreeTable() -> [Int: Algorithm] {
+    return thistlethwaiteTraversal(
+        factor: thistlethwaiteThreeLimit,
+        allowedTurns: thistlethwaiteThreeAllowedTurns,
+        stateEncoding: encodeThistlethwaiteThree
+    )
 }
