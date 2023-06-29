@@ -5,8 +5,8 @@ extension Solver.Thistlethwaite {
     static func traversal(
         factor: Int, allowedTurns: [Turn],
         stateEncoding: (Cube) -> (Int)
-    ) -> [Int: Algorithm] {
-        var statesTable: [Int: Algorithm] = Dictionary(minimumCapacity: factor)
+    ) -> [Int: String] {
+        var statesTable: [Int: String] = Dictionary(minimumCapacity: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
         
         while statesTable.count < factor, let node = frontier.popFirst() {
@@ -16,7 +16,7 @@ extension Solver.Thistlethwaite {
                 continue
             }
             
-            statesTable[state] = node.algorithm.reversed
+            statesTable[state] = node.algorithm.reversed.stringNotation
             
             for turn in allowedTurns {
                 if let lastTurn = node.algorithm.turns.last, turn.sameLayer(as: lastTurn) {

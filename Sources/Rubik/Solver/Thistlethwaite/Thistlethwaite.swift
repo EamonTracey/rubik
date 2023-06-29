@@ -47,10 +47,10 @@ extension Solver.Thistlethwaite {
 extension Solver.Thistlethwaite {
     @usableFromInline
     func loadTables() {
-        tableOne = loadTable("one") ?? One.generateTable().mapValues { $0.stringNotation }
-        tableTwo = loadTable("two") ?? Two.generateTable().mapValues { $0.stringNotation }
-        tableThree = loadTable("three") ?? Three.generateTable().mapValues { $0.stringNotation }
-        tableFour = loadTable("four") ?? Four.generateTable().mapValues { $0.stringNotation }
+        tableOne = loadTable("one") ?? One.generateTable()
+        tableTwo = loadTable("two") ?? Two.generateTable()
+        tableThree = loadTable("three") ?? Three.generateTable()
+        tableFour = loadTable("four") ?? Four.generateTable()
         tablesLoaded = true
     }
     

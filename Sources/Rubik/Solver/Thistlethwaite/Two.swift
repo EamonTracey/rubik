@@ -34,7 +34,7 @@ extension Solver.Thistlethwaite {
         }
 
         @usableFromInline
-        static func generateTable() -> [Int: Algorithm] {
+        static func generateTable() -> [Int: String] {
             return traversal(
                 factor: factor,
                 allowedTurns: allowedTurns,
