@@ -12,23 +12,30 @@ extension Solver {
 
 extension Solver.Thistlethwaite {
     @usableFromInline
-    func solve(_ cube: Cube) -> Algorithm {
+    func solve(_ cube: Cube) -> Algorithm? {
         if !tablesLoaded {
             loadTables()
         }
 
         var cube = cube
 
-        let one = tableOne![One.encode(cube)]!
-        cube.execute(Algorithm(one)!)
-        let two = tableTwo![Two.encode(cube)]!
-        cube.execute(Algorithm(two)!)
-        let three = tableThree![Three.encode(cube)]!
-        cube.execute(Algorithm(three)!)
-        let four = tableFour![Four.encode(cube)]!
-        cube.execute(Algorithm(four)!)
+        guard let one = tableOne?[One.encode(cube)] else { return nil }
+        guard let oneAlgorithm = Algorithm(one) else { return nil }
+        cube.execute(oneAlgorithm)
+        
+        guard let two = tableTwo?[Two.encode(cube)] else { return nil }
+        guard let twoAlgorithm = Algorithm(two) else { return nil }
+        cube.execute(twoAlgorithm)
+        
+        guard let three = tableThree?[Three.encode(cube)] else { return nil }
+        guard let threeAlgorithm = Algorithm(three) else { return nil }
+        cube.execute(threeAlgorithm)
+        
+        guard let four = tableFour?[Four.encode(cube)] else { return nil }
+        guard let fourAlgorithm = Algorithm(four) else { return nil }
+        cube.execute(fourAlgorithm)
 
-        return Algorithm("\(one) \(two) \(three) \(four)")!
+        return Algorithm("\(one) \(two) \(three) \(four)")
     }
 }
 
