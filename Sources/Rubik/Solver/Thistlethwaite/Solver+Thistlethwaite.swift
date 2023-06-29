@@ -17,12 +17,18 @@ extension Solver.Thistlethwaite {
             loadTables()
         }
         
-        let one = tableOne![One.encode(cube)]!
-        let two = tableTwo![Two.encode(cube)]!
-//        let three = tableThree![Three.encode(cube)]!
-//        let four = tableFour![Four.encode(cube)]!
+        var cube = cube
         
-        return Algorithm("\(one) \(two)")!
+        let one = tableOne![One.encode(cube)]!
+        cube.execute(Algorithm(one)!)
+        let two = tableTwo![Two.encode(cube)]!
+        cube.execute(Algorithm(two)!)
+        let three = tableThree![Three.encode(cube)]!
+        cube.execute(Algorithm(three)!)
+        let four = tableFour![Four.encode(cube)]!
+        cube.execute(Algorithm(four)!)
+        
+        return Algorithm("\(one) \(two) \(three) \(four)")!
     }
 }
 
