@@ -34,23 +34,11 @@ extension Solver.Thistlethwaite {
 
 extension Solver.Thistlethwaite {
     @usableFromInline
-    func loadTable(_ step: String) -> [Int: String]? {
-        if let url = Bundle.module.url(forResource: "Tables/thistlethwaite_\(step)", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           let dict = try? JSONDecoder().decode([Int: String].self, from: data) {
-            return dict
-        }
-        return nil
-    }
-}
-
-extension Solver.Thistlethwaite {
-    @usableFromInline
     func loadTables() {
-        tableOne = loadTable("one") ?? One.generateTable()
-        tableTwo = loadTable("two") ?? Two.generateTable()
-        tableThree = loadTable("three") ?? Three.generateTable()
-        tableFour = loadTable("four") ?? Four.generateTable()
+        tableOne = One.loadTable() ?? One.generateTable()
+        tableTwo = Two.loadTable() ?? Two.generateTable()
+        tableThree = Three.loadTable() ?? Three.generateTable()
+        tableFour = Four.loadTable() ?? Four.generateTable()
         tablesLoaded = true
     }
     
