@@ -2,10 +2,10 @@ import Foundation
 
 extension Solver {
     class Thistlethwaite {
-        private var tableOne: [Int: String]? = nil
-        private var tableTwo: [Int: String]? = nil
-        private var tableThree: [Int: String]? = nil
-        private var tableFour: [Int: String]? = nil
+        private var tableOne: [Int: String]?
+        private var tableTwo: [Int: String]?
+        private var tableThree: [Int: String]?
+        private var tableFour: [Int: String]?
         private var tablesLoaded: Bool = false
     }
 }

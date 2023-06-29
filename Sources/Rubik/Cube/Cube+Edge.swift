@@ -67,6 +67,12 @@ extension Cube.Edge {
     }
 }
 
+extension Cube.Edge.Position: Comparable {
+    public static func < (lhs: Cube.Edge.Position, rhs: Cube.Edge.Position) -> Bool {
+        return lhs.rawValue < rhs.rawValue
+    }
+}
+
 extension Cube.Edge {
     /// Flip the orientation of an edge cubelet.
     @inlinable

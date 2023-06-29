@@ -20,8 +20,7 @@ extension ThistlethwaiteStep {
 extension ThistlethwaiteStep {
     static func loadTable() -> [Int: String]? {
         if let url = Bundle.module.url(forResource: "Tables/thistlethwaite_\(name)", withExtension: "json"),
-          let data = try? Data(contentsOf: url),
-          let dict = try? JSONDecoder().decode([Int: String].self, from: data) {
+          let data = try? Data(contentsOf: url), let dict = try? JSONDecoder().decode([Int: String].self, from: data) {
             return dict
         }
         return nil

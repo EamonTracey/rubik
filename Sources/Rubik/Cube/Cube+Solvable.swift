@@ -25,19 +25,15 @@ extension Cube {
         var edgeInversions: Int = 0
         var cornerInversions: Int = 0
 
-        for (a, elementA) in edges.enumerated() {
-            for elementB in edges[(a + 1)...] {
-                if elementA.solvedPosition.rawValue > elementB.solvedPosition.rawValue {
+        for (indexA, elementA) in edges.enumerated() {
+            for elementB in edges[(indexA + 1)...] where elementA.solvedPosition > elementB.solvedPosition {
                     edgeInversions += 1
-                }
             }
         }
 
-        for (a, elementA) in corners.enumerated() {
-            for elementB in corners[(a + 1)...] {
-                if elementA.solvedPosition.rawValue > elementB.solvedPosition.rawValue {
+        for (indexA, elementA) in corners.enumerated() {
+            for elementB in corners[(indexA + 1)...] where elementA.solvedPosition > elementB.solvedPosition {
                     cornerInversions += 1
-                }
             }
         }
 

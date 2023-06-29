@@ -41,8 +41,7 @@ extension Solver.Thistlethwaite.Four: ThistlethwaiteStep {
 
         secondTetradPermutation += cube.corners[4].solvedPosition.rawValue
 
-        return standingSlicePermutation + middleSlicePermutation +
-          equatorialSlicePermutation + firstTetradPermutation +
+        return standingSlicePermutation + middleSlicePermutation + equatorialSlicePermutation + firstTetradPermutation +
           secondTetradPermutation
     }
 }

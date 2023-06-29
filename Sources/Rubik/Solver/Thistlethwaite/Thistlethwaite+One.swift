@@ -13,7 +13,7 @@ extension Solver.Thistlethwaite.One: ThistlethwaiteStep {
         .right(.clockwise), .right(.half), .right(.counterclockwise),
         .left(.clockwise), .left(.half), .left(.counterclockwise),
         .front(.clockwise), .front(.half), .front(.counterclockwise),
-        .back(.clockwise), .back(.half), .back(.counterclockwise),
+        .back(.clockwise), .back(.half), .back(.counterclockwise)
     ]
 
     @usableFromInline

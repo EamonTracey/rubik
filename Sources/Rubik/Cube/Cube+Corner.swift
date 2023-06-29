@@ -61,6 +61,12 @@ extension Cube.Corner {
     }
 }
 
+extension Cube.Corner.Position: Comparable {
+    public static func < (lhs: Cube.Corner.Position, rhs: Cube.Corner.Position) -> Bool {
+        return lhs.rawValue < rhs.rawValue
+    }
+}
+
 extension Cube.Corner {
     /// Represents the degree by which a corner twists.
     public enum TwistDegree: Int {

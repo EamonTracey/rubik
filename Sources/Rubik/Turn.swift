@@ -141,17 +141,8 @@ extension Turn {
     @usableFromInline
     func sameLayer(as turn: Turn) -> Bool {
         switch (self, turn) {
-        case (.up, .up):
-            fallthrough
-        case (.down, .down):
-            fallthrough
-        case (.right, .right):
-            fallthrough
-        case (.left, .left):
-            fallthrough
-        case (.front, .front):
-            fallthrough
-        case (.back, .back):
+        case (.up, .up), (.down, .down), (.right, .right), (.left, .left), (.front, .front),
+            (.back, .back):
             return true
         default:
             return false

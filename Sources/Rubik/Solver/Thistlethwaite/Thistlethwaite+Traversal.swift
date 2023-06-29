@@ -2,10 +2,7 @@ import Collections
 
 extension Solver.Thistlethwaite {
     @usableFromInline
-    static func traversal(
-        factor: Int, allowedTurns: [Turn],
-        stateEncoding: (Cube) -> (Int)
-    ) -> [Int: String] {
+    static func traversal(factor: Int, allowedTurns: [Turn], stateEncoding: (Cube) -> (Int)) -> [Int: String] {
         var statesTable: [Int: String] = Dictionary(minimumCapacity: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
 
