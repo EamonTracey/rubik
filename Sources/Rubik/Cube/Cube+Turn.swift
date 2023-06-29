@@ -49,7 +49,7 @@ extension Cube {
             edges[.upBack] = edges[.upLeft]
             edges[.upLeft] = edges[.upFront]
             edges[.upFront] = storedUpRight
-            
+
             // Corner permutation.
             let storedUpRightFront = corners[.upRightFront]
             corners[.upRightFront] = corners[.upRightBack]
@@ -58,7 +58,7 @@ extension Cube {
             corners[.upLeftFront] = storedUpRightFront
         }
     }
-    
+
     @usableFromInline
     mutating func turnDown(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
@@ -68,7 +68,7 @@ extension Cube {
             edges[.downFront] = edges[.downLeft]
             edges[.downLeft] = edges[.downBack]
             edges[.downBack] = storedDownRight
-            
+
             // Corner permutation.
             let storedDownRightFront = corners[.downRightFront]
             corners[.downRightFront] = corners[.downLeftFront]
@@ -77,7 +77,7 @@ extension Cube {
             corners[.downRightBack] = storedDownRightFront
         }
     }
-    
+
     @usableFromInline
     mutating func turnRight(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
@@ -87,14 +87,14 @@ extension Cube {
             edges[.rightFront] = edges[.downRight]
             edges[.downRight] = edges[.rightBack]
             edges[.rightBack] = storedUpRight
-            
+
             // Corner permutation.
             let storedUpRightFront = corners[.upRightFront]
             corners[.upRightFront] = corners[.downRightFront]
             corners[.downRightFront] = corners[.downRightBack]
             corners[.downRightBack] = corners[.upRightBack]
             corners[.upRightBack] = storedUpRightFront
-            
+
             // Corner orientation.
             corners[.upRightFront].twist(.counterclockwise)
             corners[.upRightBack].twist(.clockwise)
@@ -102,7 +102,7 @@ extension Cube {
             corners[.downRightBack].twist(.counterclockwise)
         }
     }
-    
+
     @usableFromInline
     mutating func turnLeft(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
@@ -112,14 +112,14 @@ extension Cube {
             edges[.leftBack] = edges[.downLeft]
             edges[.downLeft] = edges[.leftFront]
             edges[.leftFront] = storedUpLeft
-            
+
             // Corner permutation.
             let storedUpLeftFront = corners[.upLeftFront]
             corners[.upLeftFront] = corners[.upLeftBack]
             corners[.upLeftBack] = corners[.downLeftBack]
             corners[.downLeftBack] = corners[.downLeftFront]
             corners[.downLeftFront] = storedUpLeftFront
-            
+
             // Corner orientation.
             corners[.upLeftFront].twist(.clockwise)
             corners[.upLeftBack].twist(.counterclockwise)
@@ -127,7 +127,7 @@ extension Cube {
             corners[.downLeftBack].twist(.clockwise)
         }
     }
-    
+
     @usableFromInline
     mutating func turnFront(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
@@ -137,20 +137,20 @@ extension Cube {
             edges[.leftFront] = edges[.downFront]
             edges[.downFront] = edges[.rightFront]
             edges[.rightFront] = storedUpFront
-            
+
             // Corner permutation.
             let storedUpRightFront = corners[.upRightFront]
             corners[.upRightFront] = corners[.upLeftFront]
             corners[.upLeftFront] = corners[.downLeftFront]
             corners[.downLeftFront] = corners[.downRightFront]
             corners[.downRightFront] = storedUpRightFront
-            
+
             // Edge orientation.
             edges[.upFront].flip()
             edges[.downFront].flip()
             edges[.rightFront].flip()
             edges[.leftFront].flip()
-            
+
             // Corner orientation.
             corners[.upRightFront].twist(.clockwise)
             corners[.upLeftFront].twist(.counterclockwise)
@@ -158,7 +158,7 @@ extension Cube {
             corners[.downLeftFront].twist(.clockwise)
         }
     }
-    
+
     @usableFromInline
     mutating func turnBack(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
@@ -168,20 +168,20 @@ extension Cube {
             edges[.rightBack] = edges[.downBack]
             edges[.downBack] = edges[.leftBack]
             edges[.leftBack] = storedUpBack
-            
+
             // Corner permutation.
             let storedUpRightBack = corners[.upRightBack]
             corners[.upRightBack] = corners[.downRightBack]
             corners[.downRightBack] = corners[.downLeftBack]
             corners[.downLeftBack] = corners[.upLeftBack]
             corners[.upLeftBack] = storedUpRightBack
-            
+
             // Edge orientation.
             edges[.upBack].flip()
             edges[.downBack].flip()
             edges[.rightBack].flip()
             edges[.leftBack].flip()
-            
+
             // Corner orientation.
             corners[.upRightBack].twist(.counterclockwise)
             corners[.upLeftBack].twist(.clockwise)

@@ -4,7 +4,7 @@ extension Solver.Thistlethwaite {
 
 extension Solver.Thistlethwaite.One: ThistlethwaiteStep {
     static let name: String = "one"
-    
+
     static let factor: Int = 2048
 
     static let allowedTurns: [Turn] = [
@@ -19,7 +19,7 @@ extension Solver.Thistlethwaite.One: ThistlethwaiteStep {
     @usableFromInline
     static func encode(_ cube: Cube) -> Int {
         var edgeOrientation: Int = 0
-        
+
         edgeOrientation += cube.edges[0].orientation.rawValue
         edgeOrientation += cube.edges[1].orientation.rawValue * 2
         edgeOrientation += cube.edges[2].orientation.rawValue * 4
@@ -31,7 +31,7 @@ extension Solver.Thistlethwaite.One: ThistlethwaiteStep {
         edgeOrientation += cube.edges[8].orientation.rawValue * 256
         edgeOrientation += cube.edges[9].orientation.rawValue * 512
         edgeOrientation += cube.edges[10].orientation.rawValue * 1024
-        
+
         return edgeOrientation
     }
 }

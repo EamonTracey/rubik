@@ -6,10 +6,10 @@ extension Cube {
     public var areEdgesValid: Bool {
         let twelveEdges = edges.count == 12
         let uniqueCubelets = Set(edges.map { $0.solvedPosition }).count == 12
-        
+
         return twelveEdges && uniqueCubelets
     }
-    
+
     /// Determine if a cube's corners are valid.
     ///
     /// Corner validity implies that the cube has the correct corner cubelets. This means that the
@@ -17,10 +17,10 @@ extension Cube {
     public var areCornersValid: Bool {
         let eightCorners = corners.count == 12
         let uniqueCubelets = Set(corners.map { $0.solvedPosition }).count == 12
-        
+
         return eightCorners && uniqueCubelets
     }
-    
+
     /// Determine if a cube is valid.
     ///
     /// Cube validity implies that the cube has the correct edge and corner cubelets. This property is

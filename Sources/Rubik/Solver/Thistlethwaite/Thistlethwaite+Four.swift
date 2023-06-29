@@ -4,7 +4,7 @@ extension Solver.Thistlethwaite {
 
 extension Solver.Thistlethwaite.Four: ThistlethwaiteStep {
     static let name = "four"
-    
+
     static let factor: Int = 663552
 
     static let allowedTurns: [Turn] = [

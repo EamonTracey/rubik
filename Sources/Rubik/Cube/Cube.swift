@@ -24,7 +24,7 @@ public struct Cube {
     /// - Important: The array must contain 12 edges with unique `solvedPosition` values to be
     /// valid.
     public var edges: [Edge]
-    
+
     /// The corners of a cube.
     ///
     /// - Important: The array must contain 8 corners with unique `solvedPosition` values to be

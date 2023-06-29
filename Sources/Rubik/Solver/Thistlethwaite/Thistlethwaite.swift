@@ -16,9 +16,9 @@ extension Solver.Thistlethwaite {
         if !tablesLoaded {
             loadTables()
         }
-        
+
         var cube = cube
-        
+
         let one = tableOne![One.encode(cube)]!
         cube.execute(Algorithm(one)!)
         let two = tableTwo![Two.encode(cube)]!
@@ -27,7 +27,7 @@ extension Solver.Thistlethwaite {
         cube.execute(Algorithm(three)!)
         let four = tableFour![Four.encode(cube)]!
         cube.execute(Algorithm(four)!)
-        
+
         return Algorithm("\(one) \(two) \(three) \(four)")!
     }
 }
@@ -41,7 +41,7 @@ extension Solver.Thistlethwaite {
         tableFour = Four.loadTable() ?? Four.generateTable()
         tablesLoaded = true
     }
-    
+
     @usableFromInline
     func unloadTables() {
         tableOne = nil

@@ -59,7 +59,7 @@ extension Turn {
             return nil
         }
     }
-    
+
     @inlinable
     public var stringNotation: String {
         switch self {
@@ -136,7 +136,6 @@ extension Turn {
         }
     }
 }
-
 
 extension Turn {
     @usableFromInline

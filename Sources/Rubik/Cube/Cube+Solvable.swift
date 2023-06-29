@@ -24,7 +24,7 @@ extension Cube {
     public var isPermutable: Bool {
         var edgeInversions: Int = 0
         var cornerInversions: Int = 0
-        
+
         for (a, elementA) in edges.enumerated() {
             for elementB in edges[(a + 1)...] {
                 if elementA.solvedPosition.rawValue > elementB.solvedPosition.rawValue {
@@ -32,7 +32,7 @@ extension Cube {
                 }
             }
         }
-        
+
         for (a, elementA) in corners.enumerated() {
             for elementB in corners[(a + 1)...] {
                 if elementA.solvedPosition.rawValue > elementB.solvedPosition.rawValue {
@@ -40,10 +40,10 @@ extension Cube {
                 }
             }
         }
-        
+
         return (edgeInversions ^ cornerInversions) & 1 == 0
     }
-    
+
     /// Determine if the edges are orientable.
     ///
     /// Edge orientation changes by 4 edges at a time. A quarter turn of the F or B layer toggles the
@@ -70,7 +70,7 @@ extension Cube {
     public var areEdgesOrientable: Bool {
         return edges.map { $0.solvedPosition.rawValue }.reduce(0, ^) == 0
     }
-    
+
     /// Determine if the corners are orientable.
     ///
     /// Corner orientation changes by 4 corners at a time. A quarter turn of the R, L, F, or B layer twists 2
@@ -99,7 +99,7 @@ extension Cube {
     public var areCornersOrientable: Bool {
         return corners.map { $0.solvedPosition.rawValue }.reduce(0, +) % 3 == 0
     }
-    
+
     /// Determine if a cube is solvable.
     ///
     /// A cube is solvable if and only if it is permutable, its edges are orientable, and its corners are

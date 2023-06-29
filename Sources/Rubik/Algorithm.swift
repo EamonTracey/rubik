@@ -1,6 +1,6 @@
 public struct Algorithm {
     public var turns: [Turn]
-    
+
     @inlinable
     public init(turns: [Turn]) {
         self.turns = turns
@@ -22,7 +22,7 @@ extension Algorithm {
                 return nil
             }
         }
-        
+
         self.init(turns: turns)
     }
 }
@@ -33,7 +33,6 @@ extension Algorithm {
         return turns.map { $0.stringNotation }.joined(separator: " ")
     }
 }
-
 
 extension Algorithm {
     @inlinable
