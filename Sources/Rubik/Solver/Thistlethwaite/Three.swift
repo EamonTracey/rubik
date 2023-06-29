@@ -13,22 +13,22 @@ extension Solver.Thistlethwaite {
 
         @usableFromInline
         static func encode(_ cube: Cube) -> Int {
-            var encodedMiddleSliceEdgeCombination: Int = 0
-            var encodedFirstTetradCornerCombination: Int = 0
+            var middleSliceCombination: Int = 0
+            var firstTetradCombination: Int = 0
             
             for (index, edge) in cube.edges[0...7].enumerated() {
                 if edge.solvedPosition.rawValue - 4 >= 0 {
-                    encodedMiddleSliceEdgeCombination |= 256 << index
+                    middleSliceCombination |= 256 << index
                 }
             }
             
             for (index, corner) in cube.corners.enumerated() {
                 if corner.solvedPosition.rawValue - 4 >= 0 {
-                    encodedFirstTetradCornerCombination |= 1 << index
+                    firstTetradCombination |= 1 << index
                 }
             }
             
-            return encodedMiddleSliceEdgeCombination + encodedFirstTetradCornerCombination
+            return middleSliceCombination + firstTetradCombination
         }
 
         @usableFromInline
