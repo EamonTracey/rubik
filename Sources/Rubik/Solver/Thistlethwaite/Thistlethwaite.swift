@@ -21,16 +21,12 @@ extension Solver.Thistlethwaite {
 
         let one = tableOne![One.encode(cube)]!
         cube.execute(Algorithm(one)!)
-        print(one)
         let two = tableTwo![Two.encode(cube)]!
         cube.execute(Algorithm(two)!)
-        print(two)
         let three = tableThree![Three.encode(cube)]!
         cube.execute(Algorithm(three)!)
-        print(three)
         let four = tableFour![Four.encode(cube)]!
         cube.execute(Algorithm(four)!)
-        print(four)
 
         return Algorithm("\(one) \(two) \(three) \(four)")!
     }
