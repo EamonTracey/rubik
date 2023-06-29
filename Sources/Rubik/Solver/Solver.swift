@@ -16,7 +16,7 @@ extension Solver {
         if !cube.isPermutable {
             return .failure(.unsolvablePermutation)
         }
-        
+
         switch method {
         case .thistlethwaite:
             if let solution = thistlethwaite.solve(cube) {

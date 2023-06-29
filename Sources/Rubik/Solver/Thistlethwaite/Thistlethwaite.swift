@@ -22,15 +22,15 @@ extension Solver.Thistlethwaite {
         guard let one = tableOne?[One.encode(cube)] else { return nil }
         guard let oneAlgorithm = Algorithm(one) else { return nil }
         cube.execute(oneAlgorithm)
-        
+
         guard let two = tableTwo?[Two.encode(cube)] else { return nil }
         guard let twoAlgorithm = Algorithm(two) else { return nil }
         cube.execute(twoAlgorithm)
-        
+
         guard let three = tableThree?[Three.encode(cube)] else { return nil }
         guard let threeAlgorithm = Algorithm(three) else { return nil }
         cube.execute(threeAlgorithm)
-        
+
         guard let four = tableFour?[Four.encode(cube)] else { return nil }
         guard let fourAlgorithm = Algorithm(four) else { return nil }
         cube.execute(fourAlgorithm)
