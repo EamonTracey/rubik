@@ -1,7 +1,7 @@
 import Foundation
 
 extension Solver {
-    internal class Thistlethwaite {
+    class Thistlethwaite {
         private var tableOne: [Int: String]? = nil
         private var tableTwo: [Int: String]? = nil
         private var tableThree: [Int: String]? = nil
@@ -12,7 +12,7 @@ extension Solver {
 
 extension Solver.Thistlethwaite {
     @usableFromInline
-    internal func solve(_ cube: Cube) -> Algorithm {
+    func solve(_ cube: Cube) -> Algorithm {
         if !tablesLoaded {
             loadTables()
         }
@@ -34,7 +34,7 @@ extension Solver.Thistlethwaite {
 
 extension Solver.Thistlethwaite {
     @usableFromInline
-    internal func loadTable(_ step: String) -> [Int: String]? {
+    func loadTable(_ step: String) -> [Int: String]? {
         if let url = Bundle.module.url(forResource: "Tables/thistlethwaite_\(step)", withExtension: "json"),
            let data = try? Data(contentsOf: url),
            let dict = try? JSONDecoder().decode([Int: String].self, from: data) {
@@ -46,7 +46,7 @@ extension Solver.Thistlethwaite {
 
 extension Solver.Thistlethwaite {
     @usableFromInline
-    internal func loadTables() {
+    func loadTables() {
         tableOne = loadTable("one") ?? One.generateTable().mapValues { $0.stringNotation }
         tableTwo = loadTable("two") ?? Two.generateTable().mapValues { $0.stringNotation }
         tableThree = loadTable("three") ?? Three.generateTable().mapValues { $0.stringNotation }
@@ -55,7 +55,7 @@ extension Solver.Thistlethwaite {
     }
     
     @usableFromInline
-    internal func unloadTables() {
+    func unloadTables() {
         tableOne = nil
         tableTwo = nil
         tableThree = nil

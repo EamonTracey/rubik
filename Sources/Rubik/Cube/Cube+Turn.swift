@@ -41,7 +41,7 @@ extension Cube {
 
 extension Cube {
     @usableFromInline
-    internal mutating func turnUp(_ degree: Turn.Degree) {
+    mutating func turnUp(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpRight = self.edges[.upRight]
@@ -60,7 +60,7 @@ extension Cube {
     }
     
     @usableFromInline
-    internal mutating func turnDown(_ degree: Turn.Degree) {
+    mutating func turnDown(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedDownRight = self.edges[.downRight]
@@ -79,7 +79,7 @@ extension Cube {
     }
     
     @usableFromInline
-    internal mutating func turnRight(_ degree: Turn.Degree) {
+    mutating func turnRight(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpRight = self.edges[.upRight]
@@ -104,7 +104,7 @@ extension Cube {
     }
     
     @usableFromInline
-    internal mutating func turnLeft(_ degree: Turn.Degree) {
+    mutating func turnLeft(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpLeft = self.edges[.upLeft]
@@ -129,7 +129,7 @@ extension Cube {
     }
     
     @usableFromInline
-    internal mutating func turnFront(_ degree: Turn.Degree) {
+    mutating func turnFront(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpFront = self.edges[.upFront]
@@ -160,7 +160,7 @@ extension Cube {
     }
     
     @usableFromInline
-    internal mutating func turnBack(_ degree: Turn.Degree) {
+    mutating func turnBack(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             // Edge permutation.
             let storedUpBack = self.edges[.upBack]

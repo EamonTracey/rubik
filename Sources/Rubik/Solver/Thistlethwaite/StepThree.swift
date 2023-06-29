@@ -1,8 +1,8 @@
 extension Solver.Thistlethwaite {
-    internal enum Three {
-        internal static let factor: Int = 29400
+    enum Three {
+        static let factor: Int = 29400
 
-        internal static let allowedTurns: [Turn] = [
+        static let allowedTurns: [Turn] = [
             .up(.clockwise), .up(.half), .up(.counterclockwise),
             .down(.clockwise), .down(.half), .down(.counterclockwise),
             .right(.half),
@@ -12,7 +12,7 @@ extension Solver.Thistlethwaite {
         ]
 
         @usableFromInline
-        internal static func encode(_ cube: Cube) -> Int {
+        static func encode(_ cube: Cube) -> Int {
             var encodedMiddleSliceEdgeCombination: Int = 0
             var encodedFirstTetradCornerCombination: Int = 0
             
@@ -116,7 +116,7 @@ extension Solver.Thistlethwaite {
         }
 
         @usableFromInline
-        internal static func generateTable() -> [Int: Algorithm] {
+        static func generateTable() -> [Int: Algorithm] {
             return traversal(
                 factor: factor,
                 allowedTurns: allowedTurns,

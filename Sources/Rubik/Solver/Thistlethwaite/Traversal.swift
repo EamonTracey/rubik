@@ -2,7 +2,7 @@ import Collections
 
 extension Solver.Thistlethwaite {
     @usableFromInline
-    internal static func traversal(
+    static func traversal(
         factor: Int, allowedTurns: [Turn],
         stateEncoding: (Cube) -> (Int)
     ) -> [Int: Algorithm] {

@@ -1,5 +1,5 @@
 public class Solver {
-    internal let thistlethwaite = Thistlethwaite()
+    let thistlethwaite = Thistlethwaite()
 }
 
 extension Solver {
