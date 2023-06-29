@@ -30,9 +30,7 @@ extension Algorithm {
 extension Algorithm {
     @inlinable
     public var stringNotation: String {
-        return self.turns.map { turn in
-            turn.stringNotation
-        }.joined(separator: " ")
+        return turns.map { $0.stringNotation }.joined(separator: " ")
     }
 }
 
@@ -40,15 +38,13 @@ extension Algorithm {
 extension Algorithm {
     @inlinable
     public mutating func append(_ turn: Turn) {
-        self.turns.append(turn)
+        turns.append(turn)
     }
 }
 
 extension Algorithm {
     @inlinable
     public var reversed: Algorithm {
-        return Algorithm(turns: self.turns.reversed().map({ turn in
-            turn.reversed
-        }))
+        return Algorithm(turns: turns.reversed().map({ $0.reversed }))
     }
 }

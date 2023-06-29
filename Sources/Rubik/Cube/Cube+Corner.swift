@@ -73,6 +73,6 @@ extension Cube.Corner {
     /// Twist a corner to change its orientation.
     @inlinable
     public mutating func twist(_ degree: TwistDegree) {
-        self.orientation = Orientation(rawValue: (self.orientation.rawValue + degree.rawValue) % 3)!
+        orientation = Orientation(rawValue: (orientation.rawValue + degree.rawValue) % 3)!
     }
 }

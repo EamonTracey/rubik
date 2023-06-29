@@ -3,19 +3,19 @@ public class Solver {
 }
 
 extension Solver {
-    public func solve(_ cube: Cube, using method: Solver.Method) -> Algorithm {
+    public func solve(_ cube: Cube, using method: Method) -> Algorithm {
         switch method {
         case .thistlethwaite:
-            return self.thistlethwaite.solve(cube)
+            return thistlethwaite.solve(cube)
         }
     }
 }
 
 extension Solver {
-    public func loadTables(for method: Solver.Method) {
+    public func loadTables(for method: Method) {
         switch method {
         case .thistlethwaite:
-            self.thistlethwaite.loadTables()
+            thistlethwaite.loadTables()
         }
     }
 }

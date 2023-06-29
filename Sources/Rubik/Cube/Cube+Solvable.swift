@@ -25,16 +25,16 @@ extension Cube {
         var edgeInversions: Int = 0
         var cornerInversions: Int = 0
         
-        for (a, elementA) in self.edges.enumerated() {
-            for elementB in self.edges[(a + 1)...] {
+        for (a, elementA) in edges.enumerated() {
+            for elementB in edges[(a + 1)...] {
                 if elementA.solvedPosition.rawValue > elementB.solvedPosition.rawValue {
                     edgeInversions += 1
                 }
             }
         }
         
-        for (a, elementA) in self.corners.enumerated() {
-            for elementB in self.corners[(a + 1)...] {
+        for (a, elementA) in corners.enumerated() {
+            for elementB in corners[(a + 1)...] {
                 if elementA.solvedPosition.rawValue > elementB.solvedPosition.rawValue {
                     cornerInversions += 1
                 }
@@ -68,9 +68,7 @@ extension Cube {
     /// assert(!cube.areEdgesOrientable)
     /// ```
     public var areEdgesOrientable: Bool {
-        return self.edges.map { edge in
-            edge.solvedPosition.rawValue
-        }.reduce(0, ^) == 0
+        return edges.map { $0.solvedPosition.rawValue }.reduce(0, ^) == 0
     }
     
     /// Determine if the corners are orientable.
@@ -99,9 +97,7 @@ extension Cube {
     /// assert(!cube.areCornersOrientable)
     /// ```
     public var areCornersOrientable: Bool {
-        return self.corners.map { corner in
-            corner.solvedPosition.rawValue
-        }.reduce(0, +) % 3 == 0
+        return corners.map { $0.solvedPosition.rawValue }.reduce(0, +) % 3 == 0
     }
     
     /// Determine if a cube is solvable.
@@ -109,6 +105,6 @@ extension Cube {
     /// A cube is solvable if and only if it is permutable, its edges are orientable, and its corners are
     /// orientable.
     public var isSolvable: Bool {
-        return self.isPermutable && self.areEdgesOrientable && self.areCornersOrientable
+        return isPermutable && areEdgesOrientable && areCornersOrientable
     }
 }

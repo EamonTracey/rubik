@@ -71,6 +71,6 @@ extension Cube.Edge {
     /// Flip the orientation of an edge cubelet.
     @inlinable
     public mutating func flip() {
-        self.orientation = self.orientation == .correct ? .flipped : .correct
+        orientation = orientation == .correct ? .flipped : .correct
     }
 }
