@@ -21,11 +21,11 @@ extension Solver.Thistlethwaite.Three: ThistlethwaiteStep {
         var middleSliceCombination: Int = 0
         var firstTetradCombination: Int = 0
 
-        for (index, edge) in cube.edges[0...7].enumerated() where edge.solvedPosition.rawValue - 4 >= 0 {
+        for (index, edge) in cube.edges[0...7].enumerated() where edge.slice == .middle {
                 middleSliceCombination |= 256 << index
         }
 
-        for (index, corner) in cube.corners.enumerated() where corner.solvedPosition.rawValue - 4 >= 0 {
+        for (index, corner) in cube.corners.enumerated() where corner.tetrad == .first {
                 firstTetradCombination |= 1 << index
         }
 

@@ -29,7 +29,7 @@ extension Solver.Thistlethwaite.Two: ThistlethwaiteStep {
         cornerOrientation += cube.corners[5].orientation.rawValue * 995328
         cornerOrientation += cube.corners[6].orientation.rawValue * 2985984
 
-        for (index, edge) in cube.edges.enumerated() where edge.solvedPosition.rawValue >= 8 {
+        for (index, edge) in cube.edges.enumerated() where edge.slice == .equatorial {
             equatorialSliceCombination |= 1 << index
         }
 

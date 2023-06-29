@@ -74,6 +74,25 @@ extension Cube.Edge.Position: Comparable {
 }
 
 extension Cube.Edge {
+    enum Slice {
+        case standing
+        case middle
+        case equatorial
+    }
+}
+
+extension Cube.Edge {
+    var slice: Slice {
+        if self.solvedPosition.rawValue <= 3 {
+            return .standing
+        } else if self.solvedPosition.rawValue <= 7 {
+            return .middle
+        }
+        return .equatorial
+    }
+}
+
+extension Cube.Edge {
     /// Flip the orientation of an edge cubelet.
     @inlinable
     public mutating func flip() {

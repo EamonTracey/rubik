@@ -68,6 +68,22 @@ extension Cube.Corner.Position: Comparable {
 }
 
 extension Cube.Corner {
+    enum Tetrad {
+        case first
+        case second
+    }
+}
+
+extension Cube.Corner {
+    var tetrad: Tetrad {
+        if self.solvedPosition.rawValue <= 3 {
+            return .first
+        }
+        return .second
+    }
+}
+
+extension Cube.Corner {
     /// Represents the degree by which a corner twists.
     public enum TwistDegree: Int {
         case clockwise = 1
