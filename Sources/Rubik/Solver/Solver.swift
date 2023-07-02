@@ -1,30 +1,32 @@
 public class Solver {
     let thistlethwaite = Thistlethwaite()
+
+    public init() { }
 }
 
 extension Solver {
-    public func solve(_ cube: Cube, using method: Method) -> Result<Algorithm, SolveError> {
-        if !cube.isValid {
-            return .failure(.invalidCube)
-        }
-        if !cube.areEdgesOrientable {
-            return .failure(.unsolvableEdgeOrientation)
-        }
-        if !cube.areCornersOrientable {
-            return .failure(.unsolvableCornerOrientation)
-        }
-        if !cube.isPermutable {
-            return .failure(.unsolvablePermutation)
-        }
-
-        switch method {
-        case .thistlethwaite:
-            if let solution = thistlethwaite.solve(cube) {
-                return .success(solution)
-            }
-            return .failure(.corruptedTables)
-        }
-    }
+//    public func solve(_ cube: Cube, using method: Method) -> Result<Algorithm, SolveError> {
+//        if !cube.isValid {
+//            return .failure(.invalidCube)
+//        }
+//        if !cube.areEdgesOrientable {
+//            return .failure(.unsolvableEdgeOrientation)
+//        }
+//        if !cube.areCornersOrientable {
+//            return .failure(.unsolvableCornerOrientation)
+//        }
+//        if !cube.isPermutable {
+//            return .failure(.unsolvablePermutation)
+//        }
+//
+//        switch method {
+//        case .thistlethwaite:
+//            if let solution = thistlethwaite.solve(cube) {
+//                return .success(solution)
+//            }
+//            return .failure(.corruptedTables)
+//        }
+//    }
 }
 
 public enum SolveError: Error {
@@ -36,12 +38,12 @@ public enum SolveError: Error {
 }
 
 extension Solver {
-    public func loadTables(for method: Method) {
-        switch method {
-        case .thistlethwaite:
-            thistlethwaite.loadTables()
-        }
-    }
+//    public func loadTables(for method: Method) {
+//        switch method {
+//        case .thistlethwaite:
+//            thistlethwaite.loadTables()
+//        }
+//    }
 }
 
 extension Solver {

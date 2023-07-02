@@ -24,24 +24,41 @@ extension Solver.Thistlethwaite.Four: ThistlethwaiteStep {
         var firstTetradPermutation: Int = 0
         var secondTetradPermutation: Int = 0
 
-        standingSlicePermutation += cube.edges[0].solvedPosition.rawValue * 67108864
-        standingSlicePermutation += cube.edges[1].solvedPosition.rawValue * 268435456
-        standingSlicePermutation += cube.edges[2].solvedPosition.rawValue * 1073741824
+        for (index, edgeA) in cube.edges[0...3].enumerated() {
+            standingSlicePermutation *= 4 - index
+            for edgeB in cube.edges[index...3] where edgeA.solvedPosition > edgeB.solvedPosition{
+                standingSlicePermutation += 1
+            }
+        }
 
-        middleSlicePermutation += cube.edges[4].solvedPosition.rawValue * 131072
-        middleSlicePermutation += cube.edges[5].solvedPosition.rawValue * 1048576
-        middleSlicePermutation += cube.edges[6].solvedPosition.rawValue * 8388608
+        for (index, edgeA) in cube.edges[4...7].enumerated() {
+            middleSlicePermutation *= 4 - index
+            for edgeB in cube.edges[(index + 4)...7] where edgeA.solvedPosition > edgeB.solvedPosition{
+                middleSlicePermutation += 1
+            }
+        }
+        middleSlicePermutation *= 24
 
-        equatorialSlicePermutation += cube.edges[8].solvedPosition.rawValue * 512
-        equatorialSlicePermutation += cube.edges[9].solvedPosition.rawValue * 8192
 
-        firstTetradPermutation += cube.corners[0].solvedPosition.rawValue * 8
-        firstTetradPermutation += cube.corners[1].solvedPosition.rawValue * 32
-        firstTetradPermutation += cube.corners[2].solvedPosition.rawValue * 128
+        for (index, edgeA) in cube.edges[8...9].enumerated() {
+            equatorialSlicePermutation *= 4 - index
+            for edgeB in cube.edges[(index + 8)...11] where edgeA.solvedPosition > edgeB.solvedPosition {
+                equatorialSlicePermutation += 1
+            }
+        }
+        equatorialSlicePermutation *= 576
 
-        secondTetradPermutation += cube.corners[4].solvedPosition.rawValue
+        for (index, cornerA) in cube.corners[0...3].enumerated() {
+            firstTetradPermutation *= 4 - index
+            for cornerB in cube.corners[index...3] where cornerA.solvedPosition > cornerB.solvedPosition {
+                firstTetradPermutation += 1
+            }
+        }
+        firstTetradPermutation *= 6912
 
-        return standingSlicePermutation + middleSlicePermutation + equatorialSlicePermutation + firstTetradPermutation +
-          secondTetradPermutation
+        secondTetradPermutation = cube.corners[4].solvedPosition.rawValue - 4
+        secondTetradPermutation *= 165888
+
+        return standingSlicePermutation + middleSlicePermutation + equatorialSlicePermutation + firstTetradPermutation + secondTetradPermutation
     }
 }

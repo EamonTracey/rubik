@@ -9,18 +9,20 @@ protocol ThistlethwaiteStep {
 }
 
 extension ThistlethwaiteStep {
-    static func generateTable() -> [Int: String] {
-        var statesTable: [Int: String] = Dictionary(minimumCapacity: factor)
+    static func generateTable() -> [String] {
+        var statesTable: [String?] = Array(repeating: nil, count: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
-
-        while statesTable.count < factor, let node = frontier.popFirst() {
+var x = 0
+        while let node = frontier.popFirst() {
             let state = encode(node.cube)
 
-            if statesTable.keys.contains(state) {
+            if statesTable[state] != nil {
                 continue
             }
 
             statesTable[state] = node.algorithm.reversed.stringNotation
+            x += 1
+//            print(x)
 
             for turn in allowedTurns {
                 if let lastTurn = node.algorithm.turns.last,
@@ -34,30 +36,29 @@ extension ThistlethwaiteStep {
             }
         }
 
-        return statesTable
+        return statesTable as! [String]
     }
 }
 
 extension ThistlethwaiteStep {
-    static func loadTable() -> [Int: String]?{
-        var table: [Int: String] = Dictionary(minimumCapacity: factor)
+    static func loadTable() -> [String]?{
+        var table = [String]()
 
         // Get file URL of the stored table.
         guard let url = Bundle.module.url(
             forResource: "Tables/thistlethwaite_\(name)", withExtension: .none
         ) else { return nil }
 
-        // Open the file in read-only mode and reassign stdout to it.
-        guard let fileHandle = freopen(url.relativePath, "r", stdin) else { return nil }
+        guard let fileHandle = fopen(url.relativePath, "r") else { return nil }
+        var buffer = [CChar](repeating: 0, count: 32)
 
-        // Read the file in batches of 2 lines. The first line is the unique
-        // encoding of the cube. The second line is the corresponding algorithm.
-        while let code = readLine(), let algorithm = readLine() {
-            // Cast the encoding to Int.
-            guard let code = Int(code) else { return nil }
+        // Read the file line by line.
+        while fgets(&buffer, 32, fileHandle) != nil {
+            // Remove the newline character.
+            buffer[strlen(buffer) - 1] = 0
 
-            // Add the (code, algorithm) pair to the table.
-            table[code] = algorithm
+            // Add the algorithm to the table.
+            table.append(String(cString: buffer))
         }
 
         // Close the file handle.

@@ -21,18 +21,30 @@ extension Solver.Thistlethwaite.Two: ThistlethwaiteStep {
         var cornerOrientation: Int = 0
         var equatorialSliceCombination: Int = 0
 
-        cornerOrientation += cube.corners[0].orientation.rawValue * 4096
-        cornerOrientation += cube.corners[1].orientation.rawValue * 12288
-        cornerOrientation += cube.corners[2].orientation.rawValue * 36864
-        cornerOrientation += cube.corners[3].orientation.rawValue * 110592
-        cornerOrientation += cube.corners[4].orientation.rawValue * 331776
-        cornerOrientation += cube.corners[5].orientation.rawValue * 995328
-        cornerOrientation += cube.corners[6].orientation.rawValue * 2985984
+        cornerOrientation += cube.corners[0].orientation.rawValue
+        cornerOrientation += cube.corners[1].orientation.rawValue * 3
+        cornerOrientation += cube.corners[2].orientation.rawValue * 9
+        cornerOrientation += cube.corners[3].orientation.rawValue * 27
+        cornerOrientation += cube.corners[4].orientation.rawValue * 81
+        cornerOrientation += cube.corners[5].orientation.rawValue * 243
+        cornerOrientation += cube.corners[6].orientation.rawValue * 729
 
+        var r = 1
         for (index, edge) in cube.edges.enumerated() where edge.slice == .equatorial {
-            equatorialSliceCombination |= 1 << index
+            equatorialSliceCombination += binomial(index, r)
+            r += 1
         }
+        equatorialSliceCombination *= 2187
 
         return cornerOrientation + equatorialSliceCombination
     }
+}
+func binomial(_ n: Int, _ k: Int) -> Int {
+    precondition(k >= 0 && n >= 0)
+    if (k > n) { return 0 }
+    var result = 1
+    for i in 0 ..< min(k, n-k) {
+        result = (result * (n - i))/(i + 1)
+    }
+    return result
 }
