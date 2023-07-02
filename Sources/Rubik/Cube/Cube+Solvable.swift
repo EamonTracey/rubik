@@ -64,7 +64,7 @@ extension Cube {
     /// assert(!cube.areEdgesOrientable)
     /// ```
     public var areEdgesOrientable: Bool {
-        return edges.map { $0.solvedPosition.rawValue }.reduce(0, ^) == 0
+        return edges.map { $0.orientation.rawValue }.reduce(0, ^) == 0
     }
 
     /// Determine if the corners are orientable.
@@ -93,7 +93,7 @@ extension Cube {
     /// assert(!cube.areCornersOrientable)
     /// ```
     public var areCornersOrientable: Bool {
-        return corners.map { $0.solvedPosition.rawValue }.reduce(0, +) % 3 == 0
+        return corners.map { $0.orientation.rawValue }.reduce(0, +) % 3 == 0
     }
 
     /// Determine if a cube is solvable.

@@ -23,18 +23,12 @@ extension Cube {
     @inlinable
     public mutating func turn(_ turn: Turn) {
         switch turn {
-        case .up(let degree):
-            turnUp(degree)
-        case .down(let degree):
-            turnDown(degree)
-        case .right(let degree):
-            turnRight(degree)
-        case .left(let degree):
-            turnLeft(degree)
-        case .front(let degree):
-            turnFront(degree)
-        case .back(let degree):
-            turnBack(degree)
+        case .up(let degree):    turnUp(degree)
+        case .down(let degree):  turnDown(degree)
+        case .right(let degree): turnRight(degree)
+        case .left(let degree):  turnLeft(degree)
+        case .front(let degree): turnFront(degree)
+        case .back(let degree):  turnBack(degree)
         }
     }
 }

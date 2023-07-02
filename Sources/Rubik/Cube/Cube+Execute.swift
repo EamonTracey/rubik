@@ -22,7 +22,7 @@ extension Cube {
     @inlinable
     public mutating func execute(_ algorithm: Algorithm, repeats: Int = 1) {
         for _ in 0..<repeats {
-            for turn in algorithm.turns {
+            for turn in algorithm {
                 self.turn(turn)
             }
         }

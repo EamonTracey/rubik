@@ -25,12 +25,7 @@ extension Cube.Corner {
     /// cubelet is oriented if and only if it can be turned into its solved state using only U, D, R2, and L2
     /// turns. This means that R, L, F, and B change the orientation of the corners on the respective layer.
     public enum Orientation: Int {
-        /// Correct corner orientation.
-        case correct = 0
-        /// Clockwise-twisted corner orientation.
-        case clockwise = 1
-        /// Counterclockwise-twisted corner orientation.
-        case counterclockwise = 2
+        case correct, clockwise, counterclockwise
     }
 }
 
@@ -42,22 +37,8 @@ extension Cube.Corner {
     /// - Note: Corner "position" is not synonymous with corner "cubelet." Position refers to a fixed part
     /// of the cube while cubelet refers to a specific piece that can move to different positions.
     public enum Position: Int, CaseIterable {
-        /// The URF corner.
-        case upRightFront = 0
-        /// The ULB corner.
-        case upLeftBack = 1
-        /// The DRB corner.
-        case downRightBack = 2
-        /// The DLF corner.
-        case downLeftFront = 3
-        /// The URB corner.
-        case upRightBack = 4
-        /// The ULF corner.
-        case upLeftFront = 5
-        /// The DRF corner.
-        case downRightFront = 6
-        /// The DLB corner.
-        case downLeftBack = 7
+        case upRightFront, upLeftBack, downRightBack, downLeftFront,
+             upRightBack, upLeftFront, downRightFront, downLeftBack
     }
 }
 
@@ -68,15 +49,14 @@ extension Cube.Corner.Position: Comparable {
 }
 
 extension Cube.Corner {
-    enum Tetrad {
-        case first
-        case second
+    enum Tetrad: CaseIterable {
+        case first, second
     }
 }
 
 extension Cube.Corner {
     var tetrad: Tetrad {
-        if self.solvedPosition.rawValue <= 3 {
+        if solvedPosition.rawValue <= 3 {
             return .first
         }
         return .second

@@ -15,8 +15,8 @@ extension Cube {
     /// Corner validity implies that the cube has the correct corner cubelets. This means that the
     /// ``corners`` array contains exactly 8 cubelets with unique `solvedPosition` values.
     public var areCornersValid: Bool {
-        let eightCorners = corners.count == 12
-        let uniqueCubelets = Set(corners.map { $0.solvedPosition }).count == 12
+        let eightCorners = corners.count == 8
+        let uniqueCubelets = Set(corners.map { $0.solvedPosition }).count == 8
 
         return eightCorners && uniqueCubelets
     }

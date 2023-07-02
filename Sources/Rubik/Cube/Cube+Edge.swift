@@ -25,10 +25,7 @@ extension Cube.Edge {
     /// cubelet is oriented if and only if it can be turned into its solved state using only U, D, R, and L turns.
     /// This means that F and B toggle the orientation of the edges on the respective layer.
     public enum Orientation: Int {
-        /// Correct edge orientation.
-        case correct = 0
-        /// Flipped edge orientation.
-        case flipped = 1
+        case correct, flipped
     }
 }
 
@@ -40,30 +37,9 @@ extension Cube.Edge {
     /// - Note: Edge "position" is not synonymous with edge "cubelet." Position refers to a fixed part of
     /// the cube while cubelet refers to a specific piece that can move to different positions.
     public enum Position: Int, CaseIterable {
-        /// The UR edge.
-        case upRight = 0
-        /// The UL edge.
-        case upLeft = 1
-        /// The DR edge.
-        case downRight = 2
-        /// The DL edge.
-        case downLeft = 3
-        /// The UF edge.
-        case upFront = 4
-        /// The UB edge.
-        case upBack = 5
-        /// The DF edge.
-        case downFront = 6
-        /// The DB edge.
-        case downBack = 7
-        /// The RF edge.
-        case rightFront = 8
-        /// The RB edge.
-        case rightBack = 9
-        /// The LF edge.
-        case leftFront = 10
-        /// The LB edge.
-        case leftBack = 11
+        case upRight, upLeft, downRight, downLeft,
+             upFront, upBack, downFront, downBack,
+             rightFront, rightBack, leftFront, leftBack
     }
 }
 
@@ -74,18 +50,16 @@ extension Cube.Edge.Position: Comparable {
 }
 
 extension Cube.Edge {
-    enum Slice {
-        case standing
-        case middle
-        case equatorial
+    enum Slice: CaseIterable {
+        case standing, middle, equatorial
     }
 }
 
 extension Cube.Edge {
     var slice: Slice {
-        if self.solvedPosition.rawValue <= 3 {
+        if solvedPosition.rawValue <= 3 {
             return .standing
-        } else if self.solvedPosition.rawValue <= 7 {
+        } else if solvedPosition.rawValue <= 7 {
             return .middle
         }
         return .equatorial
