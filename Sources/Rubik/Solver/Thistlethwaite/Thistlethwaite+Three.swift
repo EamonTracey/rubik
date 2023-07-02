@@ -5,7 +5,7 @@ extension Solver.Thistlethwaite {
 extension Solver.Thistlethwaite.Three: ThistlethwaiteStep {
     static let name = "three"
 
-    static let factor: Int = 999999999
+    static let factor: Int = 352800
 
     static let allowedTurns: [Turn] = [
         .up(.clockwise), .up(.half), .up(.counterclockwise),
@@ -32,7 +32,7 @@ extension Solver.Thistlethwaite.Three: ThistlethwaiteStep {
         // TODO: CALCULATE TETRAD TWIST.
         // I.E. GET RID OF MORE RESTRICTIVE HULLABALOO
         // UNREADABLE IMPLIES INCOMPLETE
-        var a=0;var b=0;var c=0;var d=0;var e=0;for(index,corner)in cube.corners.enumerated(){if corner.solvedPosition == .upRightFront||corner.solvedPosition == .upLeftBack{a|=65536<<index}else if corner.solvedPosition == .upRightBack||corner.solvedPosition == .upLeftFront{b|=16777216<<index}else if corner.solvedPosition == .downRightFront||corner.solvedPosition == .downLeftBack{c|=4294967296<<index}else if corner.solvedPosition == .downRightBack||corner.solvedPosition == .downLeftFront{d|=1099511627776<<index};for corb in cube.corners[(index+1)...] where corner.solvedPosition>corb.solvedPosition{e+=1}};e %= 2
+        var a=0;var b=0;var c=0;var d=0;var e=0;for(f,g)in cube.corners.enumerated(){if g.solvedPosition == .upRightFront||g.solvedPosition == .upLeftBack{a|=65536<<f}else if g.solvedPosition == .upRightBack||g.solvedPosition == .upLeftFront{b|=16777216<<f}else if g.solvedPosition == .downRightFront||g.solvedPosition == .downLeftBack{c|=4294967296<<f}else if g.solvedPosition == .downRightBack||g.solvedPosition == .downLeftFront{d|=1099511627776<<f};for corb in cube.corners[(f+1)...] where g.solvedPosition>corb.solvedPosition{e+=1}};e%=2
 
         return middleSliceCombination + a+b+c+d+e // + firstTetradCombination
     }

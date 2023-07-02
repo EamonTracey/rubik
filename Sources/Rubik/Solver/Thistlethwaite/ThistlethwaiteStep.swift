@@ -10,7 +10,7 @@ protocol ThistlethwaiteStep {
 
 extension ThistlethwaiteStep {
     static func generateTable() -> [Int: String] {
-        var statesTable: [Int: String] = [:]//Dictionary(minimumCapacity: factor)
+        var statesTable: [Int: String] = Dictionary(minimumCapacity: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
 
         while statesTable.count < factor, let node = frontier.popFirst() {
@@ -21,7 +21,6 @@ extension ThistlethwaiteStep {
             }
 
             statesTable[state] = node.algorithm.reversed.stringNotation
-            print(statesTable.count)
 
             for turn in allowedTurns {
                 if let lastTurn = node.algorithm.turns.last,
