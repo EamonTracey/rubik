@@ -9,7 +9,7 @@ protocol ThistlethwaiteStep {
 }
 
 extension ThistlethwaiteStep {
-    static func generateTable() -> [String] {
+    static func generateTable() -> [String?] {
         var statesTable: [String?] = Array(repeating: nil, count: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
 var x = 0
@@ -33,10 +33,16 @@ var x = 0
                 adjacentNode.cube.turn(turn)
                 adjacentNode.algorithm.append(turn)
                 frontier.append(adjacentNode)
+                for turn in allowedTurns {
+                    var otha = adjacentNode
+                    otha.cube.turn(turn)
+                    otha.algorithm.append(turn)
+                    frontier.append(otha)
+                }
             }
         }
 
-        return statesTable as! [String]
+        return statesTable //as! [String]
     }
 }
 
