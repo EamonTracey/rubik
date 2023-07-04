@@ -37,7 +37,6 @@ extension Solver.Thistlethwaite.Four: ThistlethwaiteStep {
                 middleSlicePermutation += 1
             }
         }
-        middleSlicePermutation *= 24
 
 
         for (index, edgeA) in cube.edges[8...9].enumerated() {
@@ -46,7 +45,6 @@ extension Solver.Thistlethwaite.Four: ThistlethwaiteStep {
                 equatorialSlicePermutation += 1
             }
         }
-        equatorialSlicePermutation *= 576
 
         for (index, cornerA) in cube.corners[0...3].enumerated() {
             firstTetradPermutation *= 4 - index
@@ -54,11 +52,13 @@ extension Solver.Thistlethwaite.Four: ThistlethwaiteStep {
                 firstTetradPermutation += 1
             }
         }
-        firstTetradPermutation *= 6912
 
         secondTetradPermutation = cube.corners[4].solvedPosition.rawValue - 4
-        secondTetradPermutation *= 165888
 
-        return standingSlicePermutation + middleSlicePermutation + equatorialSlicePermutation + firstTetradPermutation + secondTetradPermutation
+        return standingSlicePermutation +
+               middleSlicePermutation * 24 +
+               equatorialSlicePermutation * 576 +
+               firstTetradPermutation * 6912 +
+               secondTetradPermutation * 165888
     }
 }

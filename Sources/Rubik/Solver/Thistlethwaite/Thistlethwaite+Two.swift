@@ -34,9 +34,9 @@ extension Solver.Thistlethwaite.Two: ThistlethwaiteStep {
             equatorialSliceCombination += binomial(index, r)
             r += 1
         }
-        equatorialSliceCombination *= 2187
 
-        return cornerOrientation + equatorialSliceCombination
+        return cornerOrientation +
+               equatorialSliceCombination * 2187
     }
 }
 func binomial(_ n: Int, _ k: Int) -> Int {

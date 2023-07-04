@@ -9,7 +9,7 @@ protocol ThistlethwaiteStep {
 }
 
 extension ThistlethwaiteStep {
-    static func generateTable() -> [String?] {
+    static func generateTable() -> [String] {
         var statesTable: [String?] = Array(repeating: nil, count: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
 var x = 0
@@ -17,12 +17,15 @@ var x = 0
             let state = encode(node.cube)
 
             if statesTable[state] != nil {
+                if statesTable[state]!.count > node.algorithm.reversed.stringNotation.count {
+                    statesTable[state] = node.algorithm.reversed.stringNotation
+                }
                 continue
             }
 
             statesTable[state] = node.algorithm.reversed.stringNotation
             x += 1
-//            print(x)
+            print(x)
 
             for turn in allowedTurns {
                 if let lastTurn = node.algorithm.turns.last,
@@ -38,11 +41,17 @@ var x = 0
                     otha.cube.turn(turn)
                     otha.algorithm.append(turn)
                     frontier.append(otha)
+                    for turn in allowedTurns {
+                        var qqqq = otha
+                        qqqq.cube.turn(turn)
+                        qqqq.algorithm.append(turn)
+                        frontier.append(qqqq)
+                    }
                 }
             }
         }
 
-        return statesTable //as! [String]
+        return statesTable as! [String]
     }
 }
 
@@ -56,10 +65,10 @@ extension ThistlethwaiteStep {
         ) else { return nil }
 
         guard let fileHandle = fopen(url.relativePath, "r") else { return nil }
-        var buffer = [CChar](repeating: 0, count: 32)
+        var buffer = [CChar](repeating: 0, count: 64)
 
         // Read the file line by line.
-        while fgets(&buffer, 32, fileHandle) != nil {
+        while fgets(&buffer, 64, fileHandle) != nil {
             // Remove the newline character.
             buffer[strlen(buffer) - 1] = 0
 
