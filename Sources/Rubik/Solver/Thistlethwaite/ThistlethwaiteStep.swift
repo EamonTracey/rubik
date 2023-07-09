@@ -9,23 +9,18 @@ protocol ThistlethwaiteStep {
 }
 
 extension ThistlethwaiteStep {
-    static func generateTable() -> [String] {
+    static func generateTable() -> [String?] {
         var statesTable: [String?] = Array(repeating: nil, count: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
-var x = 0
+
         while let node = frontier.popFirst() {
             let state = encode(node.cube)
 
             if statesTable[state] != nil {
-                if statesTable[state]!.count > node.algorithm.reversed.stringNotation.count {
-                    statesTable[state] = node.algorithm.reversed.stringNotation
-                }
                 continue
             }
 
             statesTable[state] = node.algorithm.reversed.stringNotation
-            x += 1
-            print(x)
 
             for turn in allowedTurns {
                 if let lastTurn = node.algorithm.turns.last,
@@ -36,22 +31,10 @@ var x = 0
                 adjacentNode.cube.turn(turn)
                 adjacentNode.algorithm.append(turn)
                 frontier.append(adjacentNode)
-                for turn in allowedTurns {
-                    var otha = adjacentNode
-                    otha.cube.turn(turn)
-                    otha.algorithm.append(turn)
-                    frontier.append(otha)
-                    for turn in allowedTurns {
-                        var qqqq = otha
-                        qqqq.cube.turn(turn)
-                        qqqq.algorithm.append(turn)
-                        frontier.append(qqqq)
-                    }
-                }
             }
         }
 
-        return statesTable as! [String]
+        return statesTable //as! [String]
     }
 }
 

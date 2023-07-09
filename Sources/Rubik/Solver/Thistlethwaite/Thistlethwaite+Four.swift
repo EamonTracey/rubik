@@ -1,5 +1,5 @@
 extension Solver.Thistlethwaite {
-    enum Four { }
+    public enum Four { }
 }
 
 extension Solver.Thistlethwaite.Four: ThistlethwaiteStep {
@@ -7,7 +7,7 @@ extension Solver.Thistlethwaite.Four: ThistlethwaiteStep {
 
     static let factor: Int = 663552
 
-    static let allowedTurns: [Turn] = [
+    public static let allowedTurns: [Turn] = [
         .up(.half),
         .down(.half),
         .right(.half),
@@ -16,8 +16,8 @@ extension Solver.Thistlethwaite.Four: ThistlethwaiteStep {
         .back(.half)
     ]
 
-    @usableFromInline
-    static func encode(_ cube: Cube) -> Int {
+//    @usableFromInline
+    public static func encode(_ cube: Cube) -> Int {
         var standingSlicePermutation: Int = 0
         var middleSlicePermutation: Int = 0
         var equatorialSlicePermutation: Int = 0
