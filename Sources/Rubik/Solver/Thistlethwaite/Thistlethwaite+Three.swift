@@ -44,15 +44,22 @@ fileprivate func tetradParity(_ cube: Cube) -> Int {
     var flipit: [Int] = .init(repeating: 8, count: 8)
     var firsts: [Int] = []
     var seconds: [Int] = []
-
-    flipit[0] = getIndexOf(value: 0, array: raw)
-    flipit[1] = getIndexOf(value: 1, array: raw)
-    flipit[2] = getIndexOf(value: 2, array: raw)
-    flipit[3] = getIndexOf(value: 3, array: raw)
-    flipit[4] = getIndexOf(value: 4, array: raw)
-    flipit[5] = getIndexOf(value: 5, array: raw)
-    flipit[6] = getIndexOf(value: 6, array: raw)
-    flipit[7] = getIndexOf(value: 7, array: raw)
+    // 0 -> 1
+    // 1 -> 5
+    // 2 -> 3
+    // 3 -> 7
+    // 4 -> 2
+    // 5 -> 6
+    // 6 -> 0
+    // 7 -> 4
+    flipit[0] = cube.corners[0].solvedPosition.rawValue//getIndexOf(value: 4, array: raw)
+    flipit[1] = cube.corners[1].solvedPosition.rawValue//getIndexOf(value: 5, array: raw)
+    flipit[2] = cube.corners[2].solvedPosition.rawValue//getIndexOf(value: 2, array: raw)
+    flipit[3] = cube.corners[3].solvedPosition.rawValue//getIndexOf(value: 3, array: raw)
+    flipit[4] = cube.corners[4].solvedPosition.rawValue//getIndexOf(value: 0, array: raw)
+    flipit[5] = cube.corners[5].solvedPosition.rawValue//getIndexOf(value: 1, array: raw)
+    flipit[6] = cube.corners[6].solvedPosition.rawValue//getIndexOf(value: 6, array: raw)
+    flipit[7] = cube.corners[7].solvedPosition.rawValue//getIndexOf(value: 7, array: raw)
 
     for element in flipit {
         if element <= 3 { firsts.append(element) }
