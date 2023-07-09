@@ -9,7 +9,7 @@ protocol ThistlethwaiteStep {
 }
 
 extension ThistlethwaiteStep {
-    static func generateTable() -> [String?] {
+    static func generateTable() -> [String] {
         var statesTable: [String?] = Array(repeating: nil, count: factor)
         var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
 
@@ -34,12 +34,12 @@ extension ThistlethwaiteStep {
             }
         }
 
-        return statesTable //as! [String]
+        return statesTable as! [String]
     }
 }
 
 extension ThistlethwaiteStep {
-    static func loadTable() -> [String]?{
+    static func loadTable() -> [String]? {
         var table = [String]()
 
         // Get file URL of the stored table.

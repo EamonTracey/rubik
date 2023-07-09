@@ -1,4 +1,4 @@
-public extension Solver.Thistlethwaite {
+extension Solver.Thistlethwaite {
     enum Two { }
 }
 
@@ -7,7 +7,7 @@ extension Solver.Thistlethwaite.Two: ThistlethwaiteStep {
 
     static let factor: Int = 1082565
 
-    public static let allowedTurns: [Turn] = [
+    static let allowedTurns: [Turn] = [
         .up(.clockwise), .up(.half), .up(.counterclockwise),
         .down(.clockwise), .down(.half), .down(.counterclockwise),
         .right(.clockwise), .right(.half), .right(.counterclockwise),
@@ -16,9 +16,8 @@ extension Solver.Thistlethwaite.Two: ThistlethwaiteStep {
         .back(.half)
     ]
 
-//    @usableFromInline
-//    @inlinable
-    public static func encode(_ cube: Cube) -> Int {
+    @usableFromInline
+    static func encode(_ cube: Cube) -> Int {
         var cornerOrientation: Int = 0
         var equatorialSliceCombination: Int = 0
 
@@ -32,7 +31,7 @@ extension Solver.Thistlethwaite.Two: ThistlethwaiteStep {
 
         var r = 1
         for (index, edge) in cube.edges.enumerated() where edge.slice == .equatorial {
-            equatorialSliceCombination += binomial(index, r)
+            equatorialSliceCombination += combinations(index, r)
             r += 1
         }
 

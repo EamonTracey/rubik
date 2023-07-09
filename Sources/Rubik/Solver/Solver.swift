@@ -39,10 +39,10 @@ public enum SolveError: Error {
 
 extension Solver {
     public func loadTables(for method: Method) {
-//        switch method {
-//        case .thistlethwaite:
-//            thistlethwaite.loadTables()
-//        }
+        switch method {
+        case .thistlethwaite:
+            thistlethwaite.loadTables()
+        }
     }
 }
 

@@ -14,7 +14,7 @@ extension Solver.Thistlethwaite {
     @usableFromInline
     func solve(_ cube: Cube) -> Algorithm? {
         if !tablesLoaded {
-//            loadTables()
+            loadTables()
         }
 
         var cube = cube
@@ -40,14 +40,14 @@ extension Solver.Thistlethwaite {
 }
 
 extension Solver.Thistlethwaite {
-//    @usableFromInline
-//    func loadTables() {
-//        tableOne = One.loadTable() ?? One.generateTable()
-//        tableTwo = Two.loadTable() ?? Two.generateTable()
-//        tableThree = Three.loadTable() ?? Three.generateTable()
-//        tableFour = Four.loadTable() ?? Four.generateTable()
-//        tablesLoaded = true
-//    }
+    @usableFromInline
+    func loadTables() {
+        tableOne = One.loadTable()
+        tableTwo = Two.loadTable()
+        tableThree = Three.loadTable()
+        tableFour = Four.loadTable()
+        tablesLoaded = true
+    }
 
     @usableFromInline
     func unloadTables() {
