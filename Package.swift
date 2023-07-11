@@ -19,12 +19,18 @@ let package = Package(
     targets: [
         .target(
             name: "Rubik",
-            dependencies: [.product(name: "Collections", package: "swift-collections")],
             resources: [.copy("Tables/")]
         ),
         .testTarget(
             name: "RubikTests",
             dependencies: ["Rubik"]
+        ),
+        .executableTarget(
+            name: "RubikTables",
+            dependencies: [
+                .product(name: "Collections", package: "swift-collections"),
+                "Rubik"
+            ]
         )
     ]
 )

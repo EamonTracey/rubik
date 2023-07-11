@@ -1,9 +1,9 @@
 extension Algorithm {
     @inlinable
-    public init?(_ stringNotation: String) {
+    public init?(_ stringNotation: some StringProtocol) {
         var turns: [Turn] = []
         for word in stringNotation.split(separator: " ") {
-            if let turn = Turn(String(word)) {
+            if let turn = Turn(word) {
                 turns.append(turn)
             } else {
                 return nil

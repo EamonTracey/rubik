@@ -50,13 +50,13 @@ extension Cube.Edge.Position: Comparable {
 }
 
 extension Cube.Edge {
-    enum Slice: CaseIterable {
+    public enum Slice: CaseIterable {
         case standing, middle, equatorial
     }
 }
 
 extension Cube.Edge {
-    var slice: Slice {
+    public var slice: Slice {
         if solvedPosition.rawValue <= 3 {
             return .standing
         } else if solvedPosition.rawValue <= 7 {

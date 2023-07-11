@@ -1,6 +1,6 @@
 extension Turn {
     @inlinable
-    public init?(_ stringNotation: String) {
+    public init?(_ stringNotation: some StringProtocol) {
         switch stringNotation {
         case "U":  self = .up(.clockwise)
         case "U2": self = .up(.half)

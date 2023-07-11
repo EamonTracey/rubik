@@ -1,5 +1,6 @@
+import Rubik
+
 extension Turn {
-    @usableFromInline
     func sameLayer(as turn: Turn) -> Bool {
         switch (self, turn) {
         case (.up, .up),

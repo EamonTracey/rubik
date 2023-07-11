@@ -49,13 +49,13 @@ extension Cube.Corner.Position: Comparable {
 }
 
 extension Cube.Corner {
-    enum Tetrad: CaseIterable {
+    public enum Tetrad: CaseIterable {
         case first, second
     }
 }
 
 extension Cube.Corner {
-    var tetrad: Tetrad {
+    public var tetrad: Tetrad {
         if solvedPosition.rawValue <= 3 {
             return .first
         }
