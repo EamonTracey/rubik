@@ -1,53 +1,13 @@
+/// A cube solver that can find an algorithmic solution to a cube.
+///
+/// The solver currently supports only one method to solve the cube. This will be expanded.
+///
+/// - Important: Some methods require large lookup tables for the solving process. Therefore, it is best
+/// to use only one solver instance ever. One may explicitly load and unload these tables using
+/// ``loadTables(for:)`` and ``unloadTables(for:)``.
 public class Solver {
     let thistlethwaite = Thistlethwaite()
 
+    /// Initialize a solver.
     public init() { }
-}
-
-extension Solver {
-    public func solve(_ cube: Cube, using method: Method) -> Result<Algorithm, SolveError> {
-        if !cube.isValid {
-            return .failure(.invalidCube)
-        }
-        if !cube.areEdgesOrientable {
-            return .failure(.unsolvableEdgeOrientation)
-        }
-        if !cube.areCornersOrientable {
-            return .failure(.unsolvableCornerOrientation)
-        }
-        if !cube.isPermutable {
-            return .failure(.unsolvablePermutation)
-        }
-
-        switch method {
-        case .thistlethwaite:
-            if let solution = thistlethwaite.solve(cube) {
-                return .success(solution)
-            }
-            return .failure(.corruptedTables)
-        }
-    }
-}
-
-public enum SolveError: Error {
-    case invalidCube
-    case unsolvableEdgeOrientation
-    case unsolvableCornerOrientation
-    case unsolvablePermutation
-    case corruptedTables
-}
-
-extension Solver {
-    public func loadTables(for method: Method) {
-        switch method {
-        case .thistlethwaite:
-            thistlethwaite.loadTables()
-        }
-    }
-}
-
-extension Solver {
-    public enum Method {
-        case thistlethwaite
-    }
 }

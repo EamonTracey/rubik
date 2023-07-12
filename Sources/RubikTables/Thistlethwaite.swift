@@ -6,17 +6,17 @@ import Rubik
     allowedTurns: [Turn],
     encode: (Cube) -> (Int)
  ) -> [String] {
-    var statesTable: [String?] = Array(repeating: nil, count: factor)
+    var algorithmsTable: [String?] = Array(repeating: nil, count: factor)
     var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
 
     while let node = frontier.popFirst() {
         let state = encode(node.cube)
 
-        if statesTable[state] != nil {
+        if algorithmsTable[state] != nil {
             continue
         }
 
-        statesTable[state] = node.algorithm.reversed.stringNotation
+        algorithmsTable[state] = node.algorithm.reversed.stringNotation
 
         for turn in allowedTurns {
             if let lastTurn = node.algorithm.turns.last,
@@ -30,5 +30,5 @@ import Rubik
         }
     }
 
-    return statesTable as! [String]
+    return algorithmsTable as! [String]
 }

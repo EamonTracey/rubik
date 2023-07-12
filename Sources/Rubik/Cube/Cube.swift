@@ -21,11 +21,19 @@
 public struct Cube {
     /// The edges of a cube.
     ///
+    /// The indices of the edges array corresponds to fixed positions in the cube. For example, the edge at
+    /// index 0 is the cubelet in the UR position and the edge at index 6 is the cubelet in the DF position. In
+    /// a solved cube, the edges array is sorted (and all edge orientations are correct).
+    ///
     /// - Important: The array must contain 12 edges with unique `solvedPosition` values to be
     /// valid.
     public var edges: [Edge]
 
     /// The corners of a cube.
+    ///
+    /// The indices of the corners array corresponds to fixed positions in the cube. For example, the corner
+    /// at index 0 is the cubelet in the URF position and the edge at index 7 is the cubelet in the DLB
+    /// position. In a solved cube, the corners array is sorted (and all corner orientations are correct).
     ///
     /// - Important: The array must contain 8 corners with unique `solvedPosition` values to be
     /// valid.

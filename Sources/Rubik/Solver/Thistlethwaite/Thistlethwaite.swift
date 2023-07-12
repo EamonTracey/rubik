@@ -33,6 +33,8 @@ extension Thistlethwaite {
         guard let fourAlgorithm = Algorithm(four) else { return nil }
         cube.execute(fourAlgorithm)
 
+        guard cube == .solvedCube else { return nil }
+
         return Algorithm("\(one) \(two) \(three) \(four)")
     }
 }
@@ -65,7 +67,6 @@ extension Thistlethwaite {
         return table
     }
 }
-
 
 extension Thistlethwaite {
     @usableFromInline

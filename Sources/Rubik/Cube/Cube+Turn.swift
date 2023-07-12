@@ -1,6 +1,9 @@
 extension Cube {
     /// Apply a turn to a cube.
     ///
+    /// - Parameters:
+    ///     - turn: The turn to be applied.
+    ///
     /// The cube has 6 layers: up (U), down (D), right (R), left (L), front (F), and back (B). Each layer can be
     /// turned clockwise, counterclockwise, and halfway (in which case the direction is irrelevant). For
     /// example, perform the sexy move:

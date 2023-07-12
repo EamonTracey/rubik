@@ -1,6 +1,10 @@
 extension Cube {
     /// Apply an algorithm to a cube.
     ///
+    /// - Parameters:
+    ///     - algorithm: The algorithm to be executed.
+    ///     - repeats: The number of times to repeat the algorithm. The default is 1.
+    ///
     /// Instead of turning layers of the cube individually, use an algorithm. For example, perform the sexy
     /// move:
     ///

@@ -1,4 +1,7 @@
 extension Turn {
+    /// The reverse of a turn.
+    ///
+    /// Applying a turn and its reverse in succession will have no net effect on a cube.
     @inlinable
     public var reversed: Turn {
         switch self {

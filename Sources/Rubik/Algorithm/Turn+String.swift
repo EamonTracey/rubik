@@ -1,4 +1,13 @@
 extension Turn {
+    /// Initialize a turn from a string.
+    ///
+    /// - Parameters:
+    ///     - stringNotation: The string notation of a turn.
+    ///
+    /// - Returns: A turn if the string contains valid notation, otherwise nil.
+    ///
+    /// A turn can be "U", "D", "R", "L", "F", or "B". Appending an apostrophe ("'") to the turn indicates a
+    /// counterclockwise turn. Appending "2" to the turn indicates a half turn.
     @inlinable
     public init?(_ stringNotation: some StringProtocol) {
         switch stringNotation {
@@ -24,6 +33,7 @@ extension Turn {
         }
     }
 
+    /// A turn in string notation.
     @inlinable
     public var stringNotation: String {
         switch self {

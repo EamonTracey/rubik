@@ -24,7 +24,7 @@ extension Cube.Corner {
     /// - Note: Corner orientation is relative. The definition of corner orientation is as follows: a corner
     /// cubelet is oriented if and only if it can be turned into its solved state using only U, D, R2, and L2
     /// turns. This means that R, L, F, and B change the orientation of the corners on the respective layer.
-    public enum Orientation: Int {
+    public enum Orientation: Int, CaseIterable {
         case correct, clockwise, counterclockwise
     }
 }
@@ -42,19 +42,21 @@ extension Cube.Corner {
     }
 }
 
-extension Cube.Corner.Position: Comparable {
-    public static func < (lhs: Cube.Corner.Position, rhs: Cube.Corner.Position) -> Bool {
-        return lhs.rawValue < rhs.rawValue
-    }
-}
-
 extension Cube.Corner {
+    /// A tetrad of a cube.
+    ///
+    /// A cube has two tetrads, each comprised of 4 corner positions. The first tetrad contains positions
+    /// URF, ULB, DRB, and DLF. The second tetrad contains positions ULF, URB, DRF, and DLB. An
+    /// important realization is that only quarter turns can move cubelets from one tetrad into another. Half
+    /// turns keep all corner cubelets in the same tetrad as before.
+    ///
+    /// Tetrads are analogous to edge slices.
     public enum Tetrad: CaseIterable {
         case first, second
     }
-}
 
-extension Cube.Corner {
+    /// The tetrad of a corner cubelet.
+    @inlinable
     public var tetrad: Tetrad {
         if solvedPosition.rawValue <= 3 {
             return .first
@@ -64,17 +66,34 @@ extension Cube.Corner {
 }
 
 extension Cube.Corner {
-    /// Represents the degree by which a corner twists.
-    public enum TwistDegree: Int {
+    /// The degree by which a corner twists.
+    public enum TwistDegree: Int, CaseIterable {
         case clockwise = 1
         case counterclockwise = 2
     }
-}
 
-extension Cube.Corner {
     /// Twist a corner to change its orientation.
+    ///
+    /// - Parameters:
+    ///     - degree: The degree by which to twist the corner.
     @inlinable
     public mutating func twist(_ degree: TwistDegree) {
         orientation = Orientation(rawValue: (orientation.rawValue + degree.rawValue) % 3)!
+    }
+}
+
+extension Cube.Corner.Position: Comparable {
+    /// Compare corner positions using raw values.
+    @inlinable
+    public static func < (lhs: Cube.Corner.Position, rhs: Cube.Corner.Position) -> Bool {
+        return lhs.rawValue < rhs.rawValue
+    }
+}
+
+extension Cube.Corner: Comparable {
+    /// Compare corners using the raw values of the solved positions.
+    @inlinable
+    public static func < (lhs: Cube.Corner, rhs: Cube.Corner) -> Bool {
+        return lhs.solvedPosition < rhs.solvedPosition
     }
 }
