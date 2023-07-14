@@ -1,4 +1,4 @@
-import Rubik
+import Cubik
 
 extension Turn {
     func sameLayer(as turn: Turn) -> Bool {

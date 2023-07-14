@@ -3,11 +3,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "Rubik",
+    name: "Cubik",
     products: [
         .library(
-            name: "Rubik",
-            targets: ["Rubik"]
+            name: "Cubik",
+            targets: ["Cubik"]
         )
     ],
     dependencies: [
@@ -18,18 +18,18 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Rubik",
+            name: "Cubik",
             resources: [.copy("Tables/")]
         ),
         .testTarget(
-            name: "RubikTests",
-            dependencies: ["Rubik"]
+            name: "CubikTests",
+            dependencies: ["Cubik"]
         ),
         .executableTarget(
-            name: "RubikTables",
+            name: "CubikTables",
             dependencies: [
                 .product(name: "Collections", package: "swift-collections"),
-                "Rubik"
+                "Cubik"
             ]
         )
     ]

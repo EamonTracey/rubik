@@ -1,5 +1,5 @@
 import Foundation
-@_spi(Tables) import Rubik
+@_spi(Tables) import Cubik
 
 // Start the timer. Tested on a 2018 Macbook Air,
 // the script completes in roughly 30 seconds.

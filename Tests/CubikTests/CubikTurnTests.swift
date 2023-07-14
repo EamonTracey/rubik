@@ -1,8 +1,8 @@
 import XCTest
 
-@testable import Rubik
+@testable import Cubik
 
-final class RubikTurnTests: XCTestCase {
+final class CubikTurnTests: XCTestCase {
     var cube1: Cube!
     var cube2: Cube!
     

@@ -1,5 +1,5 @@
 import Collections
-@_spi(Tables) import Rubik
+@_spi(Tables) import Cubik
 
 func generateThistlethwaiteTable(
     factor: Int,
