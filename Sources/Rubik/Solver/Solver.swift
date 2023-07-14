@@ -6,8 +6,10 @@
 /// to use only one solver instance ever. One may explicitly load and unload these tables using
 /// ``loadTables(for:)`` and ``unloadTables(for:)``.
 public class Solver {
+    @usableFromInline
     let thistlethwaite = Thistlethwaite()
 
     /// Initialize a solver.
+    @inlinable
     public init() { }
 }

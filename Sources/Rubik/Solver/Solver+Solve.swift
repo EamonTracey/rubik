@@ -38,6 +38,7 @@ extension Solver {
     ///     print("Failed to find a solution for the following reason: \(error).")
     /// }
     /// ```
+    @inlinable
     public func solve(_ cube: Cube, using method: Method) -> Result<Algorithm, SolveError> {
         if !cube.isValid {
             return .failure(.invalidCube)

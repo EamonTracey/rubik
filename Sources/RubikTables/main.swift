@@ -24,7 +24,7 @@ let thistlethwaiteTableOne = generateThistlethwaiteTable(
 )
 print("✅")
 print("Writing Thistlethwaite table one...", terminator: "")
-try! thistlethwaiteTableOne.write(to: "thistlethwaite_one")
+try! write(table: thistlethwaiteTableOne, to: "thistlethwaite_one")
 print("✅")
 
 print("Generating Thistlethwaite table two...", terminator: "")
@@ -42,7 +42,7 @@ let thistlethwaiteTableTwo = generateThistlethwaiteTable(
 )
 print("✅")
 print("Writing Thistlethwaite table two...", terminator: "")
-try! thistlethwaiteTableTwo.write(to: "thistlethwaite_two")
+try! write(table: thistlethwaiteTableTwo, to: "thistlethwaite_two")
 print("✅")
 
 print("Generating Thistlethwaite table three...", terminator: "")
@@ -60,7 +60,7 @@ let thistlethwaiteTableThree = generateThistlethwaiteTable(
 )
 print("✅")
 print("Writing Thistlethwaite table three...", terminator: "")
-try! thistlethwaiteTableThree.write(to: "thistlethwaite_three")
+try! write(table: thistlethwaiteTableThree, to: "thistlethwaite_three")
 print("✅")
 
 print("Generating Thistlethwaite table four...", terminator: "")
@@ -78,7 +78,7 @@ let thistlethwaiteTableFour = generateThistlethwaiteTable(
 )
 print("✅")
 print("Writing Thistlethwaite table four...", terminator: "")
-try! thistlethwaiteTableFour.write(to: "thistlethwaite_four")
+try! write(table: thistlethwaiteTableFour, to: "thistlethwaite_four")
 print("✅")
 
 var endTime = Date().timeIntervalSince1970

@@ -1,2048 +1,2048 @@
 
-B' U' B'
-B' U B'
-R' F' U' F'
-B D B'
-D' F' R' F'
-R F' U' F'
-D R U B'
-B D' B'
-L' F U F'
-U' F' L' F'
-R D' U B'
-L' F' D' F'
-U' R' D' B'
-R' D' U B'
-R' F2 R2 D U' F'
-F' L2 F'
-F R' F'
-F' L F'
-L2 R' D F'
-F R F'
-L2 D' R' F'
-L2 R D F'
-L D' R' F'
-F' L' F'
-L' R' D F'
-U2 R D' B'
-D L R' F'
-L' R D F'
-L' D' R' F'
-R D L F'
-U' R' B' L' D F'
-L2 F U2 F'
-B' R B'
-B L' B'
-B2 L' U' B'
-B' R' B'
-D R B'
-B' R' U B'
-L' D R B'
-B L B'
-R D' B'
-U R D' B'
-D' L' R B'
-R' D' B'
-L D R B'
-R' D' L' B'
-R' B' L2 D U' F'
-F U' R' U' F'
-B' R U2 B'
-B2 L' U2 B'
-F2 L R' U2 F'
-B' R' U2 B'
-R' F2 R2 U2 F'
-F2 L R U2 F'
-R' B' L2 D F'
-B2 L U2 B'
-F2 L' R' U2 F'
-L' F2 L2 U2 F'
-B2 L' B' R2 D' F'
-F2 L' R U2 F'
-R' B' L' D F'
-B2 L' B' R D' F'
-B L' R B' D' F'
-F L2 F'
-F' R' F'
-F L F'
-L R' U' F'
-F' R F'
-L2 U R F'
-L R U' F'
-L U R F'
-F L' F'
-L2 R' U' F'
-D2 R' U B'
-R' U' L' F'
-L2 R U' F'
-L' U R F'
-U' L' R F'
-R' U B' L2 U' F'
-U' F' R' F'
-L2 R' F'
-L U' R' F'
-L R' F'
-L2 R F'
-D' L' R' F'
-L R F'
-U' R' B' L2 F'
-L2 U' R' F'
-L' R' F'
-U' L' R' F'
-L' F L2 R' U' F'
-L' R F'
-D R' B L2 F'
-L' F L2 R U' F'
-L' F' L2 D' R' F'
-U F' R' F'
-R D2 B'
-L U2 R' F'
-L R' U2 F'
-R' D2 B'
-U2 L R F'
-L R U2 F'
-R' B' L U' F'
-D2 R' B'
-L' R' U2 F'
-U2 L' R' F'
-L R B R2 U' F'
-L' R U2 F'
-R' B' L2 U' F'
-L R' B R2 U' F'
-B' L R' B' U' F'
-L2 U' R' U' F'
-U L R' F'
-U' L R' F'
-R B L R2 F'
-R U' L U F'
-R' B' L2 F'
-R' B L R2 F'
-L' R' B' L2 F'
-L' U' R' U' F'
-R B L' R2 F'
-B2 L' B' R2 F'
-B L' B' R' F'
-R' B L' R2 F'
-B' R' B' L' F'
-L' R' B R2 F'
-D R' B' L F'
-L2 F' D2 F'
-B R B'
-B' L' B'
-R U B'
-B R' B'
-U' R' B'
-R' U B'
-L' U' R' B'
-B' L B'
-B' L U' B'
-D' R' U B'
-R U L B'
-L R' U B'
-L U' R' B'
-U L R' B'
-R' B L2 D U' F'
-D' F R F'
-R U2 B'
-U2 R B'
-L R' D2 F'
-R' U2 B'
-D2 L' R' F'
-L R D2 F'
-R' B L2 D F'
-L' D2 R F'
-L' R' D2 F'
-D2 L R F'
-B' L' B' R2 D' F'
-L' R D2 F'
-R' B L' D F'
-B' L' B' R D' F'
-B' L' R B' D' F'
-D' B' R' B'
-R B'
-U R B'
-L' R B'
-R' B'
-U' L' R' B'
-L' R' B'
-R' B' F' U' F'
-D' R' B'
-L R B'
-D' L' R' B'
-B D' L' R B'
-L R' B'
-R' B' F D F'
-B' U L R' B'
-R' F' L' B' U' F'
-U' R U B'
-U' L' R B'
-U L' R B'
-B' L R' D2 F'
-R' U' L' U' B'
-F R' B' F'
-B' L R D2 F'
-R' B L D2 F'
-L U' R U B'
-B' L' R' D2 F'
-L' B' D2 R F'
-L' B' R' D2 F'
-B' L' R D2 F'
-R' B L' D2 F'
-L' B' R D2 F'
-L' R' B' D F'
-F D' L' D' F'
-F2 R U2 B'
-B2 L' D2 B'
-B2 L R' U2 F'
-F2 R' U2 B'
-R' B2 L2 U2 F'
-B2 L R U2 F'
-R' B L U' F'
-B2 L D2 B'
-B2 L' R' U2 F'
-L' B2 R2 U2 F'
-L R B' R2 U' F'
-B2 L' R U2 F'
-R' B L2 U' F'
-L R' B' R2 U' F'
-B L R' B' U' F'
-L2 D' R D F'
-R' D' L' D' F'
-L D' R D F'
-R B' L R2 F'
-D' L' R F'
-R' B L2 F'
-R' B' L R2 F'
-L' R' B L2 F'
-D L' R F'
-R B' L' R2 F'
-B' L' B' R2 F'
-B' L' B' R' F'
-R' B' L' R2 F'
-B R' B' L' F'
-L' R' B' R2 F'
-U' R' B' L' F'
-D' R' D' B'
-R D' L D B'
-L' D' R' D' B'
-B L R' U2 F'
-D L R' B'
-F' R' B' F'
-B L R U2 F'
-R' B' L U2 F'
-D' L R' B'
-B L' R' U2 F'
-L B U2 R' F'
-L' B R' U2 F'
-B L' R U2 F'
-R' B' L' U2 F'
-L' B R U2 F'
-L R' B' U' F'
-U' B2 L R' U2 F'
-B U L R' F'
-B U' L R' F'
-R B' U' L R' F'
-B' D' L' R F'
-U' R' B' L U2 F'
-U R' B' L U2 F'
-R' B' L F'
-B' D L' R F'
-U' L' B R' U2 F'
-L' B U' R' U' F'
-B2 L' B' R' F'
-L B' D' L' R F'
-R' B' L' F'
-B2 L' B' R F'
-L' R' B' F'
-L F' U' F'
-F' U F'
-F' U' F'
-L2 D U F'
-F D' F'
-L2 D' U F'
-L D' U' F'
-L D' U F'
-F D F'
-L' D U F'
-L2 D U' F'
-D L U F'
-L2 D' U' F'
-L' D' U F'
-U' L' D' F'
-R' D' B L U' F'
-U F' U' F'
-F' L2 U F'
-L2 D F'
-F2 R' U' F'
-L2 D' F'
-U L D' F'
-L D' F'
-L F D' R' U' F'
-L' D F'
-F' L' U F'
-D L F'
-L2 F R' D U' F'
-L' D' F'
-R' D' B L2 F'
-B D' B' L F'
-L' F' L2 D' U F'
-F' U2 F'
-R2 D B'
-L2 D U2 F'
-L' R2 D B'
-R' D B'
-U2 L D' F'
-L D' U2 F'
-R' B' L D' U' F'
-R2 D' B'
-D U2 L F'
-D L U2 F'
-R' D' B L U2 F'
-L' D' U2 F'
-D' B U2 L F'
-D' B L U2 F'
-R' D' B' L U2 F'
-F' L2 U2 F'
-F2 R' U2 F'
-F' L U2 F'
-F2 R B R2 U' F'
-F2 R U2 F'
-R' B' L2 D' F'
-D B' L D2 F'
-B' F2 R' B' U' F'
-F' L' U2 F'
-D F' R D2 B'
-D' B' L D2 F'
-L' F' R2 D B'
-L' F' L' D' U2 F'
-L' F D' R' U2 F'
-B L' B' D' F'
-R' D' B' L F'
-D F D' F'
-L2 U F'
-L U' F'
-L U F'
-D' L2 U' F'
-D' L' U F'
-F' R U' F'
-R U' B' L2 F'
-L2 U' F'
-L' U F'
-U' L' F'
-B' U' B' L' F'
-L' R U F'
-L2 F' D' R' U' F'
-L' F L2 D' U' F'
-U' F' L' R U2 F'
-L2 F'
-F2 R' F'
-L F'
-F' L R' U' F'
-F2 R F'
-F L2 D' R' F'
-F' L R U' F'
-F L D' R' F'
-L' F'
-F' L2 R' U' F'
-F' D2 R' U B'
-F D L R' F'
-F' L2 R U' F'
-F L' D' R' F'
-F' U' L' R F'
-U' R' D' B' L' F'
-L2 U2 F'
-U2 L F'
-L U2 F'
-U F' R D2 B'
-F' R U2 F'
-R B' L2 U F'
-D2 L B' D2 U' F'
-B' F' R' B' U' F'
-L' U2 F'
-U F' L2 R' U' F'
-L' F R2 D' B'
-B L' B' U F'
-D' B L' U2 F'
-L' F' D' R' U2 F'
-D' L' B U2 F'
-F' D R' B' U' F'
-U' L U F'
-F' R D2 B'
-D2 B' L D2 F'
-F' L R' U2 F'
-F' R' D2 B'
-F' U2 L R F'
-F' L R U2 F'
-F' R' B' L U' F'
-F' D2 R' B'
-F' L' R' U2 F'
-B L' B' F'
-B2 U L' B' F'
-F' L' R U2 F'
-R' D' B' L' F'
-B D' L' B' F'
-R' D' L' B' F'
-F D2 F'
-R U' B'
-R2 U B'
-L D2 U F'
-R2 U' B'
-D2 L' U F'
-D2 U' L' F'
-U' B' D2 L' F'
-L2 D2 U' F'
-L' D2 U F'
-U' L' D2 F'
-U' B' L' D2 F'
-L R2 U' B'
-R' B L2 D' U' F'
-U B L' D' U2 F'
-L' U' B D' U2 F'
-L2 D2 F'
-F R' D2 F'
-L D2 F'
-U B' L D2 F'
-D2 L' F'
-R' B L2 D' F'
-L F R D2 U' F'
-B F2 R' B' U' F'
-L' D2 F'
-L2 F R' D2 U' F'
-L F' R2 U B'
-U L' B' D2 F'
-D' F R' U2 B'
-U2 L' B D' U2 F'
-B' L' B' D' F'
-U' R' B' L' D' F'
-R2 B'
-U2 L D2 F'
-L' R2 B'
-B' L D2 U F'
-D2 L' U2 F'
-B' D2 L' U F'
-B L D' U2 F'
-F2 R' B D2 U' F'
-L R2 B'
-B' L' D2 U F'
-L B' D2 U' F'
-L' B' D2 U F'
-B L' D' U2 F'
-R' B' L' D' U2 F'
-L' B D' U2 F'
-L R' B' D' U' F'
-D' F2 R U2 F'
-B F2 R' U2 F'
-B' L D2 F'
-L F L2 R B'
-B' D2 L' F'
-F2 R' B' U2 F'
-D L' B' D2 F'
-F2 R' B' U' F'
-B' L' D2 F'
-U2 L' B' D2 F'
-L' B' D2 F'
-F2 D2 R' B' U' F'
-L B' D2 L' F'
-R' B' L' D' F'
-B2 L' B' D' F'
-L' R' B' D' F'
-B L2 U2 F'
-F2 R' D2 F'
-B2 L U2 F'
-L F' R' D2 U' F'
-F2 R D2 F'
-R B L2 U F'
-U' F R' U2 B'
-B F' R' B' U' F'
-B2 L' U2 F'
-U' B L' U2 F'
-U B L' U2 F'
-L' U' B U2 F'
-L2 F' R D2 U' F'
-R U' B' L' U2 F'
-L' F R2 U' B'
-R U' B' L' F'
-D' L' D' F'
-F R U2 B'
-F U2 R B'
-F L R' D2 F'
-F R' U2 B'
-F D2 L' R' F'
-F L R D2 F'
-R U B' L F'
-U2 B L' U2 F'
-U2 L' B U2 F'
-B' L' B' F'
-B' U L' B' F'
-F L' R D2 F'
-F' R' B L2 U' F'
-B2 D' L' B' F'
-R U L' B' F'
-D' L' D' U2 F'
-B U2 L F'
-B L U2 F'
-L' B U2 L F'
-B F' R U2 F'
-F' R' B' U2 F'
-D2 L' B U2 F'
-F' R' B' U' F'
-B L' U2 F'
-U' L' B U2 F'
-L' B U2 F'
-B2 L' B' U F'
-L' F' L2 R' B'
-R B' L' U F'
-L R2 B' R' U' F'
-L' R B' U F'
-B U' L U F'
-F U' L' R B'
-F U L' R B'
-R B' L R' F'
-F' D L R' B'
-F2 R' B' F'
-R2 B' L R' F'
-L' F2 R' B' F'
-F' D' L R' B'
-R B' L' R' F'
-B2 L' B' F'
-L' F' R B'
-R2 B' L' R' F'
-L F2 R' B' F'
-L' F' R' B'
-F' L R' B' U' F'
-R' B' U' B'
-B U' B'
-B U B'
-L' D' U' B'
-B' D B'
-D U' B'
-D U B'
-L' D U' B'
-B' D' B'
-D' U' B'
-D' U B'
-D' L' U' B'
-R' D' U' B'
-L D U' B'
-U L D B'
-D' B L R' U' F'
-F R2 F'
-L2 R2 D' F'
-L2 R2 D F'
-L R2 D' F'
-D U2 B'
-U2 L' D B'
-L R D' F'
-D B' L R2 D' F'
-D' U2 B'
-L' R2 D' F'
-D L R2 F'
-U' B L' R2 D' F'
-L' R D' F'
-D' B L2 R' F'
-D' B' L R2 F'
-L' D B' R2 D' F'
-R2 F' U2 F'
-B2 U' B'
-B2 U B'
-B L' U' B'
-D B'
-U' L' D B'
-L' D B'
-B L' D U' B'
-D' B'
-B L U' B'
-D' L' B'
-B D' L' U' B'
-L D B'
-D' B' F' R' F'
-D' B' F L F'
-D' B' L R' U2 F'
-B2 U2 B'
-B2 R U2 B'
-B L' U2 B'
-B L R2 D' F'
-B2 R' U2 B'
-R B' L2 D' F'
-B L R D' F'
-D2 L' B R2 D' F'
-B L U2 B'
-B L' R2 D' F'
-L' B R2 D F'
-L' B R2 D' F'
-B L' R D' F'
-U2 L' B R D' F'
-L' B R D' F'
-D' B' L R' F'
-F' R2 F'
-D2 U' B'
-D2 U B'
-L R' U F'
-L2 R2 U F'
-D2 L U' B'
-L R2 U F'
-U' B' L2 R F'
-L2 R2 U' F'
-L' R' U F'
-U' L' R2 F'
-U' B L' R2 F'
-L' R2 U F'
-D' B L2 R' U' F'
-D' L B' R2 U' F'
-D' L' B' R' U F'
-L2 R2 F'
-B2 L2 R' F'
-L R2 F'
-U' B' L2 R' F'
-R2 F2 R' F'
-R' F' D2 U' B'
-R2 F' L R' U' F'
-R' F' L R' U F'
-L' R2 F'
-R' F' L2 R' U' F'
-L' F' D' U2 B'
-U L' B R2 F'
-D' B' L' R2 F'
-R' F' L' R' U F'
-D' L' B' R2 F'
-D' U' B' L' R' F'
-D2 B'
-U2 L R2 F'
-L' D2 B'
-B' L R' U' F'
-D2 L B'
-R' B' L2 U F'
-B' L R U' F'
-B' R' B' L U' F'
-L D2 B'
-B' L2 R' U' F'
-L B R2 U' F'
-L' B R' U F'
-B' L2 R U' F'
-B' R' B' L2 U' F'
-L' B R2 U F'
-D' L B' R' U' F'
-U' L R' U F'
-B' L2 R' F'
-B L R2 F'
-L' B' L2 R' F'
-B' L2 R F'
-B' R' B' L2 F'
-D' L' B R2 F'
-R D B' L D' F'
-B L' R2 F'
-L B' L2 R' F'
-L' B R2 F'
-D2 R B' L D' F'
-L B' L2 R F'
-D' B' L' R' F'
-D B' L R F'
-D' L' B' R' F'
-R2 F D2 F'
-U' B'
-U B'
-L' U' B'
-R' U' B'
-D L U' B'
-L' R' U' B'
-U' B' F R F'
-L U B'
-L U' B'
-U L B'
-U' B' F' L' F'
-L R' U' B'
-B' L D U' B'
-B R' D' U B'
-L' B' R2 D' U F'
-U2 B'
-U2 L' B'
-L' U2 B'
-B' L R2 D' F'
-D2 L' R2 F'
-R B L2 D' F'
-B' L R D' F'
-D L' B' R2 D' F'
-L U2 B'
-B' L' R2 D' F'
-L' B' R2 D F'
-L' B' R2 D' F'
-B' L' R D' F'
-U L' B' R D' F'
-L' B' R D' F'
-U' R B' L' D' F'
-B'
-B2 R B'
-L' B'
-B' R' F' U' F'
-B2 R' B'
-R' B' F' U F'
-B' R F' U' F'
-B L' U' R' B'
-L B'
-B' L' F U F'
-L B' F U' F'
-L' B' F U F'
-B' L' F' D' F'
-B L U' R' B'
-L' B' F' D' F'
-L R B' D' U' F'
-U' L' U' B'
-B' F R' F'
-B' F' L F'
-B L R' D2 F'
-B' F R F'
-B D2 L' R' F'
-B L R D2 F'
-R B' L D' F'
-B' F' L' F'
-B L' R' D2 F'
-F' L' B' F'
-L' B' R' D F'
-B L' R D2 F'
-R B' L' D' F'
-L' B' R D F'
-L' R B' D' F'
-F2 U2 B'
-B2 R D2 B'
-F2 L' U2 B'
-B L R' U' F'
-B2 R' D2 B'
-R' B L2 U F'
-B L R U' F'
-B2 R' B' L U' F'
-F2 L U2 B'
-B L2 R' U' F'
-L B' R2 U' F'
-L' B' R' U F'
-B L2 R U' F'
-B2 R' B' L2 U' F'
-L' B' R2 U F'
-U' B' L' R F'
-D' L' R D' F'
-B L2 R' F'
-B' L R2 F'
-L' B L2 R' F'
-B L2 R F'
-B2 R' B' L2 F'
-D2 L' B' R2 F'
-U B' L R F'
-B' L' R2 F'
-L B L2 R' F'
-L' B' R2 F'
-U' B' L' R' F'
-L B L2 R F'
-U2 L B' R U' F'
-L U B' R U' F'
-U L' B' R F'
-D' L D B'
-B' F' R' F'
-B' F L F'
-B' L R' U2 F'
-B' F' R F'
-B' U2 L R F'
-B' L R U2 F'
-R' B' L U F'
-B' F L' F'
-B' L' R' U2 F'
-F L' B' F'
-L B' R' U' F'
-B' L' R U2 F'
-R' B' L' U F'
-L B' R U' F'
-L' R' B' U F'
-B' U' F' R' F'
-B' U L R' F'
-B' U' L R' F'
-B' L R' F'
-B D' L' R F'
-B' D' L' R' F'
-B' L R F'
-D2 L' B' R' F'
-B D L' R F'
-B' L' R' F'
-L B' U' R' F'
-L' B' R' F'
-B' L' R F'
-U2 L' B' R F'
-L' B' R F'
-R' F' L B' R' U' F'
-B2 L F' U' F'
-R D U' B'
-U2 R D U' B'
-F2 R2 D' U' F'
-R' D U' B'
-F2 R2 D' U F'
-F2 R D' U' F'
-U' B' L2 D' F'
-D2 R' D U' B'
-L' R' D' U F'
-F2 R2 D U' F'
-U' B' L' D F'
-B2 L2 D' U' F'
-D' B L2 U F'
-D' B L U' F'
-D' L U' B' U2 F'
-L F2 R2 U' F'
-F2 R' U F'
-F2 R2 U' F'
-U B' L2 D F'
-F2 R2 U F'
-D' F' D2 U' B'
-D B L2 D F'
-L F R2 D' U F'
-F R2 D F'
-R2 D' B L2 F'
-D' B L2 D F'
-D F' L R' U F'
-D' B L2 F'
-D' F U2 L' B'
-D' L' B L2 F'
-D' U B' L F'
-R' D R B'
-B2 R U' B'
-B2 R2 U B'
-B' L2 D U F'
-B2 R2 U' B'
-B' L2 D' U F'
-B' L D' U' F'
-L' B' L2 D' U F'
-B' R2 D' B'
-B' L' D U F'
-B' L2 D U' F'
-R2 D' B' L U2 F'
-F D' B' F'
-D' B' U2 L F'
-D' B' L U2 F'
-D' B' L U F'
-F2 R2 U2 F'
-B F2 R' U F'
-B' L2 D F'
-L F R2 D' U2 F'
-B' L2 D' F'
-D B' F2 R' U2 F'
-L' B' L2 D' F'
-D B' F2 R' U' F'
-B' L' D F'
-L' F R2 D' U2 F'
-D' B L D2 F'
-R2 D' B' L F'
-L B' L2 D' F'
-D' B' F2 R' F'
-D' B' L F'
-L' D B' F2 U F'
-L F' R2 U' F'
-F' R' U F'
-F' R2 U' F'
-U' B' L2 F'
-F' R2 U F'
-U F D U2 B'
-R2 U' B' L2 F'
-U' F' D2 L B'
-B2 L2 U' F'
-U' B' L2 U' F'
-U B' L2 U' F'
-B U' B' L' F'
-D' B L2 U' F'
-D' U' B' L' U2 F'
-B' D' L B' U' F'
-D' U' B' L' F'
-F2 R2 F'
-F' D2 U' B'
-F' D2 U B'
-F' L R' U F'
-F D U2 B'
-F' D2 L U' B'
-F' L R2 U F'
-D U B' L D' F'
-F D' U2 B'
-F' L' R' U F'
-F' U' L' R2 F'
-L' F' D' U' B'
-F' L' R2 U F'
-D' U2 L B' U' F'
-L F' D U B'
-D' U L' B' F'
-F' R2 U2 F'
-B' L2 U F'
-B' L U' F'
-L' B' L2 U F'
-B' D' L2 U' F'
-D2 B L' D2 U F'
-L F' L2 D B'
-D B' L D' U F'
-B' L2 U' F'
-L B' L2 U F'
-F' L' B R2 U' F'
-B2 U' B' L' F'
-D' B' L' U2 F'
-D' B' L' U F'
-D' L B' U' F'
-D' L' B' U F'
-B' L2 F'
-F' U2 L R2 F'
-L' B' L2 F'
-B2 U B' L F'
-F' D2 L B'
-F2 R F' D B'
-D B' L D' F'
-D2 L' B' F2 U F'
-L B' L2 F'
-R2 D' B' L' F'
-L' F' D' B'
-B U L' B' F'
-D' B' L' F'
-D' U2 L' B' F'
-D' L' B' F'
-F D' B' L R' F'
-R' U' R' B'
-B R U' B'
-B R2 U B'
-F' U' B' F'
-B R2 U' B'
-B L2 D' U F'
-B L D' U' F'
-U' B D2 L' F'
-F2 L2 U B'
-B L' D U F'
-B L2 D U' F'
-U' B L' D2 F'
-B L2 D' U' F'
-U' B' L' D' U2 F'
-U B' L' D' U2 F'
-U' B' L' D' F'
-F R2 D2 F'
-U2 B' F' U' F'
-B L2 D F'
-U B L D2 F'
-B L2 D' F'
-U2 B' L D' U2 F'
-L' B L2 D' F'
-U B' L D' F'
-B L' D F'
-L' F L2 U' B'
-F2 L' B' R2 U' F'
-U L' B' D F'
-L B L2 D' F'
-U2 L B' D' U' F'
-B2 D' B' L F'
-U L' B' D' F'
-B2 R2 B'
-B' F' U F'
-B' F' U' F'
-B L D2 U F'
-B' F D' F'
-B D2 L' U F'
-B' L D' U2 F'
-B' L D' U F'
-B' F D F'
-B L' D2 U F'
-F' L' B' U' F'
-L' B' D U F'
-B' L' D' U2 F'
-B' L' D' U F'
-L B' D' U' F'
-L' B' D' U F'
-L2 B D2 F'
-B' F2 R' U2 F'
-B L D2 F'
-B' F2 R' U' F'
-B D2 L' F'
-F2 R' B' U F'
-B' L D' F'
-B2 F2 R' B' U' F'
-B L' D2 F'
-B' F' L' U F'
-L' B' D F'
-L' B' F2 U F'
-B' L' D' F'
-U2 L' B' D' F'
-L' B' D' F'
-L F R B' D' U' F'
-B2 L2 U2 F'
-B L2 U F'
-B L U' F'
-L U' B' U2 F'
-B D' L2 U' F'
-U' B' F' R U2 F'
-L' B D' L2 U' F'
-U' B' F2 R F'
-B L2 U' F'
-U' B' L' U2 F'
-U B' L' U2 F'
-U' B' L' F'
-L B D' L2 U' F'
-U' B' L' R U F'
-R2 U' B' L' F'
-L' U' B' R U F'
-B L2 F'
-F U2 L' B'
-L' B L2 F'
-U B' L F'
-F D2 L' R2 F'
-F2 R' F' U' B'
-R2 U B' L F'
-D2 U L' B' F'
-L B L2 F'
-U2 L B' U' F'
-L F' U B'
-U L' B' F'
-B2 D' B' L' F'
-U2 L' B' R U F'
-R2 U L' B' F'
-F' U' B' L' R F'
-L2 B' U2 F'
-B' U2 L F'
-B' L U2 F'
-B' L U F'
-B' F' R U2 F'
-B' D' L' U F'
-B' F' R U' F'
-D2 L' B' U F'
-B' L' U2 F'
-B' L' U F'
-L B' U' F'
-L' B' U F'
-B' L' R U F'
-U' L' B' R U F'
-L' B' R U F'
-L F' R B' D' U' F'
-B' U' L U F'
-B' F2 R' F'
-B' L F'
-L' B' F2 R' F'
-B' F2 R F'
-B2 F2 R' B' F'
-D2 L' B' F'
-F' R' B' L U F'
-B' L' F'
-U2 L' B' F'
-L' B' F'
-F' L B' R' U' F'
-L B' F2 R F'
-F' R' B' L' U F'
-F' L B' R U' F'
-F' L' R' B' U F'
-F2 L F' U' F'
-F U F'
-F U' F'
-B2 R2 D' U' F'
-F' D' F'
-B2 R2 D' U F'
-B2 R D' U' F'
-D' R' U' F'
-F' D F'
-L' R' D U' F'
-B2 R2 D U' F'
-R' D U' F'
-F2 L2 D' U' F'
-U R D F'
-R D U' F'
-B D' B' R' U' F'
-U F U' F'
-F2 L2 U F'
-F2 L U' F'
-F R' U' F'
-B2 R D' F'
-D' R' F'
-F R U' F'
-D' F L R' U' F'
-F2 L2 U' F'
-R' D F'
-U' R' D F'
-R' F' L2 D U' F'
-R D F'
-B D' B' R' F'
-D' F' U2 R B'
-R' F R2 D U' F'
-F U2 F'
-B2 L2 U' B'
-B2 L' U B'
-L2 R D' B'
-F2 R' D B'
-D' R' U2 F'
-D' U2 R' F'
-D B' R' D2 U' F'
-B2 L2 U B'
-R' D U2 F'
-U2 R' D F'
-D' B' R' D2 U' F'
-R D U2 F'
-D' B R' U2 F'
-D' B U2 R' F'
-R' D' B D2 U' F'
-F2 L2 U2 F'
-F R' U2 F'
-F2 L U2 F'
-R B F R2 U' F'
-F R U2 F'
-D B' R' D2 F'
-R' B F R2 U' F'
-R' F L2 D' B'
-F2 L' U2 F'
-D' B' R' D2 F'
-D' B F2 L U2 F'
-D F L R' U2 F'
-R D' B' D2 F'
-R' D' B D2 F'
-R F' D L U2 F'
-R' D' B' F2 U' F'
-D F' D' F'
-B2 R' U F'
-B2 R2 U' F'
-R' U' F'
-B2 R2 U F'
-U R F'
-R U' F'
-U' R' B R2 F'
-F L2 U' F'
-L' R' U' F'
-D R U' F'
-U' F D2 R' B'
-L' R U' F'
-U F L2 R U' F'
-R F L2 D U' F'
-R' F' R2 D U' F'
-B2 R2 F'
-R' F'
-U' R' F'
-F L R' U' F'
-R F'
-F' L2 D' R' F'
-F L R U' F'
-F' L D' R' F'
-D R F'
-F L2 R' U' F'
-F D2 R' U B'
-F' D L R' F'
-F L2 R U' F'
-F' L' D' R' F'
-F U' L' R F'
-D U' R' B' F'
-B R2 U2 F'
-R' U2 F'
-U2 R' F'
-R B R2 U' F'
-R U2 F'
-U' R' B R2 U' F'
-R' B R2 U' F'
-B' R' B' U' F'
-D R U2 F'
-R' F R2 D' B'
-D2 B' R D2 U' F'
-D2 R' B D2 U' F'
-D B R U2 F'
-D R' B' U2 F'
-L' R' B R2 U' F'
-D R' B' U' F'
-U' R' U' F'
-R B R2 F'
-F L U2 R' F'
-F L R' U2 F'
-R' B R2 F'
-B' R' B' F'
-F L R U2 F'
-B' U' R' B' F'
-F D2 R' B'
-F L' R' U2 F'
-F U2 L' R' F'
-D2 R' B' F2 U' F'
-F L' R U2 F'
-D R' B' F'
-D U2 R' B' F'
-L D R' B' F'
-F' D2 F'
-F2 R U' B'
-F2 R2 U B'
-R' D2 U' F'
-F2 R2 U' B'
-U R D2 F'
-R D2 U' F'
-U' B' R D2 F'
-B' L2 U B'
-D2 U R F'
-D2 R U' F'
-U' B' D2 R F'
-L2 R' U B'
-R' B L' D U' F'
-R' B' R2 D U' F'
-B R' B' D U' F'
-B' R2 D2 F'
-R' D2 F'
-U' R' D2 F'
-U' B' R' D2 F'
-R D2 F'
-U2 B' R D2 U' F'
-R F' R2 U B'
-U' R' B D2 F'
-D2 R F'
-R B' R2 D F'
-U B' D2 R U' F'
-R' F D2 R U' F'
-R' B' R2 D F'
-B R' B' D F'
-R F D2 R U' F'
-U' R' B' D F'
-F2 R2 B'
-L2 R B'
-U2 R' D2 F'
-B' R' D2 U' F'
-L2 R' B'
-B D' R' U2 F'
-B' R D2 U' F'
-R' B D2 U' F'
-D2 R U2 F'
-B R' D U2 F'
-B' D2 R U' F'
-L' B' R' D2 U' F'
-B R D U2 F'
-R' B' D U2 F'
-L' B' R D2 U' F'
-R' B' D U' F'
-U' R' D2 U' F'
-B' R' D2 F'
-B F2 L U2 F'
-R' F' L' R2 B'
-B' R D2 F'
-R' B D2 F'
-U2 R' B D2 F'
-R' B' F2 U' F'
-B' D2 R F'
-D' R' B D2 F'
-F2 L' B U2 F'
-D' R' B' F2 U' F'
-R' B D2 R F'
-R' B' D F'
-U2 R' B' D F'
-L R' B' D F'
-B2 R2 U2 F'
-B2 R' U2 F'
-F2 L D2 F'
-R B' R2 U' F'
-B2 R U2 F'
-U' B R U2 F'
-R' B' R2 U' F'
-B R' B' U' F'
-F2 L' D2 F'
-R' F L2 D2 U' F'
-D2 R' B' R2 U' F'
-B' L' B' R' U' F'
-R F L2 D2 U' F'
-R' F' L2 U B'
-L' R' B' R2 U' F'
-R' U B' L' U' F'
-D' R D F'
-R B' R2 F'
-F' U2 R B'
-F' L R' D2 F'
-R' B' R2 F'
-B R' B' F'
-U2 R' B' U2 F'
-U' R' B' F'
-D2 R' B' R2 F'
-F' L' R' D2 F'
-F' D2 L R F'
-D2 U' R' B' F'
-F' L' R D2 F'
-L2 U' R' B' F'
-U2 R' B' L' U' F'
-L' U' R' B' F'
-D' R D U2 F'
-B R' U2 F'
-B U2 R' F'
-R B' U2 R' F'
-B R U2 F'
-R' B' U2 F'
-U R' B' U2 F'
-R' B' U' F'
-B D R U2 F'
-D2 R' B' U2 F'
-F L' B U2 F'
-D2 R' B' U' F'
-R F L R2 B'
-R' B' L' U' F'
-R' B' D R U' F'
-L' R' B' U' F'
-B U' R' U' F'
-F' U' L' R B'
-F' U L' R B'
-R B' U' R' F'
-F D L R' B'
-R' B' F'
-U2 R' B' F'
-R' F' L' B'
-F D' L R' B'
-D2 R' B' F'
-D2 U2 R' B' F'
-L D2 R' B' F'
-R' B' D R F'
-R' F' L B'
-L' U2 R' B' F'
-F L R' B' U' F'
-L' F' U' F'
-U2 L D U' F'
-L D U' F'
-R' D' U' F'
-D2 L' D U' F'
-D' U F'
-D' U' F'
-B' U' B' D' F'
-L' D U' F'
-D U F'
-D U' F'
-D' U' B' D2 F'
-L' D' U' F'
-D' U' B U2 F'
-B D' B' U' F'
-D' F' R' D2 U' F'
-L' D L F'
-F2 U F'
-F2 U' F'
-F' L2 D U F'
-D' F'
-F' L2 D' U F'
-F' L D' U' F'
-F D' R' U' F'
-D F'
-F' L' D U F'
-F' L2 D U' F'
-F R' D U' F'
-B D' B' F'
-F' L' D' U F'
-F R D U' F'
-U' R' D' B' F'
-U' L D U' F'
-U2 F2 U' F'
-B2 D2 U' F'
-B' U' B' D2 F'
-D' U2 F'
-D B' D2 U F'
-D B' D2 U' F'
-B' R' B' D' U' F'
-D U2 F'
-R' D' B U2 F'
-D' B' D2 U' F'
-U2 F R' D U' F'
-D' B U2 F'
-R' D' B' U2 F'
-L D' B U2 F'
-R' D' B' U' F'
-F2 U2 F'
-F' R2 D B'
-F' L2 D U2 F'
-F L2 R D' B'
-D B' D2 F'
-F D' R' U2 F'
-F' L D' U2 F'
-L2 R' D' B' F'
-D' B' D2 F'
-F R' D U2 F'
-F' D L U2 F'
-B2 U L B' D F'
-F' L' D' U2 F'
-R' D' B' F'
-U2 R' D' B' F'
-L R' D' B' F'
-L' U' L' F'
-U F'
-U' F'
-B' U' B' F'
-R U F'
-F L2 D' U F'
-F L D' U' F'
-F' D' R' U' F'
-L' U' F'
-F L' D U F'
-F L2 D U' F'
-F' R' D U' F'
-F L2 D' U' F'
-F L' D' U F'
-F' R D U' F'
-D R U' B' F'
-F'
-B' F' U' B'
-B' F' U B'
-F' R' F' U' F'
-B F' D B'
-F' D' F' R' F'
-F' R F' U' F'
-R' F' D U B'
-B F' D' B'
-F' L' F U F'
-F' U' F' L' F'
-F' R D' U B'
-F' L' F' D' F'
-R F' D' U' B'
-F' R' D' U B'
-L R F' D' U' B'
-U2 F'
-F R2 D B'
-D2 B' D2 U' F'
-F' L2 R D' B'
-F R' D B'
-F' D' R' U2 F'
-F L D' U2 F'
-B' R U' B' F'
-F R2 D' B'
-F' R' D U2 F'
-B L' B' U' F'
-B2 L' U' B' F'
-F L' D' U2 F'
-D R B' U F'
-D R2 B' R' U' F'
-R' D' L' B' U' F'
-D2 B' D2 F'
-B' F' R B'
-B F' L' B'
-B2 F' L' U' B'
-B' F' R' B'
-R' F' D B'
-B' F' R' U B'
-R' F' L' D B'
-B F' L B'
-F' R D' B'
-B2 L' F' U B'
-L F' R D' B'
-F' R' D' B'
-R' F' L D B'
-L F' R' D' B'
-F' R' B' L2 D U' F'
-D L' D U' F'
-D2 U F'
-D2 U' F'
-U' B' D2 F'
-D2 L' U' F'
-U' B D' U2 F'
-U B D' U2 F'
-R U' B D2 F'
-L' D2 U' F'
-U' B D U2 F'
-U B D U2 F'
-L' U' B' D2 F'
-B2 D' B' U2 F'
-R U' B' D U2 F'
-B' L' B' D' U' F'
-R U' B' D F'
-D2 F'
-F' R U' B'
-F' R2 U B'
-F R' D2 U' F'
-F' R2 U' B'
-F' D2 L' U F'
-F R D2 U' F'
-U' R' B' D' F'
-F' L2 D2 U' F'
-F' L' D2 U F'
-F D2 R U' F'
-D' U' R' B' D' F'
-F' L R2 U' B'
-B R' D' B' F'
-B2 L D' B' F'
-L' U' R' B' D' F'
-D2 U2 F'
-B' D2 U F'
-B' D2 U' F'
-U' F' L' R2 B'
-B D' U2 F'
-R' B' D' U2 F'
-R2 B R' D2 U' F'
-R' B' D' U' F'
-B D U2 F'
-U' L' B' D2 U' F'
-L' B' D2 U' F'
-D' R' B' D' U' F'
-D' F' L2 R' B'
-R B' D U F'
-B2 L' B' D' U' F'
-L' R' B' D' U' F'
-B' D2 F'
-F L2 R B'
-F' L' R2 B'
-F2 U F' R B'
-F L2 R' B'
-R' B' D' F'
-U2 R' B' D' F'
-F R' B D2 U' F'
-F' L R2 B'
-D' R' B' D' F'
-B2 L B' D F'
-F' L' B' D2 U F'
-D' F' R' B'
-D F' L R B'
-D' F' L' R' B'
-F R' B' D U' F'
-B2 U2 F'
-U' B U2 F'
-U B U2 F'
-F' R' D2 U' F'
-F R2 U' B'
-R U' B' U2 F'
-F' R D2 U' F'
-R U' B' F'
-F L2 D2 U' F'
-F L' D2 U F'
-F' D2 R U' F'
-D2 R U' B' F'
-F L R2 U' B'
-L2 R U' B' F'
-B2 D' L' B' U' F'
-L' R U' B' F'
-U2 B U2 F'
-B F' R B'
-B' F' L' B'
-F' R U B'
-B F' R' B'
-R F' U' B'
-F' R' U B'
-R F' L' U' B'
-B' F' L B'
-B' F' L U' B'
-F' D' R' U B'
-L' F' R U B'
-F' L R' U B'
-R F' L U' B'
-L' F' R' U B'
-F' R' B L2 D U' F'
-B U2 F'
-F' L2 R B'
-F L' R2 B'
-U F' R B'
-F' L2 R' B'
-R B' U F'
-R2 B' R' U' F'
-U' F' L' R' B'
-F L R2 B'
-D2 R B' U F'
-B2 L' B' U' F'
-U F' L R B'
-F2 D' F' R' B'
-L2 F' R' B' U' F'
-L' R2 B' R' U' F'
-F' R' B' D U' F'
-F' D' B' R' B'
-F' R B'
-F' U R B'
-F' L' R B'
-F' R' B'
-L2 F2 R' B' F'
-F' L' R' B'
-F' R' B' F' U' F'
-F' D' R' B'
-F' L R B'
-R2 F2 L' B' F'
-B' L' F' R U B'
-F' L R' B'
-F' R' B' F D F'
-B' L' F' R' U B'
-L' F' R' B' F' U' F'
-R' F U F'
-F2 R D U' B'
-L' D' U B'
-R2 D' U' F'
-F2 R' D U' B'
-R2 D' U F'
-R D' U' F'
-U' B R D' F'
-L D' U B'
-R' D U F'
-R2 D U' F'
-U' B R2 D F'
-R2 D U F'
-D' B' R' U F'
-D' B' R2 U' F'
-B' D' B' R' U' F'
-R' F2 L2 U F'
-R2 D' F'
-F R2 U' F'
-U' B R2 D' F'
-R D' F'
-D B' R2 D' F'
-L2 D' B' R2 F'
-R' F R2 D' U' F'
-R2 D F'
-D' B' R2 D' F'
-D F D2 U B'
-R' F R' D U' F'
-D' B' R2 F'
-B' D' B' R' F'
-L D' B' R2 F'
-D' U' B' R' F'
-L' D' L' B'
-R2 D' U2 F'
-L2 D' B'
-B R2 D' U' F'
-L2 D B'
-B R2 D' U F'
-B R D' U' F'
-D B R' D2 U' F'
-L D' B'
-R2 D' B U2 F'
-B R2 D U' F'
-L' B R2 D' U' F'
-F' D' B' F'
-D' B' R' U2 F'
-D' B' U2 R' F'
-D' B' R' U' F'
-F R2 U2 F'
-B R2 D' F'
-B F R2 U' F'
-R2 F' L D' U2 F'
-B R D' F'
-D B R' D2 F'
-D' F L' D2 B'
-L2 D' B' R' F'
-B R2 D F'
-D' B R' D2 F'
-L B R2 D F'
-D' B' F R' U' F'
-D' B' U' R' U' F'
-D' B' R' F'
-D' B' U' R' F'
-L D' B' R' F'
-R' B2 R' U F'
-R' U F'
-R2 U' F'
-U' B R2 F'
-R2 U F'
-U' B R2 U F'
-U B R2 U F'
-B U' B' R F'
-L' R2 U' F'
-L2 U' B R2 F'
-U' F' D' U2 B'
-L' U' B R2 F'
-D B' R2 U F'
-D U' B' R U2 F'
-R2 F' R' D U' F'
-D U' B' R F'
-R2 F'
-F D2 U' B'
-F D2 U B'
-F L R' U F'
-F' D U2 B'
-F D2 L U' B'
-F L R2 U F'
-R F' D U B'
-F' D' U2 B'
-F L' R' U F'
-F U' L' R2 F'
-D2 U' R B' D' F'
-F L' R2 U F'
-R' F' D' U' B'
-D U B' R U' F'
-D' L' U' B' R' F'
-R2 U2 F'
-B R' U F'
-B R2 U' F'
-U' F L' D2 B'
-B R2 U F'
-R F' L2 D B'
-D B R D2 U' F'
-B2 U' B' R F'
-B L' R2 U' F'
-L B' L2 R' U' F'
-L' B R2 U' F'
-D2 R B' D' U' F'
-D B' R U2 F'
-D R' B' U F'
-D B' R U' F'
-D' L' B' R' U' F'
-B R2 F'
-D2 B R' D2 F'
-F L' D2 B'
-B2 U' B' R' F'
-F D2 L B'
-R F' D B'
-L2 D B' R F'
-B2 U' R' B' F'
-F L D2 B'
-D2 R B' D' F'
-F2 L' F' D' B'
-F L' B R' U F'
-D B' R F'
-B' D R' B' F'
-L D B' R F'
-F' D' B' L R' F'
-L' U L B'
-L2 U' B'
-L' U B'
-F U' B' F'
-R2 D2 U F'
-B' R2 D' U F'
-B' R D' U' F'
-U' B R D2 F'
-L2 U B'
-B' R' D U F'
-B' R2 D U' F'
-U' B D2 R F'
-B' R2 D U F'
-U' B' R D U2 F'
-L' B' R D' U' F'
-U' B' R D F'
-R2 D2 F'
-B' R2 D' F'
-B' F R2 U' F'
-U' B R' D2 F'
-B' R D' F'
-R' F L2 U' B'
-R2 F R' D2 U' F'
-U' R B' D' F'
-B' R2 D F'
-U2 B D2 R U' F'
-L B' R2 D F'
-U' B' R' D F'
-D F' L U2 B'
-B2 D' B' R' F'
-U B' R D U' F'
-L' U' R B' D' F'
-L2 B'
-B' F U F'
-B' F U' F'
-B R' D2 U' F'
-B' F' D' F'
-R B' D' U2 F'
-B R D2 U' F'
-R B' D' U' F'
-B' F' D F'
-B' R' D U2 F'
-B D2 R U' F'
-B' R' D U' F'
-B' R D U2 F'
-R' B' D U F'
-B' R D U' F'
-L' R B' D' U' F'
-R2 B' D2 F'
-B R' D2 F'
-B' F2 L U2 F'
-B' F R' U' F'
-B R D2 F'
-R B' D' F'
-B' F R U' F'
-B2 R' B' F2 U' F'
-B D2 R F'
-B' R' D F'
-F2 L B' U' F'
-F2 L' B' U F'
-B' R D F'
-B2 R' B' D F'
-F' L' B' D' F'
-R F' L B' D' U' F'
-B' R2 U2 F'
-B' R' U F'
-B' R2 U' F'
-R' F' R' D2 U' F'
-B' R2 U F'
-U' B' R U2 F'
-U B' R U2 F'
-U' B' R F'
-B' L' R2 U' F'
-U F' L U2 B'
-L' B' R2 U' F'
-U' B' D R F'
-L B L2 R U' F'
-L2 U' B' R F'
-U B' L' R U' F'
-L' U' B' R F'
-B' R2 F'
-F' U2 L' B'
-F' L' U2 B'
-U' B' R' F'
-U2 B' R U2 F'
-R' F' U' B'
-U B' R U' F'
-B U' R' B' F'
-F' L U2 B'
-L2 U' B' R' F'
-F2 L F' U B'
-L' U' B' R' F'
-B2 D B' R F'
-B2 D R' B' F'
-L' U B' R U' F'
-F U' B' L' R F'
-R2 B U2 F'
-B' R' U2 F'
-B' U2 R' F'
-B' R' U' F'
-B' R U2 F'
-R' B' U F'
-B' R U' F'
-B2 R' B' U' F'
-B' D R U2 F'
-B' L' R' U' F'
-B' D R U' F'
-L' B' R' U' F'
-B' L' R U' F'
-U' L' B' R U' F'
-L' B' R U' F'
-R F L B' D' U' F'
-B' U' R' U' F'
-B' R' F'
-B' U' R' F'
-L2 B' L' R' F'
-B' R F'
-B2 R' B' F'
-L2 B' L' R F'
-F R' B' L U F'
-B' D R F'
-L B' L' R' F'
-F2 L' B' F'
-F L B' R' U' F'
-L B' L' R F'
-F R' B' L' U F'
-F L B' R U' F'
-F L' R' B' U F'
-L' F2 R2 D U' F'
-R' D' U F'
-B2 L D U' F'
-R U' B R D' F'
-R D' U F'
-D B' R' D' U F'
-D B L D U' F'
-B U' B' D' F'
-B2 L' D U' F'
-U' B' L' D U' F'
-U B' L' D U' F'
-D' U' B D2 F'
-L D' B L U' F'
-D' U' B' U2 F'
-B' D' B' U' F'
-D' U' B' F'
-R' D' R' F'
-F' R D U' B'
-F L' D' U B'
-F R2 D' U' F'
-F' R' D U' B'
-F R2 D' U F'
-F R D' U' F'
-D F2 U' B' F'
-F L D' U B'
-F R' D U F'
-F R2 D U' F'
-D' F2 U' B' F'
-B' D' B' F'
-D' F' U' B'
-D' F' U B'
-U L D' B' F'
-R' D' R' U2 F'
-B R' D' U F'
-B' L D U' F'
-B2 U' B' D2 F'
-B R D' U F'
-D B D2 U F'
-D B D2 U' F'
-L2 D' B' U F'
-B' L' D U' F'
-R2 D' B' U2 F'
-D' B D2 U' F'
-R2 D' B' U' F'
-D' B' U2 F'
-D' B' U F'
-D' B' U' F'
-L D' B' U F'
-B R' D' R' F'
-F R2 D' U2 F'
-F L2 D' B'
-B2 F2 U' B' F'
-D B D2 F'
-D B' F2 U F'
-L2 D' B' F'
-B2 U' R' B' D' F'
-D' B D2 F'
-R2 D' B' F'
-D' B' F2 U' F'
-L R2 D' B' F'
-D' B' F'
-B' R' D' B' F'
-L D' B' F'
-F D' B' R' U' F'
-R' U R F'
-F R D U' B'
-F' L' D' U B'
-B U' B' F'
-F R' D U' B'
-F' R2 D' U F'
-F' R D' U' F'
-U' F' D B'
-F' L D' U B'
-F' R' D U F'
-F' R2 D U' F'
-U' F' D' B'
-F' R2 D U F'
-D' L2 U' B' F'
-D R2 U' B' F'
-D' L' U' B' F'
-F' R' B' U' B'
-B F' U' B'
-B F' U B'
-D2 F2 U' B' F'
-B' F' D B'
-F' D U' B'
-F' D U B'
-F' L' D U' B'
-B' F' D' B'
-F' D' U' B'
-F' D' U B'
-L F' D' U' B'
-U2 F2 D' B' F'
-F' L D U' B'
-L' F' D U B'
-F' D' B L R' U' F'
-B R' U R F'
-F' R2 D' U2 F'
-F' L2 D' B'
-B2 U' B' F'
-F' L2 D B'
-D B' D' U F'
-D B' D' U' F'
-B2 R U' B' F'
-F' L D' B'
-D2 B' D' U F'
-D2 B' D' U' F'
-B L' U' B' F'
-F2 D' B' F'
-D' U' L' B' U' F'
-D' L' B' U' F'
-F' D' B' R' U' F'
-D2 B D2 F'
-B2 F' U' B'
-B2 F' U B'
-B F' L' U' B'
-F' D B'
-B2 R F' U' B'
-F' L' D B'
-B F' L' D U' B'
-F' D' B'
-B F' L U' B'
-L F' D' B'
-B L F' D' U' B'
-F' L D B'
-F' D' B' F' R' F'
-F' D' B' F L F'
-F' D' B' L R' U2 F'
-D' R D' U F'
-B' R' D' U F'
-B L D U' F'
-U' B D2 F'
-B' R D' U F'
-U' B' D' U2 F'
-U B' D' U2 F'
-U' B' D' F'
-B L' D U' F'
-U' B' D U2 F'
-U B' D U2 F'
-U' B' D F'
-B' D' B' U2 F'
-B2 D' B' U F'
-B2 D' B' U' F'
-L' U' B' D' F'
-B' R' D' R' F'
-F L2 U' B'
-F L' U B'
-F2 U' B' F'
-U2 B' D' U2 F'
-U2 B' D' U' F'
-U B' D' U' F'
-U L2 B' L' D' F'
-F L2 U B'
-U2 B' D U' F'
-U B' D U' F'
-U L B' D F'
-B2 D' B' F'
-B2 R' D' B' F'
-B' L D' B' F'
-F' U' B' L' D' F'
-B' L' F' U' F'
-B D2 U F'
-B D2 U' F'
-B' R' D' U' F'
-B' D' U2 F'
-B' D' U F'
-B' D' U' F'
-B2 R' B' D' U' F'
-B' D U2 F'
-B' D U F'
-B' D U' F'
-L B' D U F'
-B' L' D' U' F'
-U' L' B' D' U' F'
-L' B' D' U' F'
-D' F' R B' D' U' F'
-B D2 F'
-B' F2 U F'
-B' F2 U' F'
-F2 U' F' L' B'
-B' D' F'
-B2 R' B' D' F'
-L2 B' L' D' F'
-F R B' D' U' F'
-B' D F'
-U2 L B' D F'
-L B' D F'
-B' F R' D U' F'
-D F' L B'
-B' F' L' D' U F'
-F' L B' D' U' F'
-F' L' B' D' U F'
-B' R' U R F'
-U' B' U2 F'
-U B' U2 F'
-U' B' F'
-R2 U' B' U2 F'
-U' B' R U F'
-R2 U' B' F'
-B R U' B' F'
-F' L2 U B'
-L2 U' B' F'
-U B' L' U' F'
-L' U' B' F'
-L2 R2 U' B' F'
-B2 D R B' U F'
-L' R2 U' B' F'
-F U' B' L' D' F'
-U2 B' U2 F'
-F' U' B'
-F' U B'
-F' L' U' B'
-F' R' U' B'
-F' D L U' B'
-F' L' R' U' B'
-F' U' B' F R F'
-F' L U B'
-F' L U' B'
-L' F' U B'
-F' U' B' F' L' F'
-F' L R' U' B'
-B R F' D' U' B'
-B F' R' D' U B'
-F' L' B' R2 D' U F'
-B' U2 F'
-B' U F'
-B' U' F'
-U' F' L' B'
-B' R U F'
-B2 R B' U F'
-D2 L' B' U' F'
-F' R B' D' U' F'
-B' L' U' F'
-U' L' B' U' F'
-L' B' U' F'
-B' F' R' D U' F'
-F2 D F' L B'
-B' F L' D' U F'
-F L B' D' U' F'
-F L' B' D' U F'
-B' F'
-B2 F' R B'
-F' L' B'
-B' F' R' F' U' F'
-B2 F' R' B'
-F' R' B' F' U F'
-B' F' R F' U' F'
-B R F' L' U' B'
-F' L B'
-B' F' L' F U F'
-F' L B' F U' F'
-F' L' B' F U F'
-B' F' L' F' D' F'
-B R F' L U' B'
-F' L' B' F' D' F'
-F' L R B' D' U' F'
+h2h
+h0h
+8e2e
+f3h
+5e8e
+6e2e
+360h
+f5h
+bc0e
+2ebe
+650h
+be5e
+285h
+850h
+8d732e
+eae
+c8e
+e9e
+a83e
+c6e
+a58e
+a63e
+958e
+ebe
+b83e
+165h
+398e
+b63e
+b58e
+639e
+28hb3e
+ac1e
+h6h
+fbh
+gb2h
+h8h
+36h
+h80h
+b36h
+f9h
+65h
+065h
+5b6h
+85h
+936h
+85bh
+8ha32e
+c282e
+h61h
+gb1h
+d981e
+h81h
+8d71e
+d961e
+8ha3e
+g91h
+db81e
+bda1e
+gbh75e
+db61e
+8hb3e
+gbh65e
+fb6h5e
+cae
+e8e
+c9e
+982e
+e6e
+a06e
+962e
+906e
+cbe
+a82e
+480h
+82be
+a62e
+b06e
+2b6e
+80ha2e
+2e8e
+a8e
+928e
+98e
+a6e
+5b8e
+96e
+28hae
+a28e
+b8e
+2b8e
+bca82e
+b6e
+38fae
+bca62e
+bea58e
+0e8e
+64h
+918e
+981e
+84h
+196e
+961e
+8h92e
+48h
+b81e
+1b8e
+96f72e
+b61e
+8ha2e
+98f72e
+h98h2e
+a282e
+098e
+298e
+6f97e
+6290e
+8hae
+8f97e
+b8hae
+b282e
+6fb7e
+gbh7e
+fbh8e
+8fb7e
+h8hbe
+b8f7e
+38h9e
+ae4e
+f6h
+hbh
+60h
+f8h
+28h
+80h
+b28h
+h9h
+h92h
+580h
+609h
+980h
+928h
+098h
+8fa32e
+5c6e
+61h
+16h
+984e
+81h
+4b8e
+964e
+8fa3e
+b46e
+b84e
+496e
+hbh75e
+b64e
+8fb3e
+hbh65e
+hb6h5e
+5h8h
+6h
+06h
+b6h
+8h
+2b8h
+b8h
+8he2e
+58h
+96h
+5b8h
+f5b6h
+98h
+8hc3e
+h098h
+8ebh2e
+260h
+2b6h
+0b6h
+h984e
+82b2h
+c8he
+h964e
+8f94e
+9260h
+hb84e
+bh46e
+bh84e
+hb64e
+8fb4e
+bh64e
+b8h3e
+c5b5e
+d61h
+gb4h
+g981e
+d81h
+8ga1e
+g961e
+8f92e
+g94h
+gb81e
+bg71e
+96h72e
+gb61e
+8fa2e
+98h72e
+f98h2e
+a563e
+85b5e
+9563e
+6h97e
+5b6e
+8fae
+8h97e
+b8fae
+3b6e
+6hb7e
+hbh7e
+hbh8e
+8hb7e
+f8hbe
+b8h7e
+28hbe
+585h
+6593h
+b585h
+f981e
+398h
+e8he
+f961e
+8h91e
+598h
+fb81e
+9f18e
+bf81e
+fb61e
+8hb1e
+bf61e
+98h2e
+2g981e
+f098e
+f298e
+6h298e
+h5b6e
+28h91e
+08h91e
+8h9e
+h3b6e
+2bf81e
+bf282e
+gbh8e
+9h5b6e
+8hbe
+gbh6e
+b8he
+9e2e
+e0e
+e2e
+a30e
+c5e
+a50e
+952e
+950e
+c3e
+b30e
+a32e
+390e
+a52e
+b50e
+2b5e
+85f92e
+0e2e
+ea0e
+a3e
+d82e
+a5e
+095e
+95e
+9c582e
+b3e
+eb0e
+39e
+ac832e
+b5e
+85fae
+f5h9e
+bea50e
+e1e
+73h
+a31e
+b73h
+83h
+195e
+951e
+8h952e
+75h
+319e
+391e
+85f91e
+b51e
+5f19e
+5f91e
+85h91e
+ea1e
+d81e
+e91e
+d6f72e
+d61e
+8ha5e
+3h94e
+hd8h2e
+eb1e
+3e64h
+5h94e
+be73h
+beb51e
+bc581e
+fbh5e
+85h9e
+3c5e
+a0e
+92e
+90e
+5a2e
+5b0e
+e62e
+62hae
+a2e
+b0e
+2be
+h2hbe
+b60e
+ae582e
+bca52e
+2eb61e
+ae
+d8e
+9e
+e982e
+d6e
+ca58e
+e962e
+c958e
+be
+ea82e
+e480h
+c398e
+ea62e
+cb58e
+e2b6e
+285hbe
+a1e
+19e
+91e
+0e64h
+e61e
+6ha0e
+49h42e
+he8h2e
+b1e
+0ea82e
+bc75h
+fbh0e
+5fb1e
+be581e
+5bf1e
+e38h2e
+290e
+e64h
+4h94e
+e981e
+e84h
+e196e
+e961e
+e8h92e
+e48h
+eb81e
+fbhe
+g0bhe
+eb61e
+85hbe
+f5bhe
+85bhe
+c4e
+62h
+70h
+940e
+72h
+4b0e
+42be
+2h4be
+a42e
+b40e
+2b4e
+2hb4e
+972h
+8fa52e
+0fb51e
+b2f51e
+a4e
+c84e
+94e
+0h94e
+4be
+8fa5e
+9c642e
+fd8h2e
+b4e
+ac842e
+9e70h
+0bh4e
+5c81h
+1bf51e
+hbh5e
+28hb5e
+7h
+194e
+b7h
+h940e
+4b1e
+h4b0e
+f951e
+d8f42e
+97h
+hb40e
+9h42e
+bh40e
+fb51e
+8hb51e
+bf51e
+98h52e
+5d61e
+fd81e
+h94e
+9ca6h
+h4be
+d8h1e
+3bh4e
+d8h2e
+hb4e
+1bh4e
+bh4e
+d48h2e
+9h4be
+8hb5e
+gbh5e
+b8h5e
+fa1e
+d84e
+g91e
+9e842e
+d64e
+6fa0e
+2c81h
+fe8h2e
+gb1e
+2fb1e
+0fb1e
+b2f1e
+ae642e
+62hb1e
+bc72h
+62hbe
+5b5e
+c61h
+c16h
+c984e
+c81h
+c4b8e
+c964e
+60h9e
+1fb1e
+1bf1e
+hbhe
+h0bhe
+cb64e
+e8fa2e
+g5bhe
+60bhe
+5b51e
+f19e
+f91e
+bf19e
+fe61e
+e8h1e
+4bf1e
+e8h2e
+fb1e
+2bf1e
+bf1e
+gbh0e
+bea8h
+6hb0e
+97h82e
+b6h0e
+f290e
+c2b6h
+c0b6h
+6h98e
+e398h
+d8he
+7h98e
+bd8he
+e598h
+6hb8e
+gbhe
+be6h
+7hb8e
+9d8he
+be8h
+e98h2e
+8h2h
+f2h
+f0h
+b52h
+h3h
+32h
+30h
+b32h
+h5h
+52h
+50h
+5b2h
+852h
+932h
+093h
+5f982e
+c7e
+a75e
+a73e
+975e
+31h
+1b3h
+965e
+3h975e
+51h
+b75e
+397e
+2fb75e
+b65e
+5fa8e
+5h97e
+b3h75e
+7e1e
+g2h
+g0h
+fb2h
+3h
+2b3h
+b3h
+fb32h
+5h
+f92h
+5bh
+f5b2h
+93h
+5he8e
+5hc9e
+5h981e
+g1h
+g61h
+fb1h
+f975e
+g81h
+6ha5e
+f965e
+4bf75e
+f91h
+fb75e
+bf73e
+bf75e
+fb65e
+1bf65e
+bf65e
+5h98e
+e7e
+42h
+40h
+980e
+a70e
+492h
+970e
+2ha6e
+a72e
+b80e
+2b7e
+2fb7e
+b70e
+5fa82e
+59h72e
+5bh80e
+a7e
+ga8e
+97e
+2ha8e
+7d8e
+8e42h
+7e982e
+8e980e
+b7e
+8ea82e
+be51h
+0bf7e
+5hb7e
+8eb80e
+5bh7e
+52hb8e
+4h
+197e
+b4h
+h982e
+49h
+8ha0e
+h962e
+h8h92e
+94h
+ha82e
+9f72e
+bf80e
+ha62e
+h8ha2e
+bf70e
+59h82e
+2980e
+ha8e
+f97e
+bha8e
+ha6e
+h8hae
+5bf7e
+63h95e
+fb7e
+9ha8e
+bf7e
+46h95e
+9ha6e
+5hb8e
+3h96e
+5bh8e
+7c4e
+2h
+0h
+b2h
+82h
+392h
+b82h
+2hc6e
+90h
+92h
+09h
+2hebe
+982h
+h932h
+f850h
+bh750e
+1h
+1bh
+b1h
+h975e
+4b7e
+6fa5e
+h965e
+3bh75e
+91h
+hb75e
+bh73e
+bh75e
+hb65e
+0bh65e
+bh65e
+26hb5e
+h
+g6h
+bh
+h8e2e
+g8h
+8he0e
+h6e2e
+fb28h
+9h
+hbc0e
+9hc2e
+bhc0e
+hbe5e
+f928h
+bhe5e
+96h52e
+2b2h
+hc8e
+he9e
+f984e
+hc6e
+f4b8e
+f964e
+6h95e
+hebe
+fb84e
+ebhe
+bh83e
+fb64e
+6hb5e
+bh63e
+b6h5e
+d1h
+g64h
+db1h
+f982e
+g84h
+8fa0e
+f962e
+g8h92e
+d91h
+fa82e
+9h72e
+bh80e
+fa62e
+g8ha2e
+bh70e
+2hb6e
+5b65e
+fa8e
+h97e
+bfa8e
+fa6e
+g8hae
+4bh7e
+0h96e
+hb7e
+9fa8e
+bh7e
+2hb8e
+9fa6e
+19h62e
+90h62e
+0bh6e
+593h
+he8e
+hc9e
+h981e
+he6e
+h196e
+h961e
+8h90e
+hcbe
+hb81e
+cbhe
+9h82e
+hb61e
+8hb0e
+9h62e
+b8h0e
+h2e8e
+h098e
+h298e
+h98e
+f5b6e
+h5b8e
+h96e
+4bh8e
+f3b6e
+hb8e
+9h28e
+bh8e
+hb6e
+1bh6e
+bh6e
+8e9h82e
+g9e2e
+632h
+1632h
+d752e
+832h
+d750e
+d652e
+2ha5e
+4832h
+b850e
+d732e
+2hb3e
+ga52e
+5fa0e
+5f92e
+592h1e
+9d72e
+d80e
+d72e
+0ha3e
+d70e
+5e42h
+3fa3e
+9c750e
+c73e
+75fae
+5fa3e
+3e980e
+5fae
+5c1bh
+5bfae
+50h9e
+836h
+g62h
+g70h
+ha30e
+g72h
+ha50e
+h952e
+bha50e
+h75h
+hb30e
+ha32e
+75h91e
+c5he
+5h19e
+5h91e
+5h90e
+d71e
+fd80e
+ha3e
+9c751e
+ha5e
+3hd81e
+bha5e
+3hd82e
+hb3e
+bc751e
+5f94e
+75h9e
+9ha5e
+5hd8e
+5h9e
+b3hd0e
+9e72e
+e80e
+e72e
+2hae
+e70e
+0c31h
+72hae
+2e49h
+ga2e
+2ha2e
+0ha2e
+f2hbe
+5fa2e
+52hb1e
+h59h2e
+52hbe
+d7e
+e42h
+e40h
+e980e
+c31h
+e492h
+e970e
+30h95e
+c51h
+eb80e
+e2b7e
+be52h
+eb70e
+519h2e
+9e30h
+50bhe
+e71e
+ha0e
+h92e
+bha0e
+h5a2e
+4fb40e
+9ea3h
+3h950e
+ha2e
+9ha0e
+ebf72e
+g2hbe
+5hb1e
+5hb0e
+59h2e
+5bh0e
+hae
+e197e
+bhae
+g0h9e
+e49h
+d6e3h
+3h95e
+4bhd0e
+9hae
+75hbe
+be5h
+f0bhe
+5hbe
+51bhe
+5bhe
+c5h98e
+828h
+f62h
+f70h
+e2he
+f72h
+fa50e
+f952e
+2f4be
+da0h
+fb30e
+fa32e
+2fb4e
+fa52e
+2hb51e
+0hb51e
+2hb5e
+c74e
+1he2e
+fa3e
+0f94e
+fa5e
+1h951e
+bfa5e
+0h95e
+fb3e
+bca2h
+dbh72e
+0bh3e
+9fa5e
+19h52e
+g5h9e
+0bh5e
+g7h
+he0e
+he2e
+f940e
+hc5e
+f4b0e
+h951e
+h950e
+hc3e
+fb40e
+ebh2e
+bh30e
+hb51e
+hb50e
+9h52e
+bh50e
+af4e
+hd81e
+f94e
+hd82e
+f4be
+d8h0e
+h95e
+gd8h2e
+fb4e
+heb0e
+bh3e
+bhd0e
+hb5e
+1bh5e
+bh5e
+9c6h52e
+ga1e
+fa0e
+f92e
+92h1e
+f5a2e
+2he61e
+bf5a2e
+2hd6e
+fa2e
+2hb1e
+0hb1e
+2hbe
+9f5a2e
+2hb60e
+72hbe
+b2h60e
+fae
+c1bh
+bfae
+0h9e
+c4b7e
+d8e2h
+70h9e
+40bhe
+9fae
+19h2e
+9e0h
+0bhe
+g5hbe
+1bh60e
+70bhe
+e2hb6e
+ah1e
+h19e
+h91e
+h90e
+he61e
+h5b0e
+he62e
+4bh0e
+hb1e
+hb0e
+9h2e
+bh0e
+hb60e
+2bh60e
+bh60e
+9e6h52e
+h290e
+hd8e
+h9e
+bhd8e
+hd6e
+gd8he
+4bhe
+e8h90e
+hbe
+1bhe
+bhe
+e9h82e
+9hd6e
+e8hb0e
+e9h62e
+eb8h0e
+d9e2e
+c0e
+c2e
+g752e
+e5e
+g750e
+g652e
+582e
+e3e
+b832e
+g732e
+832e
+da52e
+063e
+632e
+f5h82e
+0c2e
+da0e
+d92e
+c82e
+g65e
+58e
+c62e
+5c982e
+da2e
+83e
+283e
+8ea32e
+63e
+f5h8e
+5e16h
+8c732e
+c1e
+ga2h
+gb0h
+a65h
+d83h
+581e
+518e
+3h842e
+ga0h
+831e
+183e
+5h842e
+631e
+5f81e
+5f18e
+85f42e
+da1e
+c81e
+d91e
+6fc72e
+c61e
+3h84e
+8fc72e
+8ca5h
+db1e
+5h84e
+5fd91e
+3c981e
+65h4e
+85f4e
+6e391e
+85hd2e
+3e5e
+g80e
+g72e
+82e
+g70e
+06e
+62e
+28f7e
+ca2e
+b82e
+362e
+2c48h
+b62e
+0ca62e
+6ca32e
+8e732e
+g7e
+8e
+28e
+c982e
+6e
+ea58e
+c962e
+e958e
+36e
+ca82e
+c480h
+e398e
+ca62e
+eb58e
+c2b6e
+328he
+f71e
+81e
+18e
+6f72e
+61e
+28f72e
+8f72e
+h8h2e
+361e
+8c75h
+4h642e
+48f42e
+3f61e
+38h1e
+b8f72e
+38h2e
+282e
+6f7e
+c918e
+c981e
+8f7e
+h8he
+c961e
+h28he
+c48h
+cb81e
+c1b8e
+48hd2e
+cb61e
+38he
+318he
+938he
+e4e
+d62h
+d70h
+842e
+d72h
+064e
+642e
+2h64e
+ha0h
+406e
+462e
+2h46e
+a80h
+8fb32e
+8h732e
+f8h32e
+h74e
+84e
+284e
+2h84e
+64e
+1h642e
+6e70h
+28f4e
+46e
+6h73e
+0h462e
+8c462e
+8h73e
+f8h3e
+6c462e
+28h3e
+d7h
+a6h
+184e
+h842e
+a8h
+f581e
+h642e
+8f42e
+461e
+f831e
+h462e
+bh842e
+f631e
+8h31e
+bh642e
+8h32e
+2842e
+h84e
+fd91e
+8eb7h
+h64e
+8f4e
+18f4e
+8hd2e
+h46e
+58f4e
+dbf1e
+58hd2e
+8f46e
+8h3e
+18h3e
+98h3e
+g71e
+g81e
+d94e
+6h72e
+g61e
+2f61e
+8h72e
+f8h2e
+db4e
+8ca42e
+48h72e
+hbh82e
+6ca42e
+8ea0h
+b8h72e
+80hb2e
+563e
+6h7e
+e16h
+e984e
+8h7e
+f8he
+18h1e
+28he
+48h7e
+eb84e
+e496e
+428he
+eb64e
+a28he
+18hb2e
+b28he
+5631e
+f81e
+f18e
+6h18e
+f61e
+8h1e
+08h1e
+8h2e
+f361e
+48h1e
+cbf1e
+48h2e
+6c97h
+8hb2e
+8h362e
+b8h2e
+f282e
+e2b6h
+e0b6h
+6h28e
+c398h
+8he
+18he
+8ebh
+c598h
+48he
+418he
+948he
+8h36e
+8e9h
+b18he
+c98h2e
+be2e
+1932e
+932e
+852e
+4b32e
+50e
+52e
+h2h5e
+b32e
+30e
+32e
+52h4e
+b52e
+52f1e
+f5h2e
+5e842e
+b39e
+d0e
+d2e
+ea30e
+5e
+ea50e
+e952e
+c582e
+3e
+eb30e
+ea32e
+c832e
+f5he
+eb50e
+c632e
+285he
+2932e
+1d2e
+g42e
+h2h4e
+51e
+3h40e
+3h42e
+h8h52e
+31e
+85f1e
+5h42e
+1c832e
+5f1e
+85h1e
+95f1e
+85h2e
+d1e
+e73h
+ea31e
+ca65h
+3h4e
+c581e
+e951e
+a85he
+5h4e
+c831e
+e391e
+g09h3e
+eb51e
+85he
+185he
+985he
+b2be
+0e
+2e
+h2he
+60e
+ca50e
+c952e
+e582e
+b2e
+cb30e
+ca32e
+e832e
+ca52e
+cb50e
+e632e
+362he
+e
+he2h
+he0h
+e8e2e
+fe3h
+e5e8e
+e6e2e
+8e30h
+fe5h
+ebc0e
+e2ebe
+e650h
+ebe5e
+6e52h
+e850h
+96e52h
+1e
+c73h
+4h42e
+ea65h
+c83h
+e581e
+c951e
+h62he
+c75h
+e831e
+fbh2e
+gb2he
+cb51e
+36h0e
+37h82e
+85bh2e
+4h4e
+he6h
+febh
+geb2h
+he8h
+8e3h
+he80h
+8eb3h
+fe9h
+e65h
+gbe0h
+9e65h
+e85h
+8e93h
+9e85h
+e8ha32e
+3b32e
+40e
+42e
+2h4e
+4b2e
+2f51e
+0f51e
+62f4e
+b42e
+2f31e
+0f31e
+b2h4e
+g5h1e
+62h31e
+hbh52e
+62h3e
+4e
+e62h
+e70h
+c842e
+e72h
+e4b0e
+c642e
+28h5e
+ea42e
+eb40e
+c462e
+528h5e
+e972h
+f85he
+g95he
+b28h5e
+41e
+h40e
+h42e
+2eb7h
+f51e
+8h51e
+7f842e
+8h52e
+f31e
+2bh42e
+bh42e
+58h52e
+5ea8h
+6h30e
+gbh52e
+b8h52e
+h4e
+ca6h
+eb7h
+d0e6h
+ca8h
+8h5e
+18h5e
+c8f42e
+e97h
+58h5e
+g9h3e
+ebh40e
+5e8h
+3e96h
+5eb8h
+c8h32e
+g1e
+2f1e
+0f1e
+e842e
+c72h
+62h1e
+e642e
+62he
+ca42e
+cb40e
+e462e
+462he
+c972h
+a62he
+g5bh2e
+b62he
+1f1e
+fe6h
+hebh
+e60h
+fe8h
+6e2h
+e80h
+6eb2h
+he9h
+he92h
+e580h
+be60h
+e980h
+6e92h
+be80h
+e8fa32e
+f1e
+ea6h
+cb7h
+0e6h
+ea8h
+6h0e
+7h82e
+2eb8h
+c97h
+46h0e
+gbh2e
+0e96h
+d5e8h
+ae8h2e
+b7h82e
+e8h32e
+e5h8h
+e6h
+e06h
+eb6h
+e8h
+ad8he
+eb8h
+e8he2e
+e58h
+e96h
+7dbhe
+hbe60h
+e98h
+e8hc3e
+hbe80h
+be8he2e
+8c0e
+d632h
+b50h
+752e
+d832h
+750e
+652e
+2f65e
+950h
+830e
+732e
+2f73e
+730e
+5h80e
+5h72e
+h5h82e
+8da0e
+75e
+c72e
+2f75e
+65e
+3h75e
+a5h7e
+8c752e
+73e
+5h75e
+3c40h
+8c832e
+5h7e
+h5h8e
+95h7e
+52h8e
+b5bh
+751e
+a5h
+f752e
+a3h
+f750e
+f652e
+3f842e
+95h
+75f1e
+f732e
+bf752e
+e5he
+5h81e
+5h18e
+5h82e
+c71e
+f75e
+fc72e
+7e951e
+f65e
+3f84e
+5cb4h
+a5h8e
+f73e
+5f84e
+9f73e
+5hc82e
+5h282e
+5h8e
+5h28e
+95h8e
+8g80e
+80e
+72e
+2f7e
+70e
+2f70e
+0f70e
+f2h6e
+b72e
+a2f7e
+2e51h
+b2f7e
+3h70e
+32h61e
+7e832e
+32h6e
+7e
+c42h
+c40h
+c980e
+e31h
+c492h
+c970e
+6e30h
+e51h
+cb80e
+c2b7e
+426h5e
+cb70e
+8e52h
+30h62e
+5b2h8e
+71e
+f80e
+f72e
+2cb4h
+f70e
+6ea3h
+3f642e
+g2h6e
+fb72e
+9ha82e
+bf72e
+46h52e
+3h61e
+38h0e
+3h62e
+5bh82e
+f7e
+4f84e
+cb4h
+g2h8e
+c49h
+6e3h
+a3h6e
+g28he
+c94h
+46h5e
+dbe5h
+cbf80e
+3h6e
+h38he
+93h6e
+e5h98e
+b09h
+a2h
+b0h
+c2he
+740e
+h750e
+h652e
+2f64e
+a0h
+h830e
+h732e
+2f46e
+h730e
+2h631e
+bh652e
+2h63e
+74e
+h75e
+hc72e
+2f84e
+h65e
+8ca2h
+7c842e
+26h5e
+h73e
+1f462e
+9h73e
+2h83e
+3e91h
+g5h8e
+0h632e
+b26h5e
+ah
+hc0e
+hc2e
+f842e
+he5e
+6h51e
+f642e
+6h52e
+he3e
+h831e
+f462e
+h832e
+h631e
+8h30e
+h632e
+b6h52e
+7h4e
+f84e
+hd91e
+hc82e
+f64e
+6h5e
+hc62e
+g8hd2e
+f46e
+h83e
+d9h2e
+dbh0e
+h63e
+g8h3e
+ebh5e
+6e9h52e
+h71e
+h80e
+h72e
+8e842e
+h70e
+2h61e
+0h61e
+2h6e
+hb72e
+0e91h
+bh72e
+2h36e
+9fa62e
+a2h6e
+0hb62e
+b2h6e
+h7e
+e1bh
+eb1h
+2h8e
+1h61e
+8e2h
+0h62e
+f28he
+e91h
+a2h8e
+d9e0h
+b2h8e
+g3h6e
+g38he
+b0h62e
+c2hb6e
+7f1e
+h81e
+h18e
+h82e
+h61e
+8h0e
+h62e
+g8h2e
+h361e
+hb82e
+h362e
+bh82e
+hb62e
+2bh62e
+bh62e
+6c9h52e
+h282e
+h8e
+h28e
+ahb8e
+h6e
+g8he
+ahb6e
+c8h90e
+h36e
+9hb8e
+dbhe
+c9h82e
+9hb6e
+c8hb0e
+c9h62e
+cb8h0e
+bd732e
+850e
+g932e
+62f65e
+650e
+3h850e
+3f932e
+f2h5e
+gb32e
+2hb32e
+0hb32e
+52f4e
+95f92e
+52h1e
+h5h2e
+52he
+858e
+e632h
+cb50h
+c752e
+e832h
+c750e
+c652e
+3d2he
+c950h
+c830e
+c732e
+5d2he
+h5he
+5e2h
+5e0h
+095he
+8581e
+f850e
+h932e
+g2h4e
+f650e
+3f40e
+3f42e
+a5h0e
+hb32e
+75h1e
+5f42e
+75h2e
+5h1e
+5h0e
+5h2e
+95h0e
+f858e
+c751e
+ca5h
+gd2he
+3f4e
+3hd0e
+a5he
+g28h5e
+5f4e
+75he
+5hd2e
+975he
+5he
+h85he
+95he
+c5h82e
+806e
+c632h
+eb50h
+f2he
+c832h
+e750e
+e652e
+2e3h
+e950h
+e830e
+e732e
+2e5h
+e730e
+5a2he
+372he
+5b2he
+e8h2h
+fe2h
+fe0h
+4d2he
+he3h
+e32h
+e30h
+eb32h
+he5h
+e52h
+e50h
+9e52h
+1d5he
+e932h
+be30h
+e5f982e
+f806e
+e751e
+ea5h
+g2he
+ea3h
+3h50e
+3h52e
+g62he
+e95h
+4h50e
+4h52e
+fb2he
+d5he
+52bh2e
+5bh2e
+e5h82e
+4f4e
+ge2h
+ge0h
+feb2h
+e3h
+g6e2h
+eb3h
+feb32h
+e5h
+fe92h
+9e5h
+f9e52h
+e93h
+e5he8e
+e5hc9e
+e5h981e
+5650e
+h850e
+f932e
+2f4e
+h650e
+2h51e
+0h51e
+2h5e
+fb32e
+2h31e
+0h31e
+2h3e
+h5h1e
+g5h0e
+g5h2e
+b2h5e
+h858e
+ca2h
+cb0h
+d2he
+1h51e
+1h52e
+0h52e
+0ahb5e
+ca0h
+1h32e
+0h32e
+09h3e
+g5he
+g85he
+h95he
+e2hb5e
+hbe2e
+f40e
+f42e
+h852e
+h51e
+h50e
+h52e
+g8h52e
+h31e
+h30e
+h32e
+9h30e
+hb52e
+2bh52e
+bh52e
+5e6h52e
+f4e
+hd0e
+hd2e
+d2ebh
+h5e
+g8h5e
+ahb5e
+c6h52e
+h3e
+19h3e
+9h3e
+hc832e
+3e9h
+heb50e
+e9h52e
+ebh50e
+h806e
+2h1e
+0h1e
+2he
+72h1e
+2h60e
+72he
+f62he
+ea0h
+a2he
+0hb2e
+b2he
+a72he
+g36h0e
+b72he
+c2hb5e
+1h1e
+e2h
+e0h
+eb2h
+e82h
+e392h
+eb82h
+e2hc6e
+e90h
+e92h
+be0h
+e2hebe
+e982h
+f6e52h
+fe850h
+ebh750e
+h1e
+h0e
+h2e
+2ebh
+h60e
+g6h0e
+4bh2e
+e6h52e
+hb2e
+2bh2e
+bh2e
+he832e
+d3e9h
+hcb50e
+c9h52e
+cbh50e
+he
+ge6h
+ebh
+he8e2e
+ge8h
+e8he0e
+he6e2e
+f6eb2h
+e9h
+hebc0e
+e9hc2e
+ebhc0e
+hebe5e
+f6e92h
+ebhe5e
+e96h52e

@@ -1,11 +1,11 @@
 import Collections
-import Rubik
+@_spi(Tables) import Rubik
 
- func generateThistlethwaiteTable(
+func generateThistlethwaiteTable(
     factor: Int,
     allowedTurns: [Turn],
     encode: (Cube) -> (Int)
- ) -> [String] {
+) -> [String] {
     var algorithmsTable: [String?] = Array(repeating: nil, count: factor)
     var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
 
@@ -16,7 +16,7 @@ import Rubik
             continue
         }
 
-        algorithmsTable[state] = node.algorithm.reversed.stringNotation
+        algorithmsTable[state] = node.algorithm.reversed.compressedString
 
         for turn in allowedTurns {
             if let lastTurn = node.algorithm.turns.last,
@@ -31,4 +31,9 @@ import Rubik
     }
 
     return algorithmsTable as! [String]
+}
+
+func write(table: [String], to path: String) throws {
+    let string = table.joined(separator: "\n") + "\n"
+    try string.write(toFile: path, atomically: true, encoding: .ascii)
 }

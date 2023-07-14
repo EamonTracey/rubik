@@ -1,3 +1,5 @@
+import Foundation
+
 extension Algorithm {
     /// Initialize an algorithm from a string.
     ///
@@ -29,16 +31,77 @@ extension Algorithm {
             }
         }
 
-        self.init(turns)
+        self.turns = turns
     }
-}
 
-extension Algorithm {
     /// An algorithm in string notation.
     ///
     /// The string notation of an algorithm is a string of the turns separated by spaces.
     @inlinable
     public var stringNotation: String {
         return turns.map { $0.stringNotation }.joined(separator: " ")
+    }
+}
+
+extension Algorithm {
+    @_spi(Tables)
+    @inlinable
+    public init?(compressedString: some StringProtocol) {
+        var turns: [Turn] = []
+        for character in compressedString {
+            switch character {
+            case "0":  turns.append(.up(.clockwise))
+            case "1":  turns.append(.up(.half))
+            case "2":  turns.append(.up(.counterclockwise))
+            case "3":  turns.append(.down(.clockwise))
+            case "4":  turns.append(.down(.half))
+            case "5":  turns.append(.down(.counterclockwise))
+            case "6":  turns.append(.right(.clockwise))
+            case "7":  turns.append(.right(.half))
+            case "8":  turns.append(.right(.counterclockwise))
+            case "9":  turns.append(.left(.clockwise))
+            case "a": turns.append(.left(.half))
+            case "b": turns.append(.left(.counterclockwise))
+            case "c": turns.append(.front(.clockwise))
+            case "d": turns.append(.front(.half))
+            case "e": turns.append(.front(.counterclockwise))
+            case "f": turns.append(.back(.clockwise))
+            case "g": turns.append(.back(.half))
+            case "h": turns.append(.back(.counterclockwise))
+            default:  return nil
+            }
+        }
+
+        self.turns = turns
+    }
+
+    @_spi(Tables)
+    @inlinable
+    public var compressedString: String {
+        var string = ""
+        for turn in turns {
+            switch turn {
+            case .up(.clockwise):           string += "0"
+            case .up(.half):                string += "1"
+            case .up(.counterclockwise):    string += "2"
+            case .down(.clockwise):         string += "3"
+            case .down(.half):              string += "4"
+            case .down(.counterclockwise):  string += "5"
+            case .right(.clockwise):        string += "6"
+            case .right(.half):             string += "7"
+            case .right(.counterclockwise): string += "8"
+            case .left(.clockwise):         string += "9"
+            case .left(.half):              string += "a"
+            case .left(.counterclockwise):  string += "b"
+            case .front(.clockwise):        string += "c"
+            case .front(.half):             string += "d"
+            case .front(.counterclockwise): string += "e"
+            case .back(.clockwise):         string += "f"
+            case .back(.half):              string += "g"
+            case .back(.counterclockwise):  string += "h"
+            }
+        }
+
+        return string
     }
 }
