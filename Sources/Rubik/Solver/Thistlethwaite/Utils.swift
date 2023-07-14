@@ -22,11 +22,11 @@ func encodeCombination<T>(of elements: [T], satisfying isChosen: @escaping (T) -
 }
 
 @usableFromInline
-func encodePermutation<T: Comparable>(of elements: ArraySlice<T>, n: Int) -> Int {
+func encodePermutation<T: Comparable>(of elements: [T], n: Int) -> Int {
     var permutation = 0
-    for (index, elementA) in elements[..<(n + elements.startIndex)].enumerated() {
+    for (index, elementA) in elements[..<n].enumerated() {
         permutation *= elements.count - index
-        for elementB in elements[(index + elements.startIndex)...] where elementA > elementB {
+        for elementB in elements[index...] where elementA > elementB {
             permutation += 1
         }
     }
