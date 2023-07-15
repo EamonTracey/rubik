@@ -1,6 +1,12 @@
 extension Cube {
     public init?(facelets: [Facelet]) {
         guard facelets.count == 54 else { return nil }
+        guard facelets[4] == .up else { return nil }
+        guard facelets[13] == .down else { return nil }
+        guard facelets[22] == .right else { return nil }
+        guard facelets[31] == .left else { return nil }
+        guard facelets[40] == .front else { return nil }
+        guard facelets[49] == .back else { return nil }
 
         guard let upRight = Edge(facelets[5], facelets[19]) else { return nil }
         guard let upLeft = Edge(facelets[3], facelets[28]) else { return nil }
@@ -61,18 +67,6 @@ extension Cube.Edge {
         case (.left, .up):
             self.solvedPosition = .upLeft
             self.orientation = .flipped
-        case (.up, .front):
-            self.solvedPosition = .upFront
-            self.orientation = .correct
-        case (.front, .up):
-            self.solvedPosition = .upFront
-            self.orientation = .flipped
-        case (.up, .back):
-            self.solvedPosition = .upBack
-            self.orientation = .correct
-        case (.back, .up):
-            self.solvedPosition = .upBack
-            self.orientation = .flipped
         case (.down, .right):
             self.solvedPosition = .downRight
             self.orientation = .correct
@@ -84,6 +78,18 @@ extension Cube.Edge {
             self.orientation = .correct
         case (.left, .down):
             self.solvedPosition = .downLeft
+            self.orientation = .flipped
+        case (.up, .front):
+            self.solvedPosition = .upFront
+            self.orientation = .correct
+        case (.front, .up):
+            self.solvedPosition = .upFront
+            self.orientation = .flipped
+        case (.up, .back):
+            self.solvedPosition = .upBack
+            self.orientation = .correct
+        case (.back, .up):
+            self.solvedPosition = .upBack
             self.orientation = .flipped
         case (.down, .front):
             self.solvedPosition = .downFront
@@ -97,30 +103,30 @@ extension Cube.Edge {
         case (.back, .down):
             self.solvedPosition = .downBack
             self.orientation = .flipped
-        case (.right, .front):
-            self.solvedPosition = .rightFront
-            self.orientation = .flipped
         case (.front, .right):
             self.solvedPosition = .rightFront
             self.orientation = .correct
-        case (.right, .back):
-            self.solvedPosition = .rightBack
+        case (.right, .front):
+            self.solvedPosition = .rightFront
             self.orientation = .flipped
         case (.back, .right):
             self.solvedPosition = .rightBack
             self.orientation = .correct
-        case (.left, .front):
-            self.solvedPosition = .leftFront
+        case (.right, .back):
+            self.solvedPosition = .rightBack
             self.orientation = .flipped
         case (.front, .left):
             self.solvedPosition = .leftFront
             self.orientation = .correct
-        case (.left, .back):
-            self.solvedPosition = .leftBack
+        case (.left, .front):
+            self.solvedPosition = .leftFront
             self.orientation = .flipped
         case (.back, .left):
             self.solvedPosition = .leftBack
             self.orientation = .correct
+        case (.left, .back):
+            self.solvedPosition = .leftBack
+            self.orientation = .flipped
         default: return nil
         }
     }
@@ -129,76 +135,76 @@ extension Cube.Edge {
 extension Cube.Corner {
     init?(_ faceletA: Facelet, _ faceletB: Facelet, _ faceletC: Facelet) {
         switch (faceletA, faceletB, faceletC) {
-        case (.up, .front, .right), (.up, .right, .front):
+        case (.up, .right, .front), (.up, .front, .right):
             self.solvedPosition = .upRightFront
             self.orientation = .correct
-        case (.front, .right, .up), (.right, .front, .up):
-            self.solvedPosition = .upRightFront
-            self.orientation = .counterclockwise
-        case (.right, .up, .front), (.front, .up, .right):
+        case (.front, .up, .right), (.front, .right, .up):
             self.solvedPosition = .upRightFront
             self.orientation = .clockwise
-        case (.up, .back, .right), (.up, .right, .back):
-            self.solvedPosition = .upRightBack
-            self.orientation = .correct
-        case (.back, .right, .up), (.right, .back, .up):
-            self.solvedPosition = .upRightBack
-            self.orientation = .clockwise
-        case (.right, .up, .back), (.back, .up, .right):
-            self.solvedPosition = .upRightBack
+        case (.right, .up, .front), (.right, .front, .up):
+            self.solvedPosition = .upRightFront
             self.orientation = .counterclockwise
-        case (.up, .front, .left), (.up, .left, .front):
-            self.solvedPosition = .upLeftFront
-            self.orientation = .correct
-        case (.front, .left, .up), (.left, .front, .up):
-            self.solvedPosition = .upLeftFront
-            self.orientation = .clockwise
-        case (.left, .up, .front), (.front, .up, .left):
-            self.solvedPosition = .upLeftFront
-            self.orientation = .counterclockwise
-        case (.up, .back, .left), (.up, .left, .back):
+        case (.up, .left, .back), (.up, .back, .left):
             self.solvedPosition = .upLeftBack
             self.orientation = .correct
-        case (.back, .left, .up), (.left, .back, .up):
-            self.solvedPosition = .upLeftBack
-            self.orientation = .counterclockwise
-        case (.left, .up, .back), (.back, .up, .left):
+        case (.back, .up, .left), (.back, .left, .up):
             self.solvedPosition = .upLeftBack
             self.orientation = .clockwise
-        case (.down, .front, .right), (.down, .right, .front):
-            self.solvedPosition = .downRightFront
-            self.orientation = .correct
-        case (.front, .right, .down), (.right, .front, .down):
-            self.solvedPosition = .downRightFront
-            self.orientation = .clockwise
-        case (.right, .down, .front), (.front, .down, .right):
-            self.solvedPosition = .downRightFront
+        case (.left, .up, .back), (.left, .back, .up):
+            self.solvedPosition = .upLeftBack
             self.orientation = .counterclockwise
-        case (.down, .back, .right), (.down, .right, .back):
+        case (.down, .right, .back), (.down, .back, .right):
             self.solvedPosition = .downRightBack
             self.orientation = .correct
-        case (.back, .right, .down), (.right, .back, .down):
-            self.solvedPosition = .downRightBack
-            self.orientation = .counterclockwise
-        case (.right, .down, .back), (.back, .down, .right):
+        case (.back, .down, .right), (.back, .right, .down):
             self.solvedPosition = .downRightBack
             self.orientation = .clockwise
-        case (.down, .front, .left), (.down, .left, .front):
+        case (.right, .down, .back), (.right, .back, .down):
+            self.solvedPosition = .downRightBack
+            self.orientation = .counterclockwise
+        case (.down, .left, .front), (.down, .front, .left):
             self.solvedPosition = .downLeftFront
             self.orientation = .correct
-        case (.front, .left, .down), (.left, .front, .down):
-            self.solvedPosition = .downLeftFront
-            self.orientation = .counterclockwise
-        case (.left, .down, .front), (.front, .down, .left):
+        case (.front, .down, .left), (.front, .left, .down):
             self.solvedPosition = .downLeftFront
             self.orientation = .clockwise
-        case (.down, .back, .left), (.down, .left, .back):
+        case (.left, .down, .front), (.left, .front, .down):
+            self.solvedPosition = .downLeftFront
+            self.orientation = .counterclockwise
+        case (.up, .right, .back), (.up, .back, .right):
+            self.solvedPosition = .upRightBack
+            self.orientation = .correct
+        case (.right, .up, .back), (.right, .back, .up):
+            self.solvedPosition = .upRightBack
+            self.orientation = .clockwise
+        case (.back, .up, .right), (.back, .right, .up):
+            self.solvedPosition = .upRightBack
+            self.orientation = .counterclockwise
+        case (.up, .left, .front), (.up, .front, .left):
+            self.solvedPosition = .upLeftFront
+            self.orientation = .correct
+        case (.left, .up, .front), (.left, .front, .up):
+            self.solvedPosition = .upLeftFront
+            self.orientation = .clockwise
+        case (.front, .up, .left), (.front, .left, .up):
+            self.solvedPosition = .upLeftFront
+            self.orientation = .counterclockwise
+        case (.down, .right, .front), (.down, .front, .right):
+            self.solvedPosition = .downRightFront
+            self.orientation = .correct
+        case (.right, .down, .front), (.right, .front, .down):
+            self.solvedPosition = .downRightFront
+            self.orientation = .clockwise
+        case (.front, .down, .right), (.front, .right, .down):
+            self.solvedPosition = .downRightFront
+            self.orientation = .counterclockwise
+        case (.down, .left, .back), (.down, .back, .left):
             self.solvedPosition = .downLeftBack
             self.orientation = .correct
-        case (.back, .left, .down), (.left, .back, .down):
+        case (.left, .down, .back), (.left, .back, .down):
             self.solvedPosition = .downLeftBack
             self.orientation = .clockwise
-        case (.left, .down, .back), (.back, .down, .left):
+        case (.back, .down, .left), (.back, .left, .down):
             self.solvedPosition = .downLeftBack
             self.orientation = .counterclockwise
         default: return nil
