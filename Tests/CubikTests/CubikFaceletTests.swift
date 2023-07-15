@@ -3,7 +3,7 @@ import XCTest
 @testable import Cubik
 
 class CubikFaceletTests: XCTestCase {
-    func testFacelet() {
+    func testQuarterTurnFacelets() {
         // Solved.
         var cube = Cube(facelets: [
             .up, .up, .up, .up, .up, .up, .up, .up, .up,
@@ -27,7 +27,7 @@ class CubikFaceletTests: XCTestCase {
         ])!
         XCTAssert(cube.isValid)
         cube.turn(.up(.counterclockwise))
-        XCTAssertEqual(cube.edges, Cube.solvedEdges)
+        XCTAssertEqual(cube, .solvedCube)
 
         // D
         cube = Cube(facelets: [
@@ -40,7 +40,7 @@ class CubikFaceletTests: XCTestCase {
         ])!
         XCTAssert(cube.isValid)
         cube.turn(.down(.counterclockwise))
-        XCTAssertEqual(cube.edges, Cube.solvedEdges)
+        XCTAssertEqual(cube, .solvedCube)
 
         // R
         cube = Cube(facelets: [
@@ -53,7 +53,7 @@ class CubikFaceletTests: XCTestCase {
         ])!
         XCTAssert(cube.isValid)
         cube.turn(.right(.counterclockwise))
-        XCTAssertEqual(cube.edges, Cube.solvedEdges)
+        XCTAssertEqual(cube, .solvedCube)
 
         // L
         cube = Cube(facelets: [
@@ -66,7 +66,7 @@ class CubikFaceletTests: XCTestCase {
         ])!
         XCTAssert(cube.isValid)
         cube.turn(.left(.counterclockwise))
-        XCTAssertEqual(cube.edges, Cube.solvedEdges)
+        XCTAssertEqual(cube, .solvedCube)
 
         // F
         cube = Cube(facelets: [
@@ -79,7 +79,7 @@ class CubikFaceletTests: XCTestCase {
         ])!
         XCTAssert(cube.isValid)
         cube.turn(.front(.counterclockwise))
-        XCTAssertEqual(cube.edges, Cube.solvedEdges)
+        XCTAssertEqual(cube, .solvedCube)
 
         // B
         cube = Cube(facelets: [
@@ -92,6 +92,6 @@ class CubikFaceletTests: XCTestCase {
         ])!
         XCTAssert(cube.isValid)
         cube.turn(.back(.counterclockwise))
-        XCTAssertEqual(cube.edges, Cube.solvedEdges)
+        XCTAssertEqual(cube, .solvedCube)
     }
 }
