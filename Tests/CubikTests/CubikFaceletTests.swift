@@ -109,17 +109,27 @@ class CubikFaceletTests: XCTestCase {
         XCTAssert(cube.isValid)
         cube.execute(Algorithm("U' L' U' D L R F D' B2 L' R' U F2 L F' B' D U2 L R B2 U B L B'")!)
         XCTAssertEqual(cube, .solvedCube)
+    }
 
-        cube = Cube(facelets: [
-            .left, .up, .back, .front, .up, .back, .up, .front, .right,
-            .left, .front, .down, .down, .down, .right, .front, .left, .up,
-            .back, .down, .left, .front, .right, .right, .right, .down, .back,
-            .down, .down, .front, .back, .left, .up, .left, .left, .up,
-            .right, .up, .down, .left, .front, .left, .front, .right, .front,
-            .up, .back, .back, .up, .back, .right, .right, .back, .down
+    func testGetFacelets() {
+        cube = .solvedCube
+        XCTAssertEqual(cube.facelets, [
+            .up, .up, .up, .up, .up, .up, .up, .up, .up,
+            .down, .down, .down, .down, .down, .down, .down, .down, .down,
+            .right, .right, .right, .right, .right, .right, .right, .right, .right,
+            .left, .left, .left, .left, .left, .left, .left, .left, .left,
+            .front, .front, .front, .front, .front, .front, .front, .front, .front,
+            .back, .back, .back, .back, .back, .back, .back, .back, .back
         ])
-        XCTAssert(cube.isValid)
-        cube.execute(Algorithm("U' R' B' D' F' L2 D R2 U B2 D' R' U' R2 F2 D R2 B2 U2 R2 U' U2 L2 D2 R2 B2 L2 B2 U2 B2 R2")!)
-        XCTAssertEqual(cube, .solvedCube)
+
+        cube.execute(Algorithm("B L' B' U' B2 R' L' U2 D' B F L' F2 U' R L B2 D F' R' L' D' U L U")!)
+        XCTAssertEqual(cube.facelets, [
+            .back, .back, .back, .left, .up, .front, .right, .up, .right,
+            .front, .down, .up, .down, .down, .right, .left, .front, .down,
+            .down, .right, .left, .front, .right, .back, .right, .back, .back,
+            .down, .front, .up, .right, .left, .up, .down, .left, .left,
+            .front, .left, .front, .right, .front, .down, .up, .back, .back,
+            .up, .left, .right, .up, .back, .down, .left, .up, .front
+        ])
     }
 }

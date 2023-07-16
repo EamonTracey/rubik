@@ -15,6 +15,15 @@ extension Cube {
         Corner(orientation: .correct, solvedPosition: position)
     }
 
+
+    /// The facelets the corresponds to a solved cube.
+    ///
+    /// The array contains 54 facelets in sequential batches of 9 equivalent facelets in the order up, down,
+    /// right, left, front, back.
+    public static let solvedFacelets: [Facelet] = Facelet.allCases.flatMap { facelet in
+        Array(repeating: facelet, count: 9)
+    }
+
     /// The cube in the solved state.
     public static let solvedCube: Cube = Cube(edges: Cube.solvedEdges, corners: Cube.solvedCorners)
 }
