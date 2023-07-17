@@ -2,9 +2,7 @@ import ArgumentParser
 import Cubik
 
 struct Scramble: ParsableCommand {
-    static var configuration = CommandConfiguration(
-        abstract: "Generate random 3x3 scrambles."
-    )
+    static var configuration = CommandConfiguration(abstract: "Generate random 3x3 scrambles.")
 
     @Option(name: .shortAndLong, help: "The number of scrambles to be generated.")
     var number: Int = 1
