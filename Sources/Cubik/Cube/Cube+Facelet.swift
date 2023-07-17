@@ -7,12 +7,12 @@ extension Cube {
     /// each type on a valid cube. While it is often more useful to view the cube as a collection of pieces
     /// rather than stickers, it is arguably easiest to use the stickers to communicate the state of a cube.
     public enum Facelet: String, CaseIterable {
-        case up
-        case down
-        case right
-        case left
-        case front
-        case back
+        case up = "u"
+        case down = "d"
+        case right = "r"
+        case left = "l"
+        case front = "f"
+        case back = "b"
     }
 }
 
@@ -47,6 +47,7 @@ extension Cube {
     /// initializer must fail if the facelets correspond to invalid cubelets, such as an edge with an up facelet
     /// and a down facelet. However, if all 20 cubelets are valid, the initializer will succeed, no matter the
     /// validity of the cube. If the cube's validity is not guaranteed or known, use ``isValid`` to check.
+    @inlinable
     public init?(facelets: [Facelet]) {
         guard facelets.count == 54 else { return nil }
 
@@ -95,6 +96,7 @@ extension Cube {
     ///
     /// - Precondition: The cube must be valid. If `cube.isValid` evaluates to `false`, the
     /// program will crash. If the cube's validity is not guaranteed or known, use ``isValid`` to check.
+    @inlinable
     public var facelets: [Facelet] {
         precondition(isValid)
 
@@ -134,6 +136,7 @@ extension Cube {
 }
 
 extension Cube.Edge {
+    @usableFromInline
     init?(_ faceletA: Cube.Facelet, _ faceletB: Cube.Facelet) {
         switch (faceletA, faceletB) {
         case (.up, .right):
@@ -188,6 +191,7 @@ extension Cube.Edge {
         }
     }
 
+    @usableFromInline
     func getFacelets() -> (Cube.Facelet, Cube.Facelet) {
         switch (orientation, solvedPosition) {
         case (.correct, .upRight):
@@ -243,6 +247,7 @@ extension Cube.Edge {
 }
 
 extension Cube.Corner {
+    @usableFromInline
     init?(_ faceletA: Cube.Facelet, _ faceletB: Cube.Facelet, _ faceletC: Cube.Facelet) {
         switch (faceletA, faceletB, faceletC) {
         case (.up, .right, .front), (.up, .front, .right):
@@ -297,7 +302,8 @@ extension Cube.Corner {
         }
     }
 
-    public func getFacelets(tetrad: Cube.Corner.Tetrad) -> (Cube.Facelet, Cube.Facelet, Cube.Facelet) {
+    @usableFromInline
+    func getFacelets(tetrad: Cube.Corner.Tetrad) -> (Cube.Facelet, Cube.Facelet, Cube.Facelet) {
         switch (orientation, solvedPosition, self.tetrad == tetrad) {
         case (.correct, .upRightFront, true):
             return (.up, .front, .right)

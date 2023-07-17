@@ -8,7 +8,7 @@
 /// let algorithmB = Algorithm("R' F R F')!
 ///
 /// // R U R' U' R' F R F'
-/// print((algorithmA + algorithmB).stringNotation)
+/// print(algorithmA + algorithmB)
 /// ```
 public func + (lhs: Algorithm, rhs: Algorithm) -> Algorithm {
     return Algorithm(lhs.turns + rhs.turns)

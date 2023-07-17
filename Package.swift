@@ -8,12 +8,20 @@ let package = Package(
         .library(
             name: "Cubik",
             targets: ["Cubik"]
+        ),
+        .executable(
+            name: "cubik",
+            targets: ["CubikCLI"]
         )
     ],
     dependencies: [
         .package(
             url: "https://github.com/apple/swift-collections.git",
             .upToNextMajor(from: "1.0.0")
+        ),
+        .package(
+            url: "https://github.com/apple/swift-argument-parser",
+            .upToNextMajor(from: "1.2.0")
         )
     ],
     targets: [
@@ -29,6 +37,13 @@ let package = Package(
             name: "CubikTables",
             dependencies: [
                 .product(name: "Collections", package: "swift-collections"),
+                "Cubik"
+            ]
+        ),
+        .executableTarget(
+            name: "CubikCLI",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 "Cubik"
             ]
         )

@@ -32,7 +32,7 @@ extension Solver {
     /// let result = solver.solve(cube, using: .thistlethwaite)
     /// switch result {
     /// case .success(let solution):
-    ///     print("A solution was found: \(solution.stringNotation).")
+    ///     print("A solution was found: \(solution).")
     ///     print("The solution has \(solution.turns.count) turns.")
     /// case .failure(let error):
     ///     print("Failed to find a solution for the following reason: \(error).")

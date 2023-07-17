@@ -10,12 +10,12 @@ extension Array where Element == Cube.Edge {
     /// cube.edges[.leftBack].flip()
     /// ```
     @inlinable
-    public subscript(index: Cube.Edge.Position) -> Element {
+    public subscript(i: Cube.Edge.Position) -> Element {
         get {
-            return self[index.rawValue]
+            return self[i.rawValue]
         }
         set {
-            self[index.rawValue] = newValue
+            self[i.rawValue] = newValue
         }
     }
 }
@@ -32,12 +32,12 @@ extension Array where Element == Cube.Corner {
     /// cube.edges[.upRightFront].twist(.clockwise)
     /// ```
     @inlinable
-    public subscript(index: Cube.Corner.Position) -> Element {
+    public subscript(i: Cube.Corner.Position) -> Element {
         get {
-            return self[index.rawValue]
+            return self[i.rawValue]
         }
         set {
-            self[index.rawValue] = newValue
+            self[i.rawValue] = newValue
         }
     }
 }

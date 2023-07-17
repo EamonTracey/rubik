@@ -43,6 +43,15 @@ extension Algorithm {
     }
 }
 
+extension Algorithm: CustomStringConvertible {
+    /// The string description of an algorithm.
+    ///
+    /// This is equivalent to the algorithm's string notation.
+    public var description: String {
+        return stringNotation
+    }
+}
+
 extension Algorithm {
     @_spi(Tables)
     @inlinable
