@@ -20,7 +20,7 @@ struct Solve: ParsableCommand {
 
     @Argument(
         help: ArgumentHelp(
-            "The scrambled cubes in character-facelet representation OR the algorithm that scrambled the cube. If no" +
+            "The scrambled cubes in character-facelet representation OR the algorithm that scrambled the cube. If no " +
             "scrambles are provided, they are read from stdin."
         ),
         transform: stringToCube(_:)
@@ -85,10 +85,8 @@ extension Solve {
                 while let line = readLine(strippingNewline: true) {
                     return try? Solve.stringToCube(line)
                 }
-            } else {
-                return cubesIterator.next()
             }
-            return nil
+            return cubesIterator.next()
         }
     }
 }
