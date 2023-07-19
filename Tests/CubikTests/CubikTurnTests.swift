@@ -419,4 +419,212 @@ final class CubikTurnTests: XCTestCase {
         cube2.turnBack(.clockwise)
         XCTAssertEqual(cube1, cube2)
     }
+
+    func testStanding() {
+        // S4 =
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnStanding(.clockwise)
+        XCTAssertNotEqual(cube1, cube2)
+        cube1.turnStanding(.clockwise)
+        XCTAssertNotEqual(cube1, cube2)
+        cube1.turnStanding(.clockwise)
+        XCTAssertNotEqual(cube1, cube2)
+        cube1.turnStanding(.clockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // S2 S2 =
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnStanding(.half)
+        cube1.turnStanding(.half)
+        XCTAssertEqual(cube1, cube2)
+
+        // S S = S2
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnStanding(.clockwise)
+        cube1.turnStanding(.clockwise)
+        cube2.turnStanding(.half)
+        XCTAssertEqual(cube1, cube2)
+
+        // S' S' = S2
+        cube1.turnStanding(.counterclockwise)
+        cube1.turnStanding(.counterclockwise)
+        cube2.turnStanding(.half)
+        XCTAssertEqual(cube1, cube2)
+
+        // S S S = S'
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnStanding(.clockwise)
+        cube1.turnStanding(.clockwise)
+        cube1.turnStanding(.clockwise)
+        cube2.turnStanding(.counterclockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // S' S' S' = S
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnStanding(.counterclockwise)
+        cube1.turnStanding(.counterclockwise)
+        cube1.turnStanding(.counterclockwise)
+        cube2.turnStanding(.clockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // S S2 = S'
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnStanding(.clockwise)
+        cube1.turnStanding(.half)
+        cube2.turnStanding(.counterclockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // S' S2 = S
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnStanding(.counterclockwise)
+        cube1.turnStanding(.half)
+        cube2.turnStanding(.clockwise)
+        XCTAssertEqual(cube1, cube2)
+    }
+
+    func testMiddle() {
+        // M4 =
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnMiddle(.clockwise)
+        XCTAssertNotEqual(cube1, cube2)
+        cube1.turnMiddle(.clockwise)
+        XCTAssertNotEqual(cube1, cube2)
+        cube1.turnMiddle(.clockwise)
+        XCTAssertNotEqual(cube1, cube2)
+        cube1.turnMiddle(.clockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // M2 M2 =
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnMiddle(.half)
+        cube1.turnMiddle(.half)
+        XCTAssertEqual(cube1, cube2)
+
+        // M M = M2
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnMiddle(.clockwise)
+        cube1.turnMiddle(.clockwise)
+        cube2.turnMiddle(.half)
+        XCTAssertEqual(cube1, cube2)
+
+        // M' M' = M2
+        cube1.turnMiddle(.counterclockwise)
+        cube1.turnMiddle(.counterclockwise)
+        cube2.turnMiddle(.half)
+        XCTAssertEqual(cube1, cube2)
+
+        // M M M = M'
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnMiddle(.clockwise)
+        cube1.turnMiddle(.clockwise)
+        cube1.turnMiddle(.clockwise)
+        cube2.turnMiddle(.counterclockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // M' M' M' = M
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnMiddle(.counterclockwise)
+        cube1.turnMiddle(.counterclockwise)
+        cube1.turnMiddle(.counterclockwise)
+        cube2.turnMiddle(.clockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // M M2 = M'
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnMiddle(.clockwise)
+        cube1.turnMiddle(.half)
+        cube2.turnMiddle(.counterclockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // M' M2 = M
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnMiddle(.counterclockwise)
+        cube1.turnMiddle(.half)
+        cube2.turnMiddle(.clockwise)
+        XCTAssertEqual(cube1, cube2)
+    }
+
+    func testEquator() {
+        // E4 =
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnEquator(.clockwise)
+        XCTAssertNotEqual(cube1, cube2)
+        cube1.turnEquator(.clockwise)
+        XCTAssertNotEqual(cube1, cube2)
+        cube1.turnEquator(.clockwise)
+        XCTAssertNotEqual(cube1, cube2)
+        cube1.turnEquator(.clockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // E2 E2 =
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnEquator(.half)
+        cube1.turnEquator(.half)
+        XCTAssertEqual(cube1, cube2)
+
+        // E E = E2
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnEquator(.clockwise)
+        cube1.turnEquator(.clockwise)
+        cube2.turnEquator(.half)
+        XCTAssertEqual(cube1, cube2)
+
+        // E' E' = E2
+        cube1.turnEquator(.counterclockwise)
+        cube1.turnEquator(.counterclockwise)
+        cube2.turnEquator(.half)
+        XCTAssertEqual(cube1, cube2)
+
+        // E E E = E'
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnEquator(.clockwise)
+        cube1.turnEquator(.clockwise)
+        cube1.turnEquator(.clockwise)
+        cube2.turnEquator(.counterclockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // E' E' E' = E
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnEquator(.counterclockwise)
+        cube1.turnEquator(.counterclockwise)
+        cube1.turnEquator(.counterclockwise)
+        cube2.turnEquator(.clockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // E E2 = E'
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnEquator(.clockwise)
+        cube1.turnEquator(.half)
+        cube2.turnEquator(.counterclockwise)
+        XCTAssertEqual(cube1, cube2)
+
+        // E' E2 = E
+        cube1 = .solvedCube
+        cube2 = .solvedCube
+        cube1.turnEquator(.counterclockwise)
+        cube1.turnEquator(.half)
+        cube2.turnEquator(.clockwise)
+        XCTAssertEqual(cube1, cube2)
+    }
+
 }
