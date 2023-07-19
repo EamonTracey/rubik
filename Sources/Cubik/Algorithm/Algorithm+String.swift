@@ -108,6 +108,7 @@ extension Algorithm {
             case .back(.clockwise):         string += "f"
             case .back(.half):              string += "g"
             case .back(.counterclockwise):  string += "h"
+            default: preconditionFailure()
             }
         }
 

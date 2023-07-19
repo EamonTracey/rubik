@@ -26,12 +26,15 @@ extension Cube {
     @inlinable
     public mutating func turn(_ turn: Turn) {
         switch turn {
-        case .up(let degree):    turnUp(degree)
-        case .down(let degree):  turnDown(degree)
-        case .right(let degree): turnRight(degree)
-        case .left(let degree):  turnLeft(degree)
-        case .front(let degree): turnFront(degree)
-        case .back(let degree):  turnBack(degree)
+        case .up(let degree):       turnUp(degree)
+        case .down(let degree):     turnDown(degree)
+        case .right(let degree):    turnRight(degree)
+        case .left(let degree):     turnLeft(degree)
+        case .front(let degree):    turnFront(degree)
+        case .back(let degree):     turnBack(degree)
+        case .standing(let degree): turnStanding(degree)
+        case .middle(let degree):   turnMiddle(degree)
+        case .equator(let degree):  turnEquator(degree)
         }
     }
 }
@@ -184,6 +187,87 @@ extension Cube {
             corners[.upLeftBack].twist(.clockwise)
             corners[.downRightBack].twist(.clockwise)
             corners[.downLeftBack].twist(.counterclockwise)
+        }
+    }
+
+    @usableFromInline
+    mutating func turnStanding(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            var facelets = self.facelets
+
+            let storedUpRightUp = facelets[5]
+            facelets[5] = facelets[28]
+            facelets[28] = facelets[12]
+            facelets[12] = facelets[25]
+            facelets[25] = storedUpRightUp
+
+            let storedUpRightRight = facelets[19]
+            facelets[19] = facelets[3]
+            facelets[3] = facelets[34]
+            facelets[34] = facelets[14]
+            facelets[14] = storedUpRightRight
+
+            let storedUpCenter = facelets[4]
+            facelets[4] = facelets[31]
+            facelets[31] = facelets[13]
+            facelets[13] = facelets[22]
+            facelets[22] = storedUpCenter
+
+            self = Cube(facelets: facelets)!
+        }
+    }
+
+    @usableFromInline
+    mutating func turnMiddle(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            var facelets = self.facelets
+
+            let storedUpFrontUp = facelets[7]
+            facelets[7] = facelets[46]
+            facelets[46] = facelets[16]
+            facelets[16] = facelets[43]
+            facelets[43] = storedUpFrontUp
+
+            let storedUpFrontFront = facelets[37]
+            facelets[37] = facelets[1]
+            facelets[1] = facelets[52]
+            facelets[52] = facelets[10]
+            facelets[10] = storedUpFrontFront
+
+            let storedUpCenter = facelets[4]
+            facelets[4] = facelets[49]
+            facelets[49] = facelets[13]
+            facelets[13] = facelets[40]
+            facelets[40] = storedUpCenter
+
+            self = Cube(facelets: facelets)!
+        }
+    }
+
+    @usableFromInline
+    mutating func turnEquator(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            var facelets = self.facelets
+
+            let storedRightFrontRight = facelets[21]
+            facelets[21] = facelets[39]
+            facelets[39] = facelets[30]
+            facelets[30] = facelets[48]
+            facelets[48] = storedRightFrontRight
+
+            let storedRightFrontFront = facelets[41]
+            facelets[41] = facelets[32]
+            facelets[32] = facelets[50]
+            facelets[50] = facelets[23]
+            facelets[23] = storedRightFrontFront
+
+            let storedRightCenter = facelets[22]
+            facelets[22] = facelets[40]
+            facelets[40] = facelets[31]
+            facelets[31] = facelets[49]
+            facelets[49] = storedRightCenter
+
+            self = Cube(facelets: facelets)!
         }
     }
 }

@@ -51,45 +51,46 @@ extension Cube {
     public init?(facelets: [Facelet]) {
         guard facelets.count == 54 else { return nil }
 
-        guard facelets[4] == .up else { return nil }
-        guard facelets[13] == .down else { return nil }
-        guard facelets[22] == .right else { return nil }
-        guard facelets[31] == .left else { return nil }
-        guard facelets[40] == .front else { return nil }
-        guard facelets[49] == .back else { return nil }
-
-        guard let upRight = Edge(facelets[5], facelets[19]) else { return nil }
-        guard let upLeft = Edge(facelets[3], facelets[28]) else { return nil }
-        guard let downRight = Edge(facelets[14], facelets[25]) else { return nil }
-        guard let downLeft = Edge(facelets[12], facelets[34]) else { return nil }
-        guard let upFront = Edge(facelets[7], facelets[37]) else { return nil }
-        guard let upBack = Edge(facelets[1], facelets[46]) else { return nil }
-        guard let downFront = Edge(facelets[10], facelets[43]) else { return nil }
-        guard let downBack = Edge(facelets[16], facelets[52]) else { return nil }
-        guard let rightFront = Edge(facelets[41], facelets[21]) else { return nil }
-        guard let rightBack = Edge(facelets[48], facelets[23]) else { return nil }
-        guard let leftFront = Edge(facelets[39], facelets[32]) else { return nil }
-        guard let leftBack = Edge(facelets[50], facelets[30]) else { return nil }
-
-        guard let upRightFront = Corner(facelets[8], facelets[38], facelets[18]) else { return nil }
-        guard let upLeftBack = Corner(facelets[0], facelets[47], facelets[27]) else { return nil }
-        guard let downRightBack = Corner(facelets[17], facelets[51], facelets[26]) else { return nil }
-        guard let downLeftFront = Corner(facelets[9], facelets[42], facelets[35]) else { return nil }
-        guard let upRightBack = Corner(facelets[2], facelets[45], facelets[20]) else { return nil }
-        guard let upLeftFront = Corner(facelets[6], facelets[36], facelets[29]) else { return nil }
-        guard let downRightFront = Corner(facelets[11], facelets[44], facelets[24]) else { return nil }
-        guard let downLeftBack = Corner(facelets[15], facelets[53], facelets[33]) else { return nil }
-
-        self.edges = [
-            upRight, upLeft, downRight, downLeft,
-            upFront, upBack, downFront, downBack,
-            rightFront, rightBack, leftFront, leftBack
+        let faceletMap: [Facelet: Facelet] = [
+            facelets[4]: .up,
+            facelets[13]: .down,
+            facelets[22]: .right,
+            facelets[31]: .left,
+            facelets[40]: .front,
+            facelets[49]: .back
         ]
 
-        self.corners = [
-            upRightFront, upLeftBack, downRightBack, downLeftFront,
-            upRightBack, upLeftFront, downRightFront, downLeftBack
-        ]
+        guard Set(faceletMap.keys).count == 6 else { return nil }
+
+        self.edges = []
+        self.corners = []
+
+        for (indexA, indexB) in [
+            (5, 19), (3, 28), (14, 25), (12, 34),
+            (7, 37), (1, 46), (10, 43), (16, 52),
+            (41, 21), (48, 23), (39, 32), (50, 30)
+        ] {
+            guard let edge = Edge(
+                faceletMap[facelets[indexA]]!, faceletMap[facelets[indexB]]!
+            ) else { return nil }
+            self.edges.append(edge)
+        }
+
+        for (indexA, indexB, indexC) in [
+            (8, 38, 18),
+            (0, 47, 27),
+            (17, 51, 26),
+            (9, 42, 35),
+            (2, 45, 20),
+            (6, 36, 29),
+            (11, 44, 24),
+            (15, 53, 33)
+        ] {
+            guard let corner = Corner(
+                faceletMap[facelets[indexA]]!, faceletMap[facelets[indexB]]!, faceletMap[facelets[indexC]]!
+            ) else { return nil }
+            self.corners.append(corner)
+        }
     }
 
     /// The facelets of a cube.

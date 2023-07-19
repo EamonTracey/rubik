@@ -29,6 +29,15 @@ extension Turn {
         case "B":  self = .back(.clockwise)
         case "B2": self = .back(.half)
         case "B'": self = .back(.counterclockwise)
+        case "S":  self = .standing(.clockwise)
+        case "S2": self = .standing(.half)
+        case "S'": self = .standing(.counterclockwise)
+        case "M":  self = .middle(.clockwise)
+        case "M2": self = .middle(.half)
+        case "M'": self = .middle(.counterclockwise)
+        case "E":  self = .equator(.clockwise)
+        case "E2": self = .equator(.half)
+        case "E'": self = .equator(.counterclockwise)
         default:   return nil
         }
     }
@@ -37,24 +46,33 @@ extension Turn {
     @inlinable
     public var stringNotation: String {
         switch self {
-        case .up(.clockwise):           return "U"
-        case .up(.half):                return "U2"
-        case .up(.counterclockwise):    return "U'"
-        case .down(.clockwise):         return "D"
-        case .down(.half):              return "D2"
-        case .down(.counterclockwise):  return "D'"
-        case .right(.clockwise):        return "R"
-        case .right(.half):             return "R2"
-        case .right(.counterclockwise): return "R'"
-        case .left(.clockwise):         return "L"
-        case .left(.half):              return "L2"
-        case .left(.counterclockwise):  return "L'"
-        case .front(.clockwise):        return "F"
-        case .front(.half):             return "F2"
-        case .front(.counterclockwise): return "F'"
-        case .back(.clockwise):         return "B"
-        case .back(.half):              return "B2"
-        case .back(.counterclockwise):  return "B'"
+        case .up(.clockwise):              return "U"
+        case .up(.half):                   return "U2"
+        case .up(.counterclockwise):       return "U'"
+        case .down(.clockwise):            return "D"
+        case .down(.half):                 return "D2"
+        case .down(.counterclockwise):     return "D'"
+        case .right(.clockwise):           return "R"
+        case .right(.half):                return "R2"
+        case .right(.counterclockwise):    return "R'"
+        case .left(.clockwise):            return "L"
+        case .left(.half):                 return "L2"
+        case .left(.counterclockwise):     return "L'"
+        case .front(.clockwise):           return "F"
+        case .front(.half):                return "F2"
+        case .front(.counterclockwise):    return "F'"
+        case .back(.clockwise):            return "B"
+        case .back(.half):                 return "B2"
+        case .back(.counterclockwise):     return "B'"
+        case .standing(.clockwise):        return "S"
+        case .standing(.half):             return "S2"
+        case .standing(.counterclockwise): return "S'"
+        case .middle(.clockwise):          return "M"
+        case .middle(.half):               return "M2"
+        case .middle(.counterclockwise):   return "M'"
+        case .equator(.clockwise):         return "E"
+        case .equator(.half):              return "E2"
+        case .equator(.counterclockwise):  return "E'"
         }
     }
 }
