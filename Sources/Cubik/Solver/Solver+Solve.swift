@@ -54,6 +54,9 @@ extension Solver {
         }
 
         switch method {
+        case .pochmann:
+            let solution = pochmann.solve(cube)
+            return .success(solution)
         case .thistlethwaite:
             if let solution = thistlethwaite.solve(cube) {
                 return .success(solution)
@@ -66,6 +69,7 @@ extension Solver {
 extension Solver {
     /// A method to solve a cube.
     public enum Method {
+        case pochmann
         case thistlethwaite
     }
 }

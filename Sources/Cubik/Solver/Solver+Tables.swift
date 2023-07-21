@@ -13,6 +13,8 @@ extension Solver {
         switch method {
         case .thistlethwaite:
             thistlethwaite.loadTables()
+        default:
+            break
         }
     }
 
@@ -29,6 +31,8 @@ extension Solver {
         switch method {
         case .thistlethwaite:
             thistlethwaite.unloadTables()
+        default:
+            break
         }
     }
 }

@@ -27,3 +27,29 @@ extension Cube {
     /// The cube in the solved state.
     public static let solvedCube: Cube = Cube(edges: Cube.solvedEdges, corners: Cube.solvedCorners)
 }
+
+extension Cube {
+    public var areEdgesOriented: Bool {
+        return edges.map { $0.orientation } == Cube.solvedEdges.map({ $0.orientation })
+    }
+
+    public var areEdgesPermuted: Bool {
+        return edges.map { $0.solvedPosition } == Cube.solvedEdges.map({ $0.solvedPosition })
+    }
+
+    public var areEdgesSolved: Bool {
+        return edges == Cube.solvedEdges
+    }
+
+    public var areCornersOriented: Bool {
+        return corners.map { $0.orientation } == Cube.solvedCorners.map({ $0.orientation })
+    }
+
+    public var areCornersPermuted: Bool {
+        return corners.map { $0.solvedPosition } == Cube.solvedCorners.map({ $0.solvedPosition })
+    }
+
+    public var areCornersSolved: Bool {
+        return corners == Cube.solvedCorners
+    }
+}

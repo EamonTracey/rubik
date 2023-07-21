@@ -30,6 +30,9 @@ public enum Turn: Equatable, Hashable {
     case standing(Degree)
     case middle(Degree)
     case equator(Degree)
+    case yaxis(Degree)
+    case xaxis(Degree)
+    case zaxis(Degree)
 }
 
 extension Turn {

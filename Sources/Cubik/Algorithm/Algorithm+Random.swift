@@ -7,7 +7,7 @@ extension Algorithm {
     /// that all cube states are equally likely. This means it is not WCA compliant.
     public static func random() -> Algorithm {
         return Algorithm((0..<25).map { _ in
-            Turn.allCases.randomElement()!
+            Turn.outerTurns.randomElement()!
         })
     }
 }

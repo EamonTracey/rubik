@@ -38,6 +38,15 @@ extension Turn {
         case "E":  self = .equator(.clockwise)
         case "E2": self = .equator(.half)
         case "E'": self = .equator(.counterclockwise)
+        case "y":  self = .yaxis(.clockwise)
+        case "y2": self = .yaxis(.half)
+        case "y'": self = .yaxis(.counterclockwise)
+        case "x":  self = .xaxis(.clockwise)
+        case "x2": self = .xaxis(.half)
+        case "x'": self = .xaxis(.counterclockwise)
+        case "z":  self = .zaxis(.clockwise)
+        case "z2": self = .zaxis(.half)
+        case "z'": self = .zaxis(.counterclockwise)
         default:   return nil
         }
     }
@@ -73,6 +82,15 @@ extension Turn {
         case .equator(.clockwise):         return "E"
         case .equator(.half):              return "E2"
         case .equator(.counterclockwise):  return "E'"
+        case .yaxis(.clockwise):           return "y"
+        case .yaxis(.half):                return "y2"
+        case .yaxis(.counterclockwise):    return "y'"
+        case .xaxis(.clockwise):           return "x"
+        case .xaxis(.half):                return "x2"
+        case .xaxis(.counterclockwise):    return "x'"
+        case .zaxis(.clockwise):           return "z"
+        case .zaxis(.half):                return "z2"
+        case .zaxis(.counterclockwise):    return "z'"
         }
     }
 }

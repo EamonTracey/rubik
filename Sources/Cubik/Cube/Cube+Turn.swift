@@ -35,6 +35,9 @@ extension Cube {
         case .standing(let degree): turnStanding(degree)
         case .middle(let degree):   turnMiddle(degree)
         case .equator(let degree):  turnEquator(degree)
+        case .yaxis(let degree):    turnYaxis(degree)
+        case .xaxis(let degree):    turnXaxis(degree)
+        case .zaxis(let degree):    turnZaxis(degree)
         }
     }
 }
@@ -268,6 +271,33 @@ extension Cube {
             facelets[49] = storedRightCenter
 
             self = Cube(facelets: facelets)!
+        }
+    }
+
+    @usableFromInline
+    mutating func turnYaxis(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            turnUp(.clockwise)
+            turnDown(.counterclockwise)
+            turnEquator(.counterclockwise)
+        }
+    }
+
+    @usableFromInline
+    mutating func turnXaxis(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            turnRight(.clockwise)
+            turnLeft(.counterclockwise)
+            turnMiddle(.counterclockwise)
+        }
+    }
+
+    @usableFromInline
+    mutating func turnZaxis(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            turnFront(.clockwise)
+            turnBack(.counterclockwise)
+            turnStanding(.clockwise)
         }
     }
 }

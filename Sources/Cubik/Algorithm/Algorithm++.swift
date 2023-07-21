@@ -13,3 +13,7 @@
 public func + (lhs: Algorithm, rhs: Algorithm) -> Algorithm {
     return Algorithm(lhs.turns + rhs.turns)
 }
+
+public func += (lhs: inout Algorithm, rhs: Algorithm) {
+    lhs = lhs + rhs
+}
