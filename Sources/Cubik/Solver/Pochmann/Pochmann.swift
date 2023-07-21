@@ -12,6 +12,8 @@ extension Pochmann {
         let permuteCornersAlgorithm = permutePochmannCorners(cube)
         cube.execute(permuteCornersAlgorithm)
 
+        fatalError("Pochmann's method is not yet supported.")
+
         return permuteEdgesAlgorithm + permuteCornersAlgorithm
     }
 }
