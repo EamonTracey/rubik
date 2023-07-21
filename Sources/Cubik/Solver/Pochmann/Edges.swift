@@ -7,10 +7,9 @@ func permutePochmannEdges(_ cube: Cube) -> Algorithm {
         let swapPosition: Int
 
         if cube.edges[.upRight].solvedPosition == .upRight {
-            let unsolved = cube.edges.enumerated().first { (index, edge) in
+            swapPosition = cube.edges.enumerated().first { (index, edge) in
                 index != edge.solvedPosition.rawValue
-            }!
-            swapPosition = unsolved.offset
+            }!.offset
         } else {
             swapPosition = cube.edges[.upRight].solvedPosition.rawValue
         }
@@ -20,6 +19,29 @@ func permutePochmannEdges(_ cube: Cube) -> Algorithm {
 
         algorithm += commutator
         cube.execute(commutator)
+    }
+
+    return algorithm
+}
+
+@usableFromInline
+func orientPochmannEdges(_ cube: Cube) -> Algorithm {
+    var cube = cube
+    var algorithm = Algorithm.nothing
+
+    while let swapPosition = cube.edges.enumerated().first(where: { (index, edge) in
+        edge.orientation != .correct && index != Cube.Edge.Position.upRight.rawValue
+    })?.offset {
+        let setupAlgorithm = setupMap[swapPosition * 2]
+        let commutator = setupAlgorithm + tPerm + setupAlgorithm.reversed
+
+        algorithm += commutator
+        cube.execute(commutator)
+
+        let permuteAlgorithm = permutePochmannEdges(cube)
+
+        algorithm += permuteAlgorithm
+        cube.execute(permuteAlgorithm)
     }
 
     return algorithm

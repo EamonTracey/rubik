@@ -25,6 +25,29 @@ func permutePochmannCorners(_ cube: Cube) -> Algorithm {
     return algorithm
 }
 
+@usableFromInline
+func orientPochmannCorners(_ cube: Cube) -> Algorithm {
+    var cube = cube
+    var algorithm = Algorithm.nothing
+
+    while let swapPosition = cube.corners.enumerated().first(where: { (index, corner) in
+        corner.orientation != .correct && index != Cube.Corner.Position.upLeftBack.rawValue
+    })?.offset {
+        let setupAlgorithm = setupMap[swapPosition * 3]
+        let commutator = setupAlgorithm + yPerm + setupAlgorithm.reversed
+
+        algorithm += commutator
+        cube.execute(commutator)
+
+        let permuteAlgorithm = permutePochmannCorners(cube)
+
+        algorithm += permuteAlgorithm
+        cube.execute(permuteAlgorithm)
+    }
+
+    return algorithm
+}
+
 fileprivate let yPerm = Algorithm("R U' R' U' R U R' F' R U R' U' R' F R")!
 
 fileprivate let setupMap: [Algorithm] = [

@@ -9,11 +9,15 @@ extension Pochmann {
         let permuteEdgesAlgorithm = permutePochmannEdges(cube)
         cube.execute(permuteEdgesAlgorithm)
 
+        let orientEdgesAlgorithm = orientPochmannEdges(cube)
+        cube.execute(orientEdgesAlgorithm)
+
         let permuteCornersAlgorithm = permutePochmannCorners(cube)
         cube.execute(permuteCornersAlgorithm)
 
-        fatalError("Pochmann's method is not yet supported.")
+        let orientCornersAlgorithm = orientPochmannCorners(cube)
+        cube.execute(orientCornersAlgorithm)
 
-        return permuteEdgesAlgorithm + permuteCornersAlgorithm
+        return permuteEdgesAlgorithm + orientEdgesAlgorithm + permuteCornersAlgorithm + orientCornersAlgorithm
     }
 }
