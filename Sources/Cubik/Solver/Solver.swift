@@ -7,6 +7,9 @@
 /// ``loadTables(for:)`` and ``unloadTables(for:)``.
 public class Solver {
     @usableFromInline
+    let fridrich = Fridrich()
+
+    @usableFromInline
     let pochmann = Pochmann()
 
     @usableFromInline

@@ -1,12 +1,12 @@
 import Collections
 @_spi(Tables) import Cubik
 
-func generateThistlethwaiteTable(
-    factor: Int,
+func generateCubeStateTable(
+    size: Int,
     allowedTurns: [Turn],
     encode: (Cube) -> (Int)
 ) -> [String] {
-    var algorithmsTable: [String?] = Array(repeating: nil, count: factor)
+    var algorithmsTable: [String?] = Array(repeating: nil, count: size)
     var frontier: Deque<(cube: Cube, algorithm: Algorithm)> = [(.solvedCube, .nothing)]
 
     while let node = frontier.popFirst() {

@@ -11,6 +11,8 @@ extension Solver {
     @inlinable
     public func loadTables(for method: Method) {
         switch method {
+        case .fridrich:
+            fridrich.loadTables()
         case .thistlethwaite:
             thistlethwaite.loadTables()
         default:
@@ -29,6 +31,8 @@ extension Solver {
     @inlinable
     public func unloadTables(for method: Method) {
         switch method {
+        case .fridrich:
+            fridrich.unloadTables()
         case .thistlethwaite:
             thistlethwaite.unloadTables()
         default:

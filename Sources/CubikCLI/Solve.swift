@@ -62,6 +62,8 @@ extension Solve {
 extension Solver.Method: ExpressibleByArgument {
     public init?(argument: String) {
         switch argument {
+        case "fridrich":
+            self = .fridrich
         case "pochmann":
             self = .pochmann
         case "thistlethwaite":

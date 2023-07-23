@@ -54,6 +54,11 @@ extension Solver {
         }
 
         switch method {
+        case .fridrich:
+            if let solution = fridrich.solve(cube) {
+                return .success(solution)
+            }
+            return .failure(.corruptedTables)
         case .pochmann:
             let solution = pochmann.solve(cube)
             return .success(solution)
@@ -69,6 +74,7 @@ extension Solver {
 extension Solver {
     /// A method to solve a cube.
     public enum Method {
+        case fridrich
         case pochmann
         case thistlethwaite
     }

@@ -77,5 +77,6 @@ extension Thistlethwaite {
         tableTwo = nil
         tableThree = nil
         tableFour = nil
+        tablesLoaded = false
     }
 }
