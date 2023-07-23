@@ -50,6 +50,9 @@ extension Cube {
     @inlinable
     public init?(facelets: [Facelet]) {
         guard facelets.count == 54 else { return nil }
+        guard Set([facelets[4], facelets[13], facelets[22], facelets[31], facelets[40], facelets[49]]).count == 6 else {
+            return nil
+        }
 
         let faceletMap: [Facelet: Facelet] = [
             facelets[4]: .up,
@@ -60,8 +63,6 @@ extension Cube {
             facelets[49]: .back
         ]
 
-        guard Set(faceletMap.keys).count == 6 else { return nil }
-
         self.edges = []
         self.corners = []
 
@@ -70,9 +71,9 @@ extension Cube {
             (7, 37), (1, 46), (10, 43), (16, 52),
             (41, 21), (48, 23), (39, 32), (50, 30)
         ] {
-            guard let edge = Edge(
-                faceletMap[facelets[indexA]]!, faceletMap[facelets[indexB]]!
-            ) else { return nil }
+            guard let faceletA = faceletMap[facelets[indexA]] else { return nil }
+            guard let faceletB = faceletMap[facelets[indexB]] else { return nil }
+            guard let edge = Edge(faceletA, faceletB) else { return nil }
             self.edges.append(edge)
         }
 

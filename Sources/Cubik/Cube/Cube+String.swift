@@ -1,6 +1,9 @@
 extension Cube {
     public init?(_ string: String) {
         guard string.count == 54 else { return nil }
+        guard Set([string[4], string[13], string[22], string[31], string[40], string[49]]).count == 6 else {
+            return nil
+        }
 
         let faceletMap: [Character: Facelet] = [
             string[4]: .up,
@@ -11,15 +14,10 @@ extension Cube {
             string[49]: .back
         ]
 
-        guard Set(faceletMap.keys).count == 6 else { return nil }
-
         var facelets = [Facelet]()
         for character in string {
-            if let facelet = faceletMap[character] {
-                facelets.append(facelet)
-            } else {
-                return nil
-            }
+            guard let facelet = faceletMap[character] else { return nil }
+            facelets.append(facelet)
         }
 
         self.init(facelets: facelets)
