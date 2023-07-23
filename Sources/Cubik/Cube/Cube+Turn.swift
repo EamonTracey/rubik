@@ -26,18 +26,24 @@ extension Cube {
     @inlinable
     public mutating func turn(_ turn: Turn) {
         switch turn {
-        case .up(let degree):       turnUp(degree)
-        case .down(let degree):     turnDown(degree)
-        case .right(let degree):    turnRight(degree)
-        case .left(let degree):     turnLeft(degree)
-        case .front(let degree):    turnFront(degree)
-        case .back(let degree):     turnBack(degree)
-        case .standing(let degree): turnStanding(degree)
-        case .middle(let degree):   turnMiddle(degree)
-        case .equator(let degree):  turnEquator(degree)
-        case .yaxis(let degree):    turnYaxis(degree)
-        case .xaxis(let degree):    turnXaxis(degree)
-        case .zaxis(let degree):    turnZaxis(degree)
+        case .up(let degree):        turnUp(degree)
+        case .down(let degree):      turnDown(degree)
+        case .right(let degree):     turnRight(degree)
+        case .left(let degree):      turnLeft(degree)
+        case .front(let degree):     turnFront(degree)
+        case .back(let degree):      turnBack(degree)
+        case .standing(let degree):  turnStanding(degree)
+        case .middle(let degree):    turnMiddle(degree)
+        case .equator(let degree):   turnEquator(degree)
+        case .upWide(let degree):    turnUpWide(degree)
+        case .downWide(let degree):  turnDownWide(degree)
+        case .rightWide(let degree): turnRightWide(degree)
+        case .leftWide(let degree):  turnLeftWide(degree)
+        case .frontWide(let degree): turnFrontWide(degree)
+        case .backWide(let degree):  turnBackWide(degree)
+        case .yAxis(let degree):     turnYAxis(degree)
+        case .xAxis(let degree):     turnXAxis(degree)
+        case .zAxis(let degree):     turnZAxis(degree)
         }
     }
 }
@@ -275,7 +281,55 @@ extension Cube {
     }
 
     @usableFromInline
-    mutating func turnYaxis(_ degree: Turn.Degree) {
+    mutating func turnUpWide(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            turnUp(.clockwise)
+            turnEquator(.counterclockwise)
+        }
+    }
+
+    @usableFromInline
+    mutating func turnDownWide(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            turnDown(.clockwise)
+            turnEquator(.clockwise)
+        }
+    }
+
+    @usableFromInline
+    mutating func turnRightWide(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            turnRight(.clockwise)
+            turnMiddle(.counterclockwise)
+        }
+    }
+
+    @usableFromInline
+    mutating func turnLeftWide(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            turnLeft(.clockwise)
+            turnMiddle(.clockwise)
+        }
+    }
+
+    @usableFromInline
+    mutating func turnFrontWide(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            turnFront(.clockwise)
+            turnStanding(.clockwise)
+        }
+    }
+
+    @usableFromInline
+    mutating func turnBackWide(_ degree: Turn.Degree) {
+        for _ in 0..<degree.rawValue {
+            turnBack(.clockwise)
+            turnStanding(.counterclockwise)
+        }
+    }
+
+    @usableFromInline
+    mutating func turnYAxis(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             turnUp(.clockwise)
             turnDown(.counterclockwise)
@@ -284,7 +338,7 @@ extension Cube {
     }
 
     @usableFromInline
-    mutating func turnXaxis(_ degree: Turn.Degree) {
+    mutating func turnXAxis(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             turnRight(.clockwise)
             turnLeft(.counterclockwise)
@@ -293,7 +347,7 @@ extension Cube {
     }
 
     @usableFromInline
-    mutating func turnZaxis(_ degree: Turn.Degree) {
+    mutating func turnZAxis(_ degree: Turn.Degree) {
         for _ in 0..<degree.rawValue {
             turnFront(.clockwise)
             turnBack(.counterclockwise)

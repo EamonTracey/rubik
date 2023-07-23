@@ -23,12 +23,12 @@ extension Turn {
         case .middle(.counterclockwise):   return .middle(.clockwise)
         case .equator(.clockwise):         return .equator(.counterclockwise)
         case .equator(.counterclockwise):  return .equator(.clockwise)
-        case .yaxis(.clockwise):           return .yaxis(.counterclockwise)
-        case .yaxis(.counterclockwise):    return .yaxis(.clockwise)
-        case .xaxis(.clockwise):           return .xaxis(.counterclockwise)
-        case .xaxis(.counterclockwise):    return .xaxis(.clockwise)
-        case .zaxis(.clockwise):           return .zaxis(.counterclockwise)
-        case .zaxis(.counterclockwise):    return .zaxis(.clockwise)
+        case .yAxis(.clockwise):           return .yAxis(.counterclockwise)
+        case .yAxis(.counterclockwise):    return .yAxis(.clockwise)
+        case .xAxis(.clockwise):           return .xAxis(.counterclockwise)
+        case .xAxis(.counterclockwise):    return .xAxis(.clockwise)
+        case .zAxis(.clockwise):           return .zAxis(.counterclockwise)
+        case .zAxis(.counterclockwise):    return .zAxis(.clockwise)
         default:                           return self
         }
     }

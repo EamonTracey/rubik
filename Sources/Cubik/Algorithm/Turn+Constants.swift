@@ -13,4 +13,19 @@ extension Turn {
         .middle(.clockwise), .middle(.half), .middle(.counterclockwise),
         .equator(.clockwise), .equator(.half), .equator(.counterclockwise)
     ]
+
+    public static let wideTurns: [Turn] = [
+        .upWide(.clockwise), .upWide(.half), .upWide(.counterclockwise),
+        .downWide(.clockwise), .downWide(.half), .downWide(.counterclockwise),
+        .rightWide(.clockwise), .rightWide(.half), .rightWide(.counterclockwise),
+        .leftWide(.clockwise), .leftWide(.half), .leftWide(.counterclockwise),
+        .frontWide(.clockwise), .frontWide(.half), .frontWide(.counterclockwise),
+        .backWide(.clockwise), .backWide(.half), .backWide(.counterclockwise),
+    ]
+
+    public static let rotationTurns: [Turn] = [
+        .yAxis(.clockwise), .yAxis(.half), .yAxis(.counterclockwise),
+        .xAxis(.clockwise), .xAxis(.half), .xAxis(.counterclockwise),
+        .zAxis(.clockwise), .zAxis(.half), .zAxis(.counterclockwise),
+    ]
 }
