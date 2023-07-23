@@ -33,9 +33,9 @@ extension Fridrich {
         ) else { return nil }
 
         guard let fileHandle = fopen(url.relativePath, "r") else { return nil }
-        var buffer = [CChar](repeating: 0, count: 64)
+        var buffer = [CChar](repeating: 0, count: 32)
 
-        while fgets(&buffer, 9, fileHandle) != nil {
+        while fgets(&buffer, 32, fileHandle) != nil {
             buffer[strlen(buffer) - 1] = 0
             table.append(String(cString: buffer))
         }
