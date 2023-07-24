@@ -18,11 +18,9 @@ extension Fridrich {
         guard let cross = crossTable?[encodeCross(cube)] else { return nil }
         guard let crossAlgorithm = Algorithm(compressedString: cross) else { return nil }
         cube.execute(crossAlgorithm)
-        print(crossAlgorithm)
 
         let f2lAlgorithm = solveF2L(cube)
         cube.execute(f2lAlgorithm)
-        print(f2lAlgorithm)
 
         let ollAlgorithm = solveOLL(cube)
         cube.execute(ollAlgorithm)

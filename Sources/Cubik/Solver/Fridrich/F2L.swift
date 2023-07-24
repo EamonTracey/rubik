@@ -28,67 +28,59 @@ func solveF2L(_ cube: Cube) -> Algorithm {
 
 fileprivate func enforceF2LCase(_ cube: Cube) -> Algorithm {
     var cube = cube
-    var cornerEnforcementAlgorithm = Algorithm.nothing
-    var edgeEnforcementAlgorithmOne = Algorithm.nothing
-    var edgeEnforcementAlgorithmTwo = Algorithm.nothing
+    var cornerUpEnforcement = Algorithm.nothing
+    var edgeUpEnforcement = Algorithm.nothing
+    var edgeAUFEnforcement = Algorithm.nothing
 
     let cornerPosition = cube.corners.firstIndex { $0.solvedPosition == .downRightFront}!
     switch cornerPosition {
     case Cube.Corner.Position.upRightBack.rawValue:
-        cornerEnforcementAlgorithm.turns.append(.up(.clockwise))
+        cornerUpEnforcement.turns.append(.up(.clockwise))
     case Cube.Corner.Position.upLeftFront.rawValue:
-        cornerEnforcementAlgorithm.turns.append(.up(.counterclockwise))
+        cornerUpEnforcement.turns.append(.up(.counterclockwise))
     case Cube.Corner.Position.upLeftBack.rawValue:
-        cornerEnforcementAlgorithm.turns.append(.up(.half))
+        cornerUpEnforcement.turns.append(.up(.half))
     case Cube.Corner.Position.downRightBack.rawValue:
-        cornerEnforcementAlgorithm = Algorithm("R' U' R U2")!
+        cornerUpEnforcement = Algorithm("R' U' R U2")!
     case Cube.Corner.Position.downLeftFront.rawValue:
-        cornerEnforcementAlgorithm = Algorithm("L' U' L")!
+        cornerUpEnforcement = Algorithm("L' U' L")!
     case Cube.Corner.Position.downLeftBack.rawValue:
-        cornerEnforcementAlgorithm = Algorithm("L U2 L'")!
+        cornerUpEnforcement = Algorithm("L U2 L'")!
     default:
         break
     }
-    cube.execute(cornerEnforcementAlgorithm)
+    cube.execute(cornerUpEnforcement)
 
     let edgePositionOne = cube.edges.firstIndex { $0.solvedPosition == .rightFront }!
     switch edgePositionOne {
     case Cube.Edge.Position.rightBack.rawValue:
-        edgeEnforcementAlgorithmOne = Algorithm("R' U' R")!
+        edgeUpEnforcement = Algorithm("R' U' R")!
     case Cube.Edge.Position.leftFront.rawValue:
-        edgeEnforcementAlgorithmOne = Algorithm("F' U F")!
+        edgeUpEnforcement = Algorithm("F U F'")!
     case Cube.Edge.Position.leftBack.rawValue:
-        edgeEnforcementAlgorithmOne = Algorithm("L U' L' U")!
+        edgeUpEnforcement = Algorithm("L U' L' U")!
     default:
         break
     }
-    cube.execute(edgeEnforcementAlgorithmOne)
+    cube.execute(edgeUpEnforcement)
 
     let edgePositionTwo = cube.edges.firstIndex { $0.solvedPosition == .rightFront }!
     let edgeOrientation = cube.edges[edgePositionTwo].orientation
     if cornerPosition == Cube.Corner.Position.downRightFront.rawValue {
-
-        print("hello?")
-
-        if edgePositionTwo == Cube.Edge.Position.upLeft.rawValue && edgeOrientation == .correct {
-            edgeEnforcementAlgorithmTwo.turns.append(.up(.half))
-        } else if edgePositionTwo == Cube.Edge.Position.upLeft.rawValue && edgeOrientation == .flipped {
-            edgeEnforcementAlgorithmTwo.turns.append(.up(.counterclockwise))
-        } else if edgePositionTwo == Cube.Edge.Position.upBack.rawValue && edgeOrientation == .correct {
-            edgeEnforcementAlgorithmTwo.turns.append(.up(.clockwise))
-        } else if edgePositionTwo == Cube.Edge.Position.upBack.rawValue && edgeOrientation == .flipped {
-            edgeEnforcementAlgorithmTwo.turns.append(.up(.half))
-        } else if edgePositionTwo == Cube.Edge.Position.upRight.rawValue && edgeOrientation == .flipped {
-            edgeEnforcementAlgorithmTwo.turns.append(.up(.clockwise))
-        } else if edgePositionTwo == Cube.Edge.Position.upFront.rawValue && edgeOrientation == .correct {
-            edgeEnforcementAlgorithmTwo.turns.append(.up(.counterclockwise))
+        switch (edgePositionTwo, edgeOrientation) {
+        case (Cube.Edge.Position.upRight.rawValue, .flipped), (Cube.Edge.Position.upBack.rawValue, .correct):
+            edgeAUFEnforcement.turns.append(.up(.clockwise))
+        case (Cube.Edge.Position.upLeft.rawValue, .correct), (Cube.Edge.Position.upBack.rawValue, .flipped):
+            edgeAUFEnforcement.turns.append(.up(.half))
+        case (Cube.Edge.Position.upLeft.rawValue, .flipped), (Cube.Edge.Position.upFront.rawValue, .correct):
+            edgeAUFEnforcement.turns.append(.up(.counterclockwise))
+        default:
+            break
         }
-
     }
+    cube.execute(edgeAUFEnforcement)
 
-    cube.execute(edgeEnforcementAlgorithmTwo)
-
-    return cornerEnforcementAlgorithm + edgeEnforcementAlgorithmOne + edgeEnforcementAlgorithmTwo
+    return cornerUpEnforcement + edgeUpEnforcement + edgeAUFEnforcement
 }
 
 fileprivate var f2lAlgorithms: [Algorithm] = [
