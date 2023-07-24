@@ -125,5 +125,5 @@ fileprivate var f2lAlgorithms: [Algorithm] = [
     Algorithm("R U' R' U' R U R' U2 R U' R'")!,
     Algorithm("R U' R' F' L' U2 L F")!,
     Algorithm("F' L' U2 L F R U R'")!,
-    Algorithm("R2 U2 F R2 F' U2 R' U R'")!,
+    Algorithm("R2 U2 F R2 F' U2 R' U R'")!
 ]
