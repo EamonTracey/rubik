@@ -1,5 +1,20 @@
+@usableFromInline
 func solvePLL(_ cube: Cube) -> Algorithm {
-    return .nothing
+    var cube = cube
+
+    for pllAlgorithm in pllAlgorithms {
+        for aufA in [Algorithm.nothing, Algorithm("U")!, Algorithm("U2")!, Algorithm("U'")!] {
+            for aufB in [Algorithm.nothing, Algorithm("U")!, Algorithm("U2")!, Algorithm("U'")!] {
+                let pllSolution = aufA + pllAlgorithm + aufB
+
+                cube.execute(pllSolution)
+                if cube == .solvedCube { return pllSolution }
+                cube.execute(pllSolution.reversed)
+            }
+        }
+    }
+
+    fatalError("PLL failed. This is a bug.")
 }
 
 fileprivate var pllAlgorithms: [Algorithm] = [
@@ -24,5 +39,5 @@ fileprivate var pllAlgorithms: [Algorithm] = [
     Algorithm("M2 U' M U2 M' U' M2")!,
     Algorithm("R' U R' U' y R' F' R2 U' R' U R' F R F")!,
     Algorithm("F R U' R' U' R U R' F' R U R' U' R' F R F'")!,
-    Algorithm("M' U M2 U M2 U M' U2 M2")!,
+    Algorithm("M' U M2 U M2 U M' U2 M2")!
 ]

@@ -1,5 +1,3 @@
-import Foundation
-
 extension Algorithm {
     /// Initialize an algorithm from a string.
     ///
@@ -77,7 +75,7 @@ extension Algorithm {
             case "f": turns.append(.back(.clockwise))
             case "g": turns.append(.back(.half))
             case "h": turns.append(.back(.counterclockwise))
-            default:  return nil
+            default:  fatalError("Invalid compressed algorithm encoding.")
             }
         }
 
@@ -108,7 +106,7 @@ extension Algorithm {
             case .back(.clockwise):         string += "f"
             case .back(.half):              string += "g"
             case .back(.counterclockwise):  string += "h"
-            default: preconditionFailure()
+            default: fatalError("Strictly outer turns can be compressed.")
             }
         }
 

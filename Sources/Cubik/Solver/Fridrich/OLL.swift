@@ -1,5 +1,18 @@
+@usableFromInline
 func solveOLL(_ cube: Cube) -> Algorithm {
-    return .nothing
+    var cube = cube
+
+    for ollAlgorithm in ollAlgorithms {
+        for auf in [Algorithm.nothing, Algorithm("U")!, Algorithm("U2")!, Algorithm("U'")!] {
+            let ollSolution = auf + ollAlgorithm
+
+            cube.execute(ollSolution)
+            if cube.areEdgesOriented && cube.areCornersOriented { return ollSolution }
+            cube.execute(ollSolution.reversed)
+        }
+    }
+
+    fatalError("OLL failed. This is a bug.")
 }
 
 fileprivate var ollAlgorithms: [Algorithm] = [
@@ -25,11 +38,11 @@ fileprivate var ollAlgorithms: [Algorithm] = [
     Algorithm("r' R U R U R' U' M' R' F R F'")!,
     Algorithm("r U R' U' M2 U R U' R' U' M'")!,
     Algorithm("R U2 R' U' R U R' U' R U' R'")!,
-    Algorithm("R U2 (R2 U' R2 U' R2) U2 R")!,
+    Algorithm("R U2 R2 U' R2 U' R2 U2 R")!,
     Algorithm("R2 D' R U2 R' D R U2 R")!,
     Algorithm("r U R' U' r' F R F'")!,
     Algorithm("F' r U R' U' r' F R")!,
-    Algorithm("(R U2 R') U' R U' R'")!,
+    Algorithm("R U2 R' U' R U' R'")!,
     Algorithm("R U R' U R U2 R'")!,
     Algorithm("r U R' U' r' R U R U' R'")!,
     Algorithm("R U R' U' R U' R' F' U' F R U R'")!,
@@ -57,8 +70,8 @@ fileprivate var ollAlgorithms: [Algorithm] = [
     Algorithm("F U R U' R' U R U' R' F'")!,
     Algorithm("R U R' U R U' B U' B' R'")!,
     Algorithm("l' U2 L U L' U' L U L' U l")!,
-    Algorithm("(r U2 R' U') R U R' U' R U' r'")!,
+    Algorithm("r U2 R' U' R U R' U' R U' r'")!,
     Algorithm("R' F R U R U' R2 F' R2 U' R' U R U R'")!,
-    Algorithm("(r' U' r) U' R' U R U' R' U R r' U r")!,
-    Algorithm("R U R' U' M' U R U' r'")!,
+    Algorithm("r' U' r U' R' U R U' R' U R r' U r")!,
+    Algorithm("R U R' U' M' U R U' r'")!
 ]

@@ -1,7 +1,7 @@
 @usableFromInline
 func permutePochmannEdges(_ cube: Cube) -> Algorithm {
     var cube = cube
-    var algorithm = Algorithm.nothing
+    var edgesAlgorithm = Algorithm.nothing
 
     while (!cube.areEdgesPermuted) {
         let swapPosition: Int
@@ -17,11 +17,11 @@ func permutePochmannEdges(_ cube: Cube) -> Algorithm {
         let setupAlgorithm = setupMap[swapPosition * 2 + cube.edges[.upRight].orientation.rawValue]
         let commutator = setupAlgorithm + tPerm + setupAlgorithm.reversed
 
-        algorithm += commutator
+        edgesAlgorithm += commutator
         cube.execute(commutator)
     }
 
-    return algorithm
+    return edgesAlgorithm
 }
 
 @usableFromInline
