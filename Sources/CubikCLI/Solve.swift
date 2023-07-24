@@ -72,6 +72,10 @@ extension Solver.Method: ExpressibleByArgument {
             return nil
         }
     }
+
+    public static var allValueStrings: [String] {
+        return ["fridrich", "pochmann", "thistlethwaite"]
+    }
 }
 
 fileprivate let discussion = "There are two accepted ways to represent a scrambled cube as a string: " +
