@@ -10,68 +10,68 @@ final class CubikTurnTests: XCTestCase {
         // U4 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnUp(.clockwise)
+        cube1.turnUpClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnUp(.clockwise)
+        cube1.turnUpClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnUp(.clockwise)
+        cube1.turnUpClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnUp(.clockwise)
+        cube1.turnUpClockwise()
         XCTAssertEqual(cube1, cube2)
         
         // U2 U2 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnUp(.half)
-        cube1.turnUp(.half)
+        cube1.turnUpHalf()
+        cube1.turnUpHalf()
         XCTAssertEqual(cube1, cube2)
         
         // U U = U2
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnUp(.clockwise)
-        cube1.turnUp(.clockwise)
-        cube2.turnUp(.half)
+        cube1.turnUpClockwise()
+        cube1.turnUpClockwise()
+        cube2.turnUpHalf()
         XCTAssertEqual(cube1, cube2)
         
         // U' U' = U2
-        cube1.turnUp(.counterclockwise)
-        cube1.turnUp(.counterclockwise)
-        cube2.turnUp(.half)
+        cube1.turnUpCounterclockwise()
+        cube1.turnUpCounterclockwise()
+        cube2.turnUpHalf()
         XCTAssertEqual(cube1, cube2)
         
         // U U U = U'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnUp(.clockwise)
-        cube1.turnUp(.clockwise)
-        cube1.turnUp(.clockwise)
-        cube2.turnUp(.counterclockwise)
+        cube1.turnUpClockwise()
+        cube1.turnUpClockwise()
+        cube1.turnUpClockwise()
+        cube2.turnUpCounterclockwise()
         XCTAssertEqual(cube1, cube2)
         
         // U' U' U' = U
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnUp(.counterclockwise)
-        cube1.turnUp(.counterclockwise)
-        cube1.turnUp(.counterclockwise)
-        cube2.turnUp(.clockwise)
+        cube1.turnUpCounterclockwise()
+        cube1.turnUpCounterclockwise()
+        cube1.turnUpCounterclockwise()
+        cube2.turnUpClockwise()
         XCTAssertEqual(cube1, cube2)
         
         // U U2 = U'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnUp(.clockwise)
-        cube1.turnUp(.half)
-        cube2.turnUp(.counterclockwise)
+        cube1.turnUpClockwise()
+        cube1.turnUpHalf()
+        cube2.turnUpCounterclockwise()
         XCTAssertEqual(cube1, cube2)
         
         // U' U2 = U
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnUp(.counterclockwise)
-        cube1.turnUp(.half)
-        cube2.turnUp(.clockwise)
+        cube1.turnUpCounterclockwise()
+        cube1.turnUpHalf()
+        cube2.turnUpClockwise()
         XCTAssertEqual(cube1, cube2)
     }
     
@@ -79,68 +79,68 @@ final class CubikTurnTests: XCTestCase {
         // D4 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnDown(.clockwise)
+        cube1.turnDownClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnDown(.clockwise)
+        cube1.turnDownClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnDown(.clockwise)
+        cube1.turnDownClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnDown(.clockwise)
+        cube1.turnDownClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // D2 D2 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnDown(.half)
-        cube1.turnDown(.half)
+        cube1.turnDownHalf()
+        cube1.turnDownHalf()
         XCTAssertEqual(cube1, cube2)
 
         // D D = D2
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnDown(.clockwise)
-        cube1.turnDown(.clockwise)
-        cube2.turnDown(.half)
+        cube1.turnDownClockwise()
+        cube1.turnDownClockwise()
+        cube2.turnDownHalf()
         XCTAssertEqual(cube1, cube2)
 
         // D' D' = D2
-        cube1.turnDown(.counterclockwise)
-        cube1.turnDown(.counterclockwise)
-        cube2.turnDown(.half)
+        cube1.turnDownCounterclockwise()
+        cube1.turnDownCounterclockwise()
+        cube2.turnDownHalf()
         XCTAssertEqual(cube1, cube2)
 
         // D D D = D'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnDown(.clockwise)
-        cube1.turnDown(.clockwise)
-        cube1.turnDown(.clockwise)
-        cube2.turnDown(.counterclockwise)
+        cube1.turnDownClockwise()
+        cube1.turnDownClockwise()
+        cube1.turnDownClockwise()
+        cube2.turnDownCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // D' D' D' = D
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnDown(.counterclockwise)
-        cube1.turnDown(.counterclockwise)
-        cube1.turnDown(.counterclockwise)
-        cube2.turnDown(.clockwise)
+        cube1.turnDownCounterclockwise()
+        cube1.turnDownCounterclockwise()
+        cube1.turnDownCounterclockwise()
+        cube2.turnDownClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // D D2 = D'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnDown(.clockwise)
-        cube1.turnDown(.half)
-        cube2.turnDown(.counterclockwise)
+        cube1.turnDownClockwise()
+        cube1.turnDownHalf()
+        cube2.turnDownCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // D' D2 = D
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnDown(.counterclockwise)
-        cube1.turnDown(.half)
-        cube2.turnDown(.clockwise)
+        cube1.turnDownCounterclockwise()
+        cube1.turnDownHalf()
+        cube2.turnDownClockwise()
         XCTAssertEqual(cube1, cube2)
     }
     
@@ -148,137 +148,137 @@ final class CubikTurnTests: XCTestCase {
         // R4 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnRight(.clockwise)
+        cube1.turnRightClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnRight(.clockwise)
+        cube1.turnRightClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnRight(.clockwise)
+        cube1.turnRightClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnRight(.clockwise)
+        cube1.turnRightClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // R2 R2 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnRight(.half)
-        cube1.turnRight(.half)
+        cube1.turnRightHalf()
+        cube1.turnRightHalf()
         XCTAssertEqual(cube1, cube2)
 
         // R R = R2
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnRight(.clockwise)
-        cube1.turnRight(.clockwise)
-        cube2.turnRight(.half)
+        cube1.turnRightClockwise()
+        cube1.turnRightClockwise()
+        cube2.turnRightHalf()
         XCTAssertEqual(cube1, cube2)
 
         // R' R' = R2
-        cube1.turnRight(.counterclockwise)
-        cube1.turnRight(.counterclockwise)
-        cube2.turnRight(.half)
+        cube1.turnRightCounterclockwise()
+        cube1.turnRightCounterclockwise()
+        cube2.turnRightHalf()
         XCTAssertEqual(cube1, cube2)
 
         // R R R = R'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnRight(.clockwise)
-        cube1.turnRight(.clockwise)
-        cube1.turnRight(.clockwise)
-        cube2.turnRight(.counterclockwise)
+        cube1.turnRightClockwise()
+        cube1.turnRightClockwise()
+        cube1.turnRightClockwise()
+        cube2.turnRightCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // R' R' R' = R
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnRight(.counterclockwise)
-        cube1.turnRight(.counterclockwise)
-        cube1.turnRight(.counterclockwise)
-        cube2.turnRight(.clockwise)
+        cube1.turnRightCounterclockwise()
+        cube1.turnRightCounterclockwise()
+        cube1.turnRightCounterclockwise()
+        cube2.turnRightClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // R R2 = R'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnRight(.clockwise)
-        cube1.turnRight(.half)
-        cube2.turnRight(.counterclockwise)
+        cube1.turnRightClockwise()
+        cube1.turnRightHalf()
+        cube2.turnRightCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // R' R2 = R
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnRight(.counterclockwise)
-        cube1.turnRight(.half)
-        cube2.turnRight(.clockwise)
+        cube1.turnRightCounterclockwise()
+        cube1.turnRightHalf()
+        cube2.turnRightClockwise()
         XCTAssertEqual(cube1, cube2)
     }
-    
+
     func testTurnLeft() {
         // L4 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnLeft(.clockwise)
+        cube1.turnLeftClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnLeft(.clockwise)
+        cube1.turnLeftClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnLeft(.clockwise)
+        cube1.turnLeftClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnLeft(.clockwise)
+        cube1.turnLeftClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // L2 L2 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnLeft(.half)
-        cube1.turnLeft(.half)
+        cube1.turnLeftHalf()
+        cube1.turnLeftHalf()
         XCTAssertEqual(cube1, cube2)
 
         // L L = L2
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnLeft(.clockwise)
-        cube1.turnLeft(.clockwise)
-        cube2.turnLeft(.half)
+        cube1.turnLeftClockwise()
+        cube1.turnLeftClockwise()
+        cube2.turnLeftHalf()
         XCTAssertEqual(cube1, cube2)
 
         // L' L' = L2
-        cube1.turnLeft(.counterclockwise)
-        cube1.turnLeft(.counterclockwise)
-        cube2.turnLeft(.half)
+        cube1.turnLeftCounterclockwise()
+        cube1.turnLeftCounterclockwise()
+        cube2.turnLeftHalf()
         XCTAssertEqual(cube1, cube2)
 
         // L L L = L'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnLeft(.clockwise)
-        cube1.turnLeft(.clockwise)
-        cube1.turnLeft(.clockwise)
-        cube2.turnLeft(.counterclockwise)
+        cube1.turnLeftClockwise()
+        cube1.turnLeftClockwise()
+        cube1.turnLeftClockwise()
+        cube2.turnLeftCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // L' L' L' = L
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnLeft(.counterclockwise)
-        cube1.turnLeft(.counterclockwise)
-        cube1.turnLeft(.counterclockwise)
-        cube2.turnLeft(.clockwise)
+        cube1.turnLeftCounterclockwise()
+        cube1.turnLeftCounterclockwise()
+        cube1.turnLeftCounterclockwise()
+        cube2.turnLeftClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // L L2 = L'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnLeft(.clockwise)
-        cube1.turnLeft(.half)
-        cube2.turnLeft(.counterclockwise)
+        cube1.turnLeftClockwise()
+        cube1.turnLeftHalf()
+        cube2.turnLeftCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // L' L2 = L
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnLeft(.counterclockwise)
-        cube1.turnLeft(.half)
-        cube2.turnLeft(.clockwise)
+        cube1.turnLeftCounterclockwise()
+        cube1.turnLeftHalf()
+        cube2.turnLeftClockwise()
         XCTAssertEqual(cube1, cube2)
     }
 
@@ -286,68 +286,68 @@ final class CubikTurnTests: XCTestCase {
         // F4 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnFront(.clockwise)
+        cube1.turnFrontClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnFront(.clockwise)
+        cube1.turnFrontClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnFront(.clockwise)
+        cube1.turnFrontClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnFront(.clockwise)
+        cube1.turnFrontClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // F2 F2 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnFront(.half)
-        cube1.turnFront(.half)
+        cube1.turnFrontHalf()
+        cube1.turnFrontHalf()
         XCTAssertEqual(cube1, cube2)
 
         // F F = F2
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnFront(.clockwise)
-        cube1.turnFront(.clockwise)
-        cube2.turnFront(.half)
+        cube1.turnFrontClockwise()
+        cube1.turnFrontClockwise()
+        cube2.turnFrontHalf()
         XCTAssertEqual(cube1, cube2)
 
         // F' F' = F2
-        cube1.turnFront(.counterclockwise)
-        cube1.turnFront(.counterclockwise)
-        cube2.turnFront(.half)
+        cube1.turnFrontCounterclockwise()
+        cube1.turnFrontCounterclockwise()
+        cube2.turnFrontHalf()
         XCTAssertEqual(cube1, cube2)
 
         // F F F = F'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnFront(.clockwise)
-        cube1.turnFront(.clockwise)
-        cube1.turnFront(.clockwise)
-        cube2.turnFront(.counterclockwise)
+        cube1.turnFrontClockwise()
+        cube1.turnFrontClockwise()
+        cube1.turnFrontClockwise()
+        cube2.turnFrontCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // F' F' F' = F
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnFront(.counterclockwise)
-        cube1.turnFront(.counterclockwise)
-        cube1.turnFront(.counterclockwise)
-        cube2.turnFront(.clockwise)
+        cube1.turnFrontCounterclockwise()
+        cube1.turnFrontCounterclockwise()
+        cube1.turnFrontCounterclockwise()
+        cube2.turnFrontClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // F F2 = F'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnFront(.clockwise)
-        cube1.turnFront(.half)
-        cube2.turnFront(.counterclockwise)
+        cube1.turnFrontClockwise()
+        cube1.turnFrontHalf()
+        cube2.turnFrontCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // F' F2 = F
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnFront(.counterclockwise)
-        cube1.turnFront(.half)
-        cube2.turnFront(.clockwise)
+        cube1.turnFrontCounterclockwise()
+        cube1.turnFrontHalf()
+        cube2.turnFrontClockwise()
         XCTAssertEqual(cube1, cube2)
     }
 
@@ -355,68 +355,68 @@ final class CubikTurnTests: XCTestCase {
         // B4 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnBack(.clockwise)
+        cube1.turnBackClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnBack(.clockwise)
+        cube1.turnBackClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnBack(.clockwise)
+        cube1.turnBackClockwise()
         XCTAssertNotEqual(cube1, cube2)
-        cube1.turnBack(.clockwise)
+        cube1.turnBackClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // B2 B2 =
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnBack(.half)
-        cube1.turnBack(.half)
+        cube1.turnBackHalf()
+        cube1.turnBackHalf()
         XCTAssertEqual(cube1, cube2)
 
         // B B = B2
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnBack(.clockwise)
-        cube1.turnBack(.clockwise)
-        cube2.turnBack(.half)
+        cube1.turnBackClockwise()
+        cube1.turnBackClockwise()
+        cube2.turnBackHalf()
         XCTAssertEqual(cube1, cube2)
 
         // B' B' = B2
-        cube1.turnBack(.counterclockwise)
-        cube1.turnBack(.counterclockwise)
-        cube2.turnBack(.half)
+        cube1.turnBackCounterclockwise()
+        cube1.turnBackCounterclockwise()
+        cube2.turnBackHalf()
         XCTAssertEqual(cube1, cube2)
 
         // B B B = B'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnBack(.clockwise)
-        cube1.turnBack(.clockwise)
-        cube1.turnBack(.clockwise)
-        cube2.turnBack(.counterclockwise)
+        cube1.turnBackClockwise()
+        cube1.turnBackClockwise()
+        cube1.turnBackClockwise()
+        cube2.turnBackCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // B' B' B' = B
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnBack(.counterclockwise)
-        cube1.turnBack(.counterclockwise)
-        cube1.turnBack(.counterclockwise)
-        cube2.turnBack(.clockwise)
+        cube1.turnBackCounterclockwise()
+        cube1.turnBackCounterclockwise()
+        cube1.turnBackCounterclockwise()
+        cube2.turnBackClockwise()
         XCTAssertEqual(cube1, cube2)
 
         // B B2 = B'
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnBack(.clockwise)
-        cube1.turnBack(.half)
-        cube2.turnBack(.counterclockwise)
+        cube1.turnBackClockwise()
+        cube1.turnBackHalf()
+        cube2.turnBackCounterclockwise()
         XCTAssertEqual(cube1, cube2)
 
         // B' B2 = B
         cube1 = .solvedCube
         cube2 = .solvedCube
-        cube1.turnBack(.counterclockwise)
-        cube1.turnBack(.half)
-        cube2.turnBack(.clockwise)
+        cube1.turnBackCounterclockwise()
+        cube1.turnBackHalf()
+        cube2.turnBackClockwise()
         XCTAssertEqual(cube1, cube2)
     }
 
@@ -626,5 +626,4 @@ final class CubikTurnTests: XCTestCase {
         cube2.turnEquator(.clockwise)
         XCTAssertEqual(cube1, cube2)
     }
-
 }
